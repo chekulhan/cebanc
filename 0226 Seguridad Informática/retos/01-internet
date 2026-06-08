@@ -1,0 +1,51 @@
+# Datos privados
+Salseando páginas webs por datos privados
+
+site:https://www.cebanc.com/ ext:pdf
+
+site:https://www.cebanc.com/ "password" OR "secret" OR "passwd" OR "pwd"
+site:cebanc.com "API key" OR "api_key" OR "secret"
+site:cebanc.com filetype:doc OR filetype:docx OR filetype:xls OR filetype:xlsx
+site:cebanc.com filetype:sql OR filetype:bak OR filetype:zip
+site:cebanc.com intext:"S3" OR intext:"Amazon S3" OR intext:"bucket"
+
+site:web.archive.org "cebanc.com"
+
+# HTTP
+Acceder para ver los mensajes en el Networking tab de Chrome
+- https://httpstat.us/200
+- https://httpbin.org/status/403 
+- https://httpbin.org/status/404
+
+Avanzado
+```bash
+curl -I https://httpstat.us/403
+```
+-I  => Head request en lugar de un GET completo
+
+
+## Códigos HTTP
+
+|  Código | Nombre corto              | Descripción breve                                                               |
+| ------: | ------------------------- | ------------------------------------------------------------------------------- |
+| **100** | Continue                  | El cliente puede continuar con la petición (respuesta provisional).             |
+| **101** | Switching Protocols       | El servidor acepta cambiar de protocolo (p. ej. a WebSocket).                   |
+| **200** | OK                        | Petición correcta; la respuesta contiene el recurso solicitado.                 |
+| **201** | Created                   | Recurso creado con éxito (usado tras POST que crea algo).                       |
+| **204** | No Content                | Respuesta correcta pero sin cuerpo (útil para confirmaciones).                  |
+| **301** | Moved Permanently         | Redirección permanente a otra URL.                                              |
+| **302** | Found / Moved Temporarily | Redirección temporal a otra URL.                                                |
+| **304** | Not Modified              | El recurso no ha cambiado; el cliente puede usar la copia en caché.             |
+| **400** | Bad Request               | La petición está mal formada (parámetros/JSON inválido).                        |
+| **401** | Unauthorized              | Falta autenticación o credenciales inválidas.                                   |
+| **403** | Forbidden                 | Acceso denegado: no tienes permisos, aunque la autenticación pudo ser correcta. |
+| **404** | Not Found                 | El recurso no existe en esa URL.                                                |
+| **405** | Method Not Allowed        | El método HTTP usado (PUT/POST/DELETE) no está permitido en ese endpoint.       |
+| **408** | Request Timeout           | El servidor cerró la conexión por espera prolongada del cliente.                |
+| **409** | Conflict                  | Conflicto con el estado actual del recurso (p. ej. edición concurrente).        |
+| **429** | Too Many Requests         | Límite de peticiones superado (rate limiting).                                  |
+| **500** | Internal Server Error     | Error genérico del servidor (algo falló internamente).                          |
+| **501** | Not Implemented           | El servidor no soporta la funcionalidad solicitada.                             |
+| **502** | Bad Gateway               | El servidor acting as gateway recibió una respuesta inválida upstream.          |
+| **503** | Service Unavailable       | Servicio temporalmente no disponible (mantenimiento / sobrecarga).              |
+| **504** | Gateway Timeout           | El servidor acting as gateway no recibió respuesta a tiempo upstream.           |

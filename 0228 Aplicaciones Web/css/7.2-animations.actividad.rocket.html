@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rocket Orbiting Moon with Stars</title>
+<style>
+  body {
+    background: black;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Moon */
+  .moon {
+    background-color: gray;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+  }
+
+  /* Rocket orbiting */
+  .rocket {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 40px;
+    transform-origin: -150px 0;
+    animation: orbit 5s linear infinite;
+    z-index: 3;
+  }
+
+  @keyframes orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  /* Stars common style */
+  .star {
+    position: absolute;
+    background: white;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite alternate;
+  }
+
+  @keyframes twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+  }
+
+  /* Individual star positions and delays */
+  .star1 { top: 10%; left: 20%; animation-delay: 0s; }
+  .star2 { top: 30%; left: 80%; animation-delay: 0.5s; }
+  .star3 { top: 70%; left: 40%; animation-delay: 1s; }
+  .star4 { top: 50%; left: 10%; animation-delay: 1.5s; }
+  .star5 { top: 20%; left: 60%; animation-delay: 2s; }
+
+</style>
+</head>
+<body>
+
+  <!-- Stars -->
+  <div class="star star1"></div>
+  <div class="star star2"></div>
+  <div class="star star3"></div>
+  <div class="star star4"></div>
+  <div class="star star5"></div>
+
+  <div class="moon"></div>
+  <div class="rocket">🚀</div>
+
+</body>
+</html>

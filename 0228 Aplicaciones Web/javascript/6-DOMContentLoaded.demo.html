@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMContentLoaded Example</title>
+</head>
+<body>
+    <h1 id="greeting">Hello, World!</h1>
+    <button id="changeTextButton">Change Text</button>
+
+    <script>
+        // Function to change the text of the greeting
+        function changeText() {
+            const greeting = document.getElementById('greeting');
+            greeting.textContent = 'Hello, DOMContentLoaded!';
+        }
+
+        // Adding event listener for DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM fully loaded and parsed');
+            // Optionally, you can call functions or set up event listeners here
+            const button = document.getElementById('changeTextButton');
+            button.addEventListener('click', changeText); // Set up button click event
+        });
+    </script>
+</body>
+</html>

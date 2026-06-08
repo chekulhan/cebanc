@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplos de Position</title>
+    <style>
+        /* Contenedor general */
+        .container {
+            width: 600px;
+            height: 500px;
+            border: 2px solid #333;
+            position: relative;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        /* Caja con position: static */
+        .static-box {
+            position: static;
+            width: 150px;
+            height: 80px;
+            background-color: lightgreen;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Caja con position: relative , relacionado con su posicion original*/
+        .relative-box {
+            position: relative;
+            top: 50px;   /* Mueve la caja 50px hacia abajo */
+            left: 30px;  /* Mueve la caja 30px hacia la derecha */
+            width: 150px;
+            height: 80px;
+            background-color: lightskyblue;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Caja con position: absolute */
+        .absolute-box {
+            position: absolute;
+            top: 100px;  /* Mueve la caja 100px hacia abajo respecto al contenedor */
+            left: 50px;  /* Mueve la caja 50px hacia la derecha respecto al contenedor */
+            width: 150px;
+            height: 80px;
+            background-color: lightcoral;
+            margin: 10px;
+            text-align: center;
+        }
+
+        /* Caja con position: fixed */
+        .fixed-box {
+            position: fixed;
+            top: 20px;   /* Se queda fija 20px desde la parte superior de la ventana */
+            left: 20px;  /* Se queda fija 20px desde la parte izquierda de la ventana */
+            width: 150px;
+            height: 80px;
+            background-color: gold;
+            text-align: center;
+        }
+
+       
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align: center;">Ejemplos de Position en CSS</h1>
+
+    <div class="container">
+        <!-- Caja con position: static -->
+        <div class="static-box">Static</div>
+
+        <!-- Caja con position: relative -->
+        <div class="relative-box">Relative</div>
+
+        <!-- Caja con position: absolute -->
+        <div class="absolute-box">Absolute</div>
+
+
+    </div>
+
+    <!-- Caja con position: fixed (estará siempre visible) -->
+    <div class="fixed-box">Fixed</div>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Notes App</title>
+</head>
+<body>
+    <h1>Simple Notes App</h1>
+    <textarea id="noteInput" placeholder="Write your note here..."></textarea>
+    <button id="saveButton">Save Note</button>
+    <button id="clearButton">Clear Notes</button>
+    <button id="displayButton">Display Note</button>
+
+    <h2>Saved Notes:</h2>
+    <div id="notesOutput"></div>
+
+    <script>
+
+        // Comentarios ----
+
+        function saveNote() {
+
+            const noteValue = document.getElementById('noteInput').value;
+            localStorage.setItem('note', noteValue);
+        }
+
+        function displayNote() {
+            
+            const noteValue = localStorage.getItem('note');
+            document.getElementById('notesOutput').innerHTML = noteValue;
+        }
+
+
+        document.getElementById("saveButton").addEventListener('click', saveNote);
+        document.getElementById('displayButton').addEventListener('click', displayNote);
+    </script>
+</body>
+</html>

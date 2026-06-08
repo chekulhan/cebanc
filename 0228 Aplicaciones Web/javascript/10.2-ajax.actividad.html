@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX con XMLHttpRequest - Usuario</title>
+   
+</head>
+<body>
+
+    <h1>AJAX con XMLHttpRequest - Usuario</h1>
+
+    <input type="number" id="userId" placeholder="ID de usuario" value="10">
+
+    <button id="cargarUsuarios">Buscar Usuario</button>
+    <div id="contenido"></div>
+    <div id="waiting" style="display: none;">Waiting....</div>
+
+    <script>
+        document.getElementById('cargarUsuarios').addEventListener('click', function() {
+            const xhr = new XMLHttpRequest();
+            
+            const userId = document.getElementById("userId").value;
+            const waiting = document.getElementById("waiting");
+            waiting.style.display = 'block';
+
+            // URL de la API pública de JSONPlaceholder
+            const url = `https://jsonplaceholder.typicode.com/users/${userId}`;
+            
+            // Configura la solicitud
+            xhr.open('GET', url, true);
+            
+            // Configura la función de respuesta
+            xhr.onload = function() {
+
+                
+
+                if (xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText); // Convierte la respuesta a JSON
+
+                    let htmlContenido = `
+                        <div class="usuario">
+                            <h3>${data.name}</h3>
+                            <p><strong>Correo electrónico:</strong> ${data.email}</p>
+                            <p><strong>Dirección:</strong> ${data.address.street}, ${data.address.city}</p>
+                        </div>
+                        `;
+
+                    waiting.style.display = 'none';
+                    // Inserta el contenido HTML generado en el div de contenido
+                    document.getElementById('contenido').innerHTML = htmlContenido;
+                } else {
+                    // Si hay un error, muestra un mensaje de error
+                    console.error('Error al cargar los usuarios:', xhr.status);
+                    document.getElementById('contenido').innerHTML = 'Error al cargar los usuarios.';
+                }
+            };
+            
+            // Maneja errores de solicitud
+            xhr.onerror = function() {
+                console.error('Error en la solicitud');
+                document.getElementById('contenido').innerHTML = 'Error al cargar los usuarios.';
+            };
+            
+            // Envía la solicitud
+            xhr.send();
+        });
+    </script>
+
+</body>
+</html>

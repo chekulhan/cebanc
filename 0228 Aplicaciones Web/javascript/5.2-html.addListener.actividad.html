@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page with Events</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            transition: background-color 1s;
+        }
+        #welcomeMessage {
+            font-size: 24px;
+            color: #333;
+            opacity: 0; /* Start hidden */
+            transition: opacity 1s;
+        }
+        #dateTime {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="welcomeMessage"></div>
+    <div id="dateTime"></div>
+    <div id="localeDisplay"></div>
+
+    <script>
+        // Function to initialize the page
+        function initializePage() {
+            showWelcomeMessage();
+            changeBackgroundColor();
+            displayCurrentDateTime();
+            displayLocale();
+        }
+        // Agregar funciones
+
+        // Agregar el evento DOMContentLoaded para inicializar la página
+    </script>
+</body>
+</html>

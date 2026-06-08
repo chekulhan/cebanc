@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RedSocialX - Plataforma de Publicaciones</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f2f5;
+      margin: 20px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .post {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 5px;
+    }
+    .post-header {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    button {
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    .report {
+      background-color: #e74c3c;
+      color: white;
+    }
+    .log {
+      margin-top: 20px;
+      background-color: #fff;
+      padding: 10px;
+      border: 1px solid #ccc;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>RedSocialX - Panel de Administración</h1>
+  <p>Simulación: revisa las publicaciones de la plataforma y reporta el contenido inapropiado según las normas de la empresa.</p>
+
+  <div id="posts-container">
+    <!-- Publicaciones -->
+    <div class="post" data-inapropiado="false">
+      <div class="post-header">Lucía Fernández</div>
+      <div class="post-content">¡Increíble día en la oficina! El equipo logró todos los objetivos del proyecto.</div>
+      <button onclick="reportPost(this)" class="report">Reportar</button>
+    </div>
+
+    <div class="post" data-inapropiado="true">
+      <div class="post-header">Andrés Gómez</div>
+      <div class="post-content">¡Odio a todo el departamento de ventas! Son unos inútiles y deberían despedirlos a todos.</div>
+      <button onclick="reportPost(this)" class="report">Reportar</button>
+    </div>
+
+    <div class="post" data-inapropiado="false">
+      <div class="post-header">María López</div>
+      <div class="post-content">Felicitaciones al equipo de soporte por su excelente atención a los clientes esta semana.</div>
+      <button onclick="reportPost(this)" class="report">Reportar</button>
+    </div>
+
+    <div class="post" data-inapropiado="true">
+      <div class="post-header">Carlos Sánchez</div>
+      <div class="post-content">Ese compañero es un tonto completo, no sabe hacer nada bien. Esto es inaceptable.</div>
+      <button onclick="reportPost(this)" class="report">Reportar</button>
+    </div>
+
+    <div class="post" data-inapropiado="true">
+      <div class="post-header">Ana Pérez</div>
+      <div class="post-content">Estoy harto de este lugar, deberían cerrar la oficina y despedir a todos los jefes corruptos.</div>
+      <button onclick="reportPost(this)" class="report">Reportar</button>
+    </div>
+
+    <div class="post" data-inapropiado="false">
+      <div class="post-header">José Martínez</div>
+      <div class="post-content">Gran presentación hoy sobre innovación tecnológica. ¡Muy inspirador!</div>
+      <button onclick="reportPost(this)" class="report">Reportar</button>
+    </div>
+  </div>
+
+  <h2>Registro de Reportes</h2>
+  <div class="log" id="log"></div>
+
+  <script>
+    const logContainer = document.getElementById('log');
+
+    function reportPost(button) {
+      const postDiv = button.parentElement;
+      const content = postDiv.querySelector('.post-content').innerText;
+      const user = postDiv.querySelector('.post-header').innerText;
+      const inapropiado = postDiv.getAttribute('data-inapropiado') === "true";
+
+      if (inapropiado) {
+        alert(`¡Correcto! El contenido de ${user} es inapropiado y ha sido reportado.`);
+      } else {
+        alert(`Este contenido de ${user} no es inapropiado. Reporte innecesario.`);
+      }
+
+      // Agregar al log
+      const logEntry = document.createElement('div');
+      const fecha = new Date().toLocaleString();
+      logEntry.textContent = `[${fecha}] Reporte de ${user}: ${inapropiado ? 'Contenido inapropiado detectado' : 'Falso positivo'}`;
+      logContainer.appendChild(logEntry);
+    }
+  </script>
+
+</body>
+</html>

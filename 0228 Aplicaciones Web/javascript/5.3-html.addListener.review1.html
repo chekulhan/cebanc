@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Car Assembly Line</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  .station {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #333;
+    width: 300px;
+  }
+
+  .car {
+    display: inline-block;
+    width: 50px;
+    height: 30px;
+    background-color: #3498db;
+    margin-left: 10px;
+  }
+
+  button {
+    margin-top: 10px;
+    padding: 5px 10px;
+  }
+</style>
+</head>
+<body>
+
+<h1>Fábrica de Coches</h1>
+
+<div class="station" id="paintingStation">
+  Pintar el coche
+  <div class="car" id="car"></div>
+  <button id="paintBtn">Pintar el coche</button>
+</div>
+
+<div class="station" id="engineStation">
+  Instalar motor
+  <button id="engineBtn" disabled>Instalar motor</button>
+</div>
+
+<div class="station" id="inspectionStation">
+  Inspeccion coche
+  <button id="inspectBtn" disabled>Inspeccionar coche</button>
+</div>
+
+<p id="status">Status: Esperando pintura...</p>
+
+<script>
+  const car = document.getElementById('car');
+  const status = document.getElementById('status');
+
+  const paintBtn = document.getElementById('paintBtn');
+  const engineBtn = document.getElementById('engineBtn');
+  const inspectBtn = document.getElementById('inspectBtn');
+
+  // Step 1: Paint the car
+  paintBtn.addEventListener('click', function() {
+    // TO DO: pintar el coche 'rojo'
+    status.textContent = "Status: Car painted. Ready for engine installation.";
+    engineBtn.disabled = false; // enable next step
+    paintBtn.disabled = true;   // disable this step
+  });
+
+  // Step 2: Instalar el motor - TO DO
+  
+
+  // Paso 3: Inspeccionar el coche - TO DO
+
+
+
+  // Paso XXXXXX: Agregar un nuevo paso - TO DO
+
+</script>
+
+</body>
+</html>

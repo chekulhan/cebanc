@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMContentLoaded Activity</title>
+
+    <script>
+
+        // Attempting to change text before the DOM is fully loaded
+        const greeting = document.getElementById('greeting');
+        const button = document.getElementById('changeTextButton');
+
+        // Function to change the greeting text
+        function changeText() {
+            greeting.textContent = 'Hello, DOMContentLoaded!';
+        }
+
+        // Event listener for button click
+        button.addEventListener('click', changeText);
+
+        // This will throw an error because the elements might not exist yet
+        greeting.textContent = 'Welcome to the DOM Manipulation Activity!';
+
+
+
+    </script>
+</head>
+<body>
+    <h1 id="greeting">Hola todo el mundo!</h1>
+    <button id="changeTextButton">Change Text</button>
+
+    
+</body>
+</html>

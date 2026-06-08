@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query String Example</title>
+</head>
+<body>
+
+    <h1>Welcome!</h1>
+    <p id="message">Loading...</p>
+
+    <script>
+        // Get the query string from the URL
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name"); // Get the "name" parameter
+
+        if (params.has("name")) {
+            console.log("name param existe");
+        }
+        if (params.has("edad")) {
+            console.log("edad param existe");
+        }
+
+        // Display the name if it exists, otherwise show a default message
+        const messageElement = document.getElementById("message");
+        if (name) {
+            messageElement.textContent = `Hello, ${name}!`;
+        } else {
+            messageElement.textContent = "Hello, visitor!";
+        }
+    </script>
+
+</body>
+</html>

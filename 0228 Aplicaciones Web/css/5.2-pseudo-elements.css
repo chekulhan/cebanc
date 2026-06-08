@@ -1,0 +1,30 @@
+html {
+    font-family: Popins, sans-serif;
+}
+
+h1 {
+    position: relative; /* posicionar lo elementos relative al padre  */
+    width: max-content;
+}
+
+/* h1::before{
+    content: "👋";
+} */
+
+h1::after{
+    content: "";
+    background: linear-gradient(to right, red, blue);
+    transition: 100ms;
+    border-radius: 100px;
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+h1::first-letter {
+    font-size: 2em;
+    color: red;
+}
+

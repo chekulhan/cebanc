@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Content Example</title>
+</head>
+<body>
+
+    <p id="myParagraph">This is the original content.</p>
+    <button onclick="changeContent()">Click me para cambiar este contenido</button>
+
+    <p class="myClass">This is the first content.</p>
+    <p class="myClass">This is the second content.</p>
+    <button onclick="changeContentByClass()">Click me para cambiar este contenido</button>
+
+    <p class="myQueryClass">This is the query seletor content.</p>
+    <p class="myQueryClass">This is the query seletor content.</p>
+    <button onclick="changeContentByQuerySelector()">Click me para cambiar este contenido</button>
+
+
+    <script>
+        function changeContent() {
+            document.getElementById("myParagraph").innerText = "The content has been changed!";
+        }
+
+        function changeContentByClass() {
+            var elements = document.getElementsByClassName("myClass");
+            console.log(elements);
+            elements[0].innerText = "First paragraph changed!";
+            elements[1].innerText = "Second paragraph changed!";
+
+            
+        }
+
+        // querySelector y querySelectorAll usar .
+        function changeContentByQuerySelector() {
+            var element = document.querySelector(".myQueryClass");
+            element.innerText = "The content has been changed!";
+        }
+
+        function changeContentByQuerySelector() {
+            var elements = document.querySelectorAll(".myQueryClass");
+            elements[0].innerText = "First paragraph changed!";
+            elements[1].innerText = "Second paragraph changed!";
+        }
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page with Events</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            transition: background-color 1s;
+        }
+        #welcomeMessage {
+            font-size: 24px;
+            color: #333;
+            opacity: 0; /* Start hidden */
+            transition: opacity 1s;
+        }
+        #dateTime {
+            font-size: 18px;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="welcomeMessage">¡Bienvenido a la página!</div>
+    <div id="dateTime"></div>
+    <div id="localeDisplay"></div>
+
+    <script>
+        // Function to initialize the page
+        function initializePage() {
+            showWelcomeMessage();
+            changeBackgroundColor();
+            displayCurrentDateTime();
+            displayLocale();
+        }
+
+        // Show the welcome message
+        function showWelcomeMessage() {
+            const message = document.getElementById("welcomeMessage");
+            message.style.opacity = 1; // Show the message
+        }
+
+        // Change the background color randomly
+        function changeBackgroundColor() {
+            const colors = ["#FF5733", "#33FF57", "#3357FF", "#F1C40F", "#8E44AD"];
+            document.body.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Display the current date and time
+        function displayCurrentDateTime() {
+            const dateTimeDisplay = document.getElementById("dateTime");
+            const now = new Date();
+            dateTimeDisplay.textContent = `Fecha y hora actual: ${now.toLocaleString()}`;
+        }
+
+        // Display the user's locale
+        function displayLocale() {
+            const userLocale = navigator.language || navigator.userLanguage; // Get the user's primary locale
+            const userLocales = navigator.languages || [userLocale]; // Get the user's preferred locales
+
+            document.getElementById("localeDisplay").textContent = `User's locale: ${userLocale} 
+            | Preferred locales: ${userLocales.join(', ')}`;
+        }
+
+        // Add event listener for the DOMContentLoaded event to initialize the page
+        document.addEventListener("DOMContentLoaded", initializePage);
+    </script>
+</body>
+</html>

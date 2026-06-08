@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Photo Gallery with Rowspan</title>
+    <style>
+        * {
+            box-sizing: border-box; /* Include padding and border in element's total width and height */
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+            gap: 10px; /* Space between items */
+            padding: 10px; /* Padding around the gallery */
+        }
+
+        .gallery-item {
+            padding: 5px; /* Padding inside each item */
+            overflow: hidden; /* Prevents overflow of images */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+
+        .gallery-item img {
+            width: 100%; /* Makes images responsive */
+            height: 100%; /* Makes images fill the height of the div */
+            object-fit: cover; /* Ensures the image covers the entire div */
+            transition: transform 0.3s; /* Smooth zoom effect */
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
+        /* Styles for rowspan item */
+        .item-rowspan {
+            grid-row: span 2; /* Span 2 rows */
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="https://picsum.photos/200/200?random=1" alt="Image 1"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/200/200?random=2" alt="Image 2"></div>
+        <div class="gallery-item item-rowspan"><img src="https://picsum.photos/200/200?random=3" alt="Image 3"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/200/200?random=4" alt="Image 4"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/200/200?random=5" alt="Image 5"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/200/200?random=6" alt="Image 6"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/200/200?random=7" alt="Image 7"></div>
+        <div class="gallery-item"><img src="https://picsum.photos/200/200?random=8" alt="Image 8"></div>
+    </div>
+</body>
+</html>

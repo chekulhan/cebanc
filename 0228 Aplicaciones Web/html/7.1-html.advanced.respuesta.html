@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <h1>Respuestas</h1>
+
+
+        
+    <h2>Now Playing: Imagine</h2>
+    <audio controls>
+    <source src="imagine.mp3" type="audio/mp3">
+    Your browser does not support the audio tag.
+    </audio>
+    <p>Popularity:
+    <meter min="0" max="100" value="90">90%</meter>
+    </p>
+
+    <hr>
+
+    <h2>Choose Your Theme Color</h2>
+    <label for="theme">Select color:</label>
+    <input type="color" id="theme" name="theme" value="#ff9900">
+    <output>Selected: #ff9900</output>
+
+
+    <h2>School Dance Invitation</h2>
+<p>Join us on <time datetime="2025-11-05T19:00">November 5, 2025, at 7 PM</time>.</p>
+
+<hr>
+
+<form>
+  <fieldset>
+    <legend>Will you attend?</legend>
+    <label><input type="radio" name="rsvp" value="yes"> Yes</label>
+    <label><input type="radio" name="rsvp" value="no"> No</label>
+  </fieldset>
+
+  <label>RSVP by:
+    <input type="date" name="reply-by">
+  </label>
+</form>
+
+<hr>
+
+<h2>Contact Us</h2>
+<form>
+  <label for="topic">Choose a topic:</label>
+  <input list="topics" id="topic" name="topic">
+  <datalist id="topics">
+    <option value="Website Issue">
+    <option value="Feedback">
+    <option value="Collaboration">
+  </datalist>
+
+  <fieldset>
+    <legend>Reason for Contact</legend>
+    <label><input type="radio" name="reason" value="question"> Question</label>
+    <label><input type="radio" name="reason" value="report"> Report</label>
+  </fieldset>
+
+  <p><label>Message:<br><textarea rows="4" cols="30"></textarea></label></p>
+</form>
+
+
+
+</body>
+</html>

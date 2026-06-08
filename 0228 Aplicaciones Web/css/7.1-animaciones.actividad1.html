@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Move Box with Keyframes</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+  }
+
+  .box {
+    position: relative; 
+    width: 50px;
+    height: 50px;
+    background-color: #e74c3c;
+    top: 0;
+    left: 0;
+    animation: moveAround 5s linear infinite alternate;
+  }
+
+  @keyframes moveAround {
+    0% {
+      top: 0;
+      left: 0;
+    }
+    25% {
+      top: 0;
+      left: 300px;
+    }
+    50% {
+      top: 200px;
+      left: 300px;
+    }
+    75% {
+      top: 200px;
+      left: 0;
+    }
+    100% {
+      top: 0;
+      left: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="box"></div>
+
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="300" height="400" style="border:1px solid black"></canvas>
+
+    <script type="module">
+        // TO DO - conseguir el canvas en contexto 2d
+
+        
+        // Block state
+        let y = 50;
+        let velocity = 0;
+        const gravity = 0.5;
+        const blockSize = 30;
+        const ground = canvas.height - blockSize;
+
+        // Key press: bounce
+        window.addEventListener("keydown", (e) => {
+            if (e.code === "Space") {
+                // TO DO - cambiar la velocidad a negativo si el usuario teclea SPACE
+            }
+        });
+
+        function update() {
+            velocity += gravity;
+            y += velocity;
+
+            // Stop at ground
+            if (y > ground) {
+                y = ground;
+                velocity = 0;
+
+                // TO DO indicamos a través de un booleano que es game over (true, false)
+               
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "blue";
+            ctx.fillRect(135, y, blockSize, blockSize);
+
+             // TO DO agregar texto para "Game Over" si el booleano es true
+
+        }
+
+        function loop() {
+            update();
+            draw();
+            requestAnimationFrame(loop);
+        }
+
+        loop();
+    </script>
+
+
+</body>
+</html>

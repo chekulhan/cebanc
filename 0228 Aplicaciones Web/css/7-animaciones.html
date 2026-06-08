@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        /* PASO 1:  */
+        .caja {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: relative; /* Necesario para mover */
+
+            /* PASO 3: */
+            animation: moverDerecha;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+        }
+
+        /* PASO 2: */
+        @keyframes moverDerecha {
+            from { transform: translateX((0px)) rotate(0deg) scale(1);  }
+            to { transform: translateX(200px) rotate(45deg) scale(1.5);   }
+        }
+
+
+        /*  Ejemplo 2: */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            animation: cambiarColor 5s infinite;
+        }
+
+        @keyframes cambiarColor {
+            0% { background-color: red; }    /* Inicio: Rojo */
+            50% { background-color: yellow; } /* Mitad: Amarillo */
+            100% { background-color: blue; } /* Final: Azul */
+        }
+       
+
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="caja">Aqui es una caja</div>
+
+    
+</body>
+</html>
