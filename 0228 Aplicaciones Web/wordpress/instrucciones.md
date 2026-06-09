@@ -64,6 +64,10 @@ Para cerrar todo:
 docker compose down
 ```
 
+**Cuidado** - Borrar tmabien los datos de los volumenes (MariaDB)
+```bash
+docker compose down -v
+```
 
 # Actividades
 ## Actividad 1
