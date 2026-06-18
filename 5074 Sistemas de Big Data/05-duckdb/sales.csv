@@ -1,0 +1,6 @@
+order_id,date,customer,product,quantity,price
+1001,2026-06-01,Alice,Laptop,1,1200.00
+1002,2026-06-01,Bob,Mouse,2,25.50
+1003,2026-06-02,Charlie,Keyboard,1,89.99
+1004,2026-06-03,Alice,Monitor,2,299.99
+1005,2026-06-03,David,Docking Station,1,149.00
