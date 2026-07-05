@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="300" height="400" style="border:1px solid black"></canvas>
+
+    <script type="module">
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Block state
+    let y = 50;
+    let velocity = 0;
+    const gravity = 0.5;
+    const blockSize = 30;
+    const ground = canvas.height - blockSize;
+
+    // Key press: bounce
+    window.addEventListener("keydown", (e) => {
+        if (e.code === "Space") {
+        velocity = -10; // jump up
+        }
+    });
+
+    function update() {
+        velocity += gravity;
+        y += velocity;
+
+        // Stop at ground
+        if (y > ground) {
+        y = ground;
+        velocity = 0;
+        }
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "blue";
+        ctx.fillRect(135, y, blockSize, blockSize);
+    }
+
+    function loop() {
+        update();
+        draw();
+        requestAnimationFrame(loop);
+    }
+
+    loop();
+    </script>
+
+
+</body>
+</html>

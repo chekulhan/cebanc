@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>User Profile</h1>
+    <p>LLevar a cabo este actividad en 3 pasos:
+        <ol>
+            <li>Guardar los datos del usuario (perfil) en localStorage</li>
+            <li>Crear una funcion (mostrarPerfil) para mostrar los datos de localStorage y enlazarlo con un boton</li>
+            <li>Asignar la funcion mostrarPerfil al window onload funcion</li>
+        </ol>
+    </p>
+
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <input type="email" id="emailInput" placeholder="Enter your email" />
+    <button id="saveButton">Save Profile</button>
+    <button id="clearButton">Clear Profile</button>
+
+    <div id="profileDisplay"></div>
+
+    <script>
+        // Function to save the user profile data to LocalStorage
+        function saveProfile() {
+            const name = document.getElementById('nameInput').value;
+            const email = document.getElementById('emailInput').value;
+
+            // Save the user profile data in LocalStorage
+            localStorage.setItem('userName', name);
+            localStorage.setItem('userEmail', email);
+
+            // Clear the input fields
+            document.getElementById('nameInput').value = '';
+            document.getElementById('emailInput').value = '';
+
+            // Display the saved profile data
+            displayProfile();
+        }
+
+        // Function to display the user profile data
+        function displayProfile() {
+            const profileDisplay = document.getElementById('profileDisplay');
+            profileDisplay.innerHTML = ''; // Clear previous display
+
+            // Get the user profile data from LocalStorage
+            const name = localStorage.getItem('userName');
+            const email = localStorage.getItem('userEmail');
+
+            // Display the user's profile if it exists
+            if (name || email) {
+                profileDisplay.innerHTML = `<p>Name: ${name || 'N/A'}</p><p>Email: ${email || 'N/A'}</p>`;
+            }
+        }
+
+        // Function to clear the user profile data from LocalStorage
+        function clearProfile() {
+            localStorage.removeItem('userName'); // Remove the user name from LocalStorage
+            localStorage.removeItem('userEmail'); // Remove the user email from LocalStorage
+            displayProfile(); // Update the displayed profile
+        }
+
+        // Event listeners for buttons
+        document.getElementById('saveButton').addEventListener('click', saveProfile);
+        document.getElementById('clearButton').addEventListener('click', clearProfile);
+
+        // Display profile when the page loads
+        window.onload = function() {
+            displayProfile(); // Check for existing profile data on load
+        };
+
+        // window.addEventListener('load', displayProfile);
+    </script>
+</body>
+</html>

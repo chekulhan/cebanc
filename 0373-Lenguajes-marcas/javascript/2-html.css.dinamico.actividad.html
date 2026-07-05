@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Content Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+        .magic-box {
+            border: 2px solid #4CAF50;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 300px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🔮 Click the buttons to reveal the magic messages! 🔮</h2>
+
+    <!-- Using getElementById -->
+    <div class="magic-box">
+        <p id="myParagraph">This is a hidden clue.</p>
+        <button>Click me to reveal a secret</button>
+    </div>
+
+    <!-- Using getElementsByClassName -->
+    <div class="magic-box">
+        <p class="myClass">This is a hidden clue.</p>
+        <p class="myClass">This is another hidden clue.</p>
+        <button>Click me to reveal more secrets</button>
+    </div>
+
+    <!-- Using querySelectorAll -->
+    <div class="magic-box">
+        <p class="myQueryClass">This is a hidden clue.</p>
+        <p class="myQueryClass">This is another hidden clue.</p>
+        <button>Click me to reveal the final hint</button>
+    </div>
+
+
+</body>
+</html>

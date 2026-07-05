@@ -1,0 +1,27 @@
+<script type="module">
+
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let isDrawing = false; // indicar y deberiamos dibujar o no
+
+    // TO DO - añadir un event listener para el evento 'mousedown'. En este caso, isDrawing es true - dubujamos en el canvas
+
+    // TO DO - añadir un event listener para el evento 'mouseup'. En este caso, isDrawing es false - no dibujamos
+    
+
+    canvas.addEventListener("mousemove", (event) => {
+
+        if (!isDrawing) return; // salimos si no estamos dibujando
+
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        // TO DO - dibujar/pintar un rect en la posicion x y y, del tomaño 1, 1
+ 
+
+    })
+
+
+    </script>

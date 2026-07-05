@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <style>
+        /* Establecemos un fondo de color para la página */
+        body {
+            background-color: #f4f4f9;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Titulo */
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-top: 20px;
+        }
+
+        /* Contenedor principal de la galería */
+        .gallery {
+            display: block;
+            padding: 20px;
+        }
+
+        /* Estilo de cada foto */
+        .photo {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            padding: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            max-width: 300px;
+            margin: 10px;
+        }
+
+        /* Efecto hover: fondo cambia y la imagen se agranda */
+        .photo:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
+        }
+
+        /* Estilo de las imágenes para que se adapten */
+        .photo img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Galería de Fotos</h1>
+    <div class="gallery">
+        <div class="photo">
+            <img src="https://picsum.photos/id/229/200/300" alt="Foto 1">
+        </div>
+        <div class="photo">
+            <img src="https://picsum.photos/id/230/200/300" alt="Foto 2">
+        </div>
+        <div class="photo">
+            <img src="https://picsum.photos/id/231/200/300" alt="Foto 3">
+        </div>
+        <div class="photo">
+            <img src="https://picsum.photos/id/231/200/300" alt="Foto 4">
+        </div>
+        <div class="photo">
+            <img src="https://picsum.photos/id/237/200/300" alt="Foto 5">
+        </div>
+        <div class="photo">
+            <img src="https://picsum.photos/id/236/200/300" alt="Foto 6">
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad de Revisión</title>
+    <style>
+          .flex-container {
+            display: flex;
+            flex-direction: row-reverse;
+            margin-bottom: 20px;
+            width: 100%; /* Asegura que el contenedor cubra el ancho completo */
+        }
+
+        .flex-item {
+            background-color: #87CEFA; /* Azul claro */
+            padding: 20px;
+            margin: 5px;
+            text-align: center;
+            flex: 1; /* Hace que cada flex-item ocupe el mismo espacio */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:last-child {
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bienvenido a la Actividad de Revisión</h1>
+    <p>Gestionar las tareas a través de un Kanban Board (github projects)</p>
+    <li>
+        <li>Javascript: Mostrar tu nombre</li>
+        <li>Flex container - cambiar el ordén al reves</li>
+        <li>TABLE - indicare cada segunda fila con un color diferente y la última en amarillo</li>
+        <li>Al enviar (submit) un formulario, mostrar los datos al usuario (alert) - usar event.preventDefault(); si hace falta</li>
+    </li>
+
+    <br>
+
+    <button id="nameButton">Dime tu nombre</button>
+    <div id="nameDisplay"></div>
+
+    <div class="flex-container">
+        <div class="flex-item">
+            <h2>Albert Einstein</h2>
+            <p>Físico teórico, conocido por la teoría de la relatividad.</p>
+        </div>
+        <div class="flex-item">
+            <h2>Frida Kahlo</h2>
+            <p>Artista, famosa por sus autorretratos y su estilo único.</p>
+        </div>
+        <div class="flex-item">
+            <h2>Nelson Mandela</h2>
+            <p>Líder antiapartheid y expresidente de Sudáfrica.</p>
+        </div>
+    </div>
+
+    <br>
+
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Característica</th>
+        </tr>
+        <tr>
+            <td>Albert Einstein</td>
+            <td>Físico teórico, conocido por la teoría de la relatividad</td>
+        </tr>
+        <tr>
+            <td>Frida Kahlo</td>
+            <td>Artista, famosa por sus autorretratos</td>
+        </tr>
+        <tr>
+            <td>Leonardo da Vinci</td>
+            <td>Artista y científico, conocido por obras como la Mona Lisa</td>
+        </tr>
+        <tr>
+            <td>Marie Curie</td>
+            <td>Pionera en el campo de la radiactividad, primera mujer en ganar un Nobel</td>
+        </tr>
+        <tr>
+            <td>Nelson Mandela</td>
+            <td>Líder antiapartheid y expresidente de Sudáfrica</td>
+        </tr>
+        <tr>
+            <td>Steve Jobs</td>
+            <td>Co-fundador de Apple, conocido por su innovación en tecnología</td>
+        </tr>
+       
+    </table>
+    
+    <br>
+    <br>
+    <form id="myForm">
+        <label for="numberInput">Introducir tu edad:</label>
+        <input type="number" id="numberInput" min="18" required>
+        <br>
+        <label for="selectInput">Selecciona un pais:</label>
+        <select id="selectInput" required>
+            <option value="">Selecciona...</option>
+            <option value="AUS">Australia</option>
+            <option value="ESP">España</option>
+            <option value="FR">Francia</option>
+        </select>
+        <br>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <hr>
+
+    <div id="progressContainer">
+        <button id="btnReveal">Reveal Secret</button>
+        <p id="loading" style="display:none;">Loading... ⏳</p>
+        <progress id="progressBar" value="0" max="100"></progress>
+    </div>
+
+    <p id="message" style="display:none;">🎉 Surprise! JavaScript is awesome! 🎉</p>
+
+
+    <script>
+        // Tarea 1: Preguntar el nombre
+        document.getElementById('nameButton').onclick = function() {
+            const name = prompt("¿Cuál es tu nombre?");
+            document.getElementById('nameDisplay').innerText = `Hola, ${name}!`;
+        };
+
+        // Tarea 4: Mostrar resultado del formulario en un alert
+        document.getElementById('myForm').onsubmit = function(event) {
+            event.preventDefault();
+            const numberValue = document.getElementById('numberInput').value;
+            const selectValue = document.getElementById('selectInput').value;
+            alert(`Número: ${numberValue}, Opción seleccionada: ${selectValue}`);
+        };
+
+        // Tarea 5:
+        document.getElementById("btnReveal").addEventListener("click", function(e) {
+            e.target.disabled = true;
+            let loading = document.getElementById("loading");
+            let message = document.getElementById("message");
+            let progress = document.getElementById("progressBar");
+            
+            loading.style.display='block';
+
+
+            let p = 0;
+
+            let interval = setInterval(() => {
+                p += 5;
+                progress.value = p;
+                if (p >= 100) {
+                    clearInterval(interval); // accepta un interval ID
+                }
+            }, 250);
+
+
+            setTimeout(() => {
+                message.style.display='block';
+                loading.style.display='none';
+                e.target.disabled = false;
+            }, 5000);
+
+
+        });
+
+
+
+    </script>
+</body>
+</html>

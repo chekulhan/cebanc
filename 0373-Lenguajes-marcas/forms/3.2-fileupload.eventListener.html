@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Upload</title>
+
+  
+</head>
+<body>
+    <h1>Leer un archivo de texto</h1>
+    <input type="file" id="fileInput" accept=".txt" required>
+    <pre id="fileContent"></pre>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const fileContent = document.getElementById('fileContent');
+
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    fileContent.textContent = e.target.result; // Display the file content
+                };
+
+                reader.onerror = function() {
+                    fileContent.textContent = 'Error al leer el archivo.';
+                };
+
+                reader.readAsText(file); // Read the file as text
+            }
+        });
+    </script>
+
+</body>
+</html>

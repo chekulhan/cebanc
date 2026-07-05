@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Elemento a la Lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Agregar un elemento P al documento</h1>
+    <button onclick="addParagraph()">Agregar Párrafo</button>
+
+    <div id="yellowDiv" style="background-color: yellow; width:100%">Mi DIV</div>
+    
+    <script>
+        function addParagraph() {
+            // Create a new paragraph element
+            var newParagraph = document.createElement("p");
+
+            // Set the text content of the new paragraph
+            newParagraph.innerText = "Este es un nuevo párrafo agregado a la página.";
+
+            // Append the new paragraph to the body of the document
+            document.body.appendChild(newParagraph);
+
+            // Agregar un P dentro del yellow div
+            // avanzado : agregar una nueva fila
+        }
+    </script>
+    
+</body>
+</html>

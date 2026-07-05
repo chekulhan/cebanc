@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+    pre {
+      background: #f5f5f5;
+      padding: 10px;
+      border-radius: 8px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+
+</head>
+<body>
+    <h1>XML Demo</h1>
+
+    <!-- preformatted text , mantener lineas y breaks -->
+    <pre id="output"></pre>
+
+    
+    <!-- encrustado xml doc -->
+    <script id="xmlData" type="text/xml">
+        <bookstore>
+        <book id="bk101">
+            <title>Learning XML</title>
+            <author>John Doe</author>
+            <price>29.99</price>
+        </book>
+        <book id="bk102">
+            <title>Advanced XML</title>
+            <author>Jane Smith</author>
+            <price>39.99</price>
+        </book>
+        </bookstore>
+    </script>
+
+    
+    <script>
+        const xml = document.getElementById("xmlData").textContent;
+        console.log(xml);
+
+        const outputText = document.getElementById("output").innerText = xml;
+        
+    </script>
+
+
+</body>
+</html>

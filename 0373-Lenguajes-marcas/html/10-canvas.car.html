@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Simple Car Canvas</title>
+  <style>
+    body { display:flex; align-items:center; justify-content:center; height:100vh; margin:0; background:#f0f0f0; }
+    canvas { background: #fff; border:1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="700" height="300"></canvas>
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    // Draw a simple car: rectangle + 2 wheels
+    function drawCar(ctx, x, y, scale = 1, color = "blue") {
+      const bodyWidth = 120 * scale;
+      const bodyHeight = 40 * scale;
+      const wheelRadius = 15 * scale;
+      const wheelOffsetX = 40 * scale;
+
+      // car body
+      ctx.fillStyle = color;
+      ctx.fillRect(x - bodyWidth/2, y - bodyHeight - wheelRadius, bodyWidth, bodyHeight);
+
+      // wheels
+      ctx.fillStyle = "black";
+      ctx.beginPath();
+      ctx.arc(x - wheelOffsetX, y - wheelRadius, wheelRadius, 0, Math.PI*2);
+      ctx.fill();
+      ctx.beginPath();
+      ctx.arc(x + wheelOffsetX, y - wheelRadius, wheelRadius, 0, Math.PI*2);
+      ctx.fill();
+    }
+
+    // Draw the road line
+    function drawRoad(ctx, y) {
+      ctx.strokeStyle = "gray";
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(canvas.width, y);
+      ctx.stroke();
+    }
+
+    // Render scene
+    function render() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      drawRoad(ctx, 250);         // simple road
+      drawCar(ctx, 200, 250, 1);  // first car
+      drawCar(ctx, 400, 250, 0.8); // smaller car
+    }
+
+    render();
+  </script>
+</body>
+</html>

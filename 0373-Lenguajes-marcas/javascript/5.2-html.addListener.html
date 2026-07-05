@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener Example</title>
+</head>
+<body>
+    <h1>Event Listener Ejemplo</h1>
+    <ul>
+        <li><strong>Eventos del ratón</strong>
+            <ul>
+                <li><code>click</code>: Se activa cuando se hace clic con el ratón.</li>
+                <li><code>dblclick</code>: Se activa cuando se hace doble clic con el ratón.</li>
+                <li><code>mouseover</code>: Se activa cuando el puntero del ratón entra en un elemento.</li>
+                <li><code>mouseout</code>: Se activa cuando el puntero del ratón sale de un elemento.</li>
+                <li><code>mousedown</code>: Se activa cuando se presiona un botón del ratón.</li>
+                <li><code>mouseup</code>: Se activa cuando se suelta un botón del ratón.</li>
+            </ul>
+        </li>
+        <li><strong>Eventos del teclado</strong>
+            <ul>
+                <li><code>keydown</code>: Se activa cuando se presiona una tecla.</li>
+                <li><code>keyup</code>: Se activa cuando se suelta una tecla.</li>
+                <li><code>keypress</code>: Se activa cuando se presiona una tecla (obsoleto en algunos navegadores).</li>
+            </ul>
+        </li>
+        <li><strong>Eventos de formularios</strong>
+            <ul>
+                <li><code>submit</code>: Se activa cuando se envía un formulario.</li>
+                <li><code>change</code>: Se activa cuando el valor de un input, select o textarea cambia.</li>
+                <li><code>input</code>: Se activa cuando el valor de un input cambia en tiempo real.</li>
+                <li><code>focus</code>: Se activa cuando un elemento obtiene el foco.</li>
+                <li><code>blur</code>: Se activa cuando un elemento pierde el foco.</li>
+            </ul>
+        </li>
+        <li><strong>Eventos de ventana</strong>
+            <ul>
+                <li><code>load</code>: Se activa cuando la página está completamente cargada.</li>
+                <li><code>resize</code>: Se activa cuando se redimensiona la ventana del navegador.</li>
+                <li><code>scroll</code>: Se activa cuando se desplaza el documento.</li>
+            </ul>
+        </li>
+        <li><strong>Eventos táctiles (para pantallas táctiles)</strong>
+            <ul>
+                <li><code>touchstart</code>: Se activa cuando se coloca un punto de contacto en la superficie táctil.</li>
+                <li><code>touchend</code>: Se activa cuando se retira un punto de contacto de la superficie táctil.</li>
+                <li><code>touchmove</code>: Se activa cuando se mueve un punto de contacto a lo largo de la superficie táctil.</li>
+            </ul>
+        </li>
+    </ul>
+    
+
+
+    <button id="myButton1">Click Me!</button>
+    <button id="myButton2">Click Me Too!</button>
+
+
+
+    <script>
+
+
+
+        document.getElementById("myButton1").addEventListener("click", sayHi);
+
+        document.getElementById("myButton1").addEventListener("mouseover", sayHi);
+
+        document.getElementById("myButton2").addEventListener("click", function() {
+            alert("Button clicked!");
+        });
+
+        function sayHi() {
+            alert("Button 2clicked!");
+        }
+        function sayHi() {
+            alert("Button 2 mouse over!");
+        }
+      
+    </script>
+</body>
+</html>

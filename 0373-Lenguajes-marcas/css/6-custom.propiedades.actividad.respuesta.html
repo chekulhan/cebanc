@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad: Uso de Variables CSS en Transacciones Bancarias</title>
+    <style>
+        /* Definición de las variables en :root */
+        :root {
+            --color-fondo: #f9f9f9;
+            --color-texto: #333;
+            --tamano-titulo: 1.5rem;
+            --tamano-boton: 1rem;
+            --color-boton: #2c9e9e;
+            --color-boton-hover: #1a6c6c;
+            --color-transaccion-pago: #e44d26;
+            --color-transaccion-ingreso: #4CAF50;
+        }
+
+        /* Estilos generales para el cuerpo */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8e8e8;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Estilo para el título principal */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        /* Estilo para las transacciones */
+        .transaction-list {
+            background-color: var(--color-fondo);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 60%;
+            margin: 20px auto;
+        }
+
+        /* Estilo para cada transacción */
+        .transaction {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para el título de la transacción */
+        .transaction h3 {
+            font-size: var(--tamano-titulo);
+            margin-bottom: 10px;
+        }
+
+        /* Estilo para la fecha */
+        .transaction p.date {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* Estilo para el monto */
+        .transaction p.amount {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Estilo para el tipo de transacción */
+        .transaction .type {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #555;
+        }
+
+        /* Estilo para el botón de detalles */
+        .transaction button {
+            font-size: var(--tamano-boton);
+            padding: 10px 20px;
+            background-color: var(--color-boton);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        /* Efecto al pasar el mouse por encima del botón */
+        .transaction button:hover {
+            background-color: var(--color-boton-hover);
+        }
+
+        /* Estilo para las transacciones de pago */
+        .payment {
+            border-left: 5px solid var(--color-transaccion-pago);
+        }
+
+        /* Estilo para las transacciones de ingreso */
+        .deposit {
+            border-left: 5px solid var(--color-transaccion-ingreso);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🏦 Historial de Transacciones</h1>
+    
+    <div class="transaction-list">
+
+        <div class="transaction payment">
+            <h3>Pago en Tienda Online</h3>
+            <p class="date">12 de febrero, 2025</p>
+            <p class="amount">- $50.00</p>
+            <p class="type">Pago realizado por compras en línea.</p>
+            <button>Ver Detalles</button>
+        </div>
+
+        <div class="transaction deposit">
+            <h3>Ingreso de Nómina</h3>
+            <p class="date">10 de febrero, 2025</p>
+            <p class="amount">+ $1,200.00</p>
+            <p class="type">Pago de salario mensual.</p>
+            <button>Ver Detalles</button>
+        </div>
+
+        <div class="transaction payment">
+            <h3>Pago de Servicios</h3>
+            <p class="date">8 de febrero, 2025</p>
+            <p class="amount">- $120.00</p>
+            <p class="type">Pago de factura de electricidad.</p>
+            <button>Ver Detalles</button>
+        </div>
+
+        <div class="transaction deposit">
+            <h3>Depósito en Efectivo</h3>
+            <p class="date">5 de febrero, 2025</p>
+            <p class="amount">+ $300.00</p>
+            <p class="type">Depósito realizado en ventanilla bancaria.</p>
+            <button>Ver Detalles</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

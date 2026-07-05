@@ -1,0 +1,31 @@
+<script type="module">
+
+    const canvas = document.querySelector("canvas");
+    const ctx = canvas.getContext("2d");
+
+    let isDrawing = false;
+
+
+    canvas.addEventListener("mousedown", ()=> {
+        isDrawing = true;
+    });
+
+    canvas.addEventListener("mouseup", ()=> {
+        isDrawing = false;
+    });
+
+    canvas.addEventListener("mousemove", (event) => {
+
+        if (!isDrawing) return;
+
+        const rect = canvas.getBoundingClientRect();
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        ctx.fillStyle = "black";
+        ctx.fillRect(x, y, 4, 4);
+
+    })
+
+
+    </script>

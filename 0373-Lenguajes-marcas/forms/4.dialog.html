@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        dialog {
+            margin: 0; /* `margin: auto;` is the default. */
+            transform: translateX(-50%);
+            left: 50%;
+        }
+
+        dialog::backdrop {
+          background-color: darkorange;
+        }
+
+        dialog:open {
+            background-color: azure;
+        }
+
+        dialog:closed {
+          display: block;
+          background: #333;
+          color: #222;
+          opacity: 0.5;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <h1>hola</h1>
+   <!--  <dialog open>
+        <p>Esto es un ejemplo de mensaje de diálogo.</p>
+        <form method="dialog">
+            <button>Aceptar</button>
+         </form>
+     </dialog>
+-->
+     
+<div popover id="my-popover">Greetings, one and all!</div>
+<button popovertarget="my-popover">Open Popover</button>
+
+
+<button id="btnMostrarModal">Open</button>
+<dialog id="alertDialog">
+    <p>Esto es un ejemplo de mensaje de diálogo.</p>
+    <form method="dialog">
+        <button>Aceptar</button>
+     </form>
+ </dialog>
+
+     <script>
+    const showButton = document.getElementById("btnMostrarModal");
+    showButton.addEventListener("click", function () {
+      const alertDialog = document.getElementById("alertDialog");
+      //alertDialog.show();
+      alertDialog.showModal();
+    });
+
+     </script>
+</body>
+</html>

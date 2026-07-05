@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Elemento a la Lista</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Agregar Elemento a la Lista</h1>
+    
+    <input type="text" id="itemInput" placeholder="Escribe un nuevo elemento" required>
+    <button onclick="addItem()">Agregar</button>
+
+    <ul id="itemList"></ul>
+
+    <script>
+        function addItem() {
+            // Get the input value
+            var itemValue = document.getElementById("itemInput").value;
+
+            // Create a new list item
+            var newItem = document.createElement("li");
+            newItem.innerText = itemValue;
+
+            // Append the new item to the list
+            document.getElementById("itemList").appendChild(newItem);
+
+            // Clear the input field
+            document.getElementById("itemInput").value = "";
+        }
+    </script>
+
+</body>
+</html>

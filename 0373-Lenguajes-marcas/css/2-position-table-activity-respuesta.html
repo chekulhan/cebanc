@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla con Encabezado Sticky</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            position: sticky;
+            top: 0; /* Hace que el encabezado se quede en la parte superior */
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        td {
+            background-color: #fff;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover td {
+            background-color: #f1f1f1;
+        }
+
+        
+    </style>
+</head>
+<body>
+
+    <h1>Usuarios y sus ciudades</h1>
+    <h2>Objectivo es mantener el titulo de la tabla fijo, cuando el usuario empieza a scroll</h2>
+   
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Ciudad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Ana</td>
+                    <td>28</td>
+                    <td>Madrid</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Juan</td>
+                    <td>35</td>
+                    <td>Barcelona</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Pedro</td>
+                    <td>22</td>
+                    <td>Valencia</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Maria</td>
+                    <td>30</td>
+                    <td>Sevilla</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>José</td>
+                    <td>40</td>
+                    <td>Zaragoza</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>Laura</td>
+                    <td>25</td>
+                    <td>Alicante</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>Carlos</td>
+                    <td>33</td>
+                    <td>Granada</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>Paula</td>
+                    <td>27</td>
+                    <td>Córdoba</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>Iván</td>
+                    <td>38</td>
+                    <td>Bilbao</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>Elena</td>
+                    <td>29</td>
+                    <td>Vigo</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+</body>
+</html>

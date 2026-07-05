@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio File Upload</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+    
+        .imageContainer {
+            margin-top: 20px;
+            display: block;
+            width: 100%;
+            max-width: 300px;
+            border: 2px solid black; /* Add border width for better visibility */
+            padding: 5px; /* Optional: Add padding for aesthetics */
+            border-radius: 5px; /* Optional: Rounded corners */
+        }
+
+        .message {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Upload an Audio File OR Image using object</h1>
+    
+    https://samplelib.com/sample-mp3.html
+
+    <input type="file" id="fileInput" accept="image/*" />
+
+    <p>No hay una etiqueta de audio o imagen</p>
+    <p>
+        <b>ACTIVIDAD:</b><br>
+        Cambiar para subir un audio - usando Audio() 
+
+    </p>
+
+    <div id="imageContainer" class="imageContainer"></div> 
+
+    <div id="message" class="message"></div>
+
+    <script>
+        const fileInput = document.getElementById('fileInput');
+        const imageContainer = document.getElementById('imageContainer'); 
+
+        const message = document.getElementById('message');
+
+        fileInput.addEventListener('change', function() {
+            const file = fileInput.files[0]; // Get the first selected file
+
+            if (file) {
+                const reader = new FileReader(); // Create a new FileReader object
+
+                // Set up the onload event to set the audio source
+                reader.onload = function(e) {
+
+                    // Create an image
+                    const imageElement = new Image();
+
+                    imageElement.src = e.target.result; // Set the image source to the file content
+                    console.log(e.target.result);
+                    imageElement.style.display = 'block'; // Display the image
+                    
+                    imageContainer.appendChild(imageElement);
+
+                    message.textContent = 'Audio o Imagen uploaded successfully!'; // Show success message
+                };
+
+                // Read the file as a data URL (for audio)
+                reader.readAsDataURL(file);
+            } else {
+                message.textContent = 'No file selected!'; // Show error message if no file is chosen
+            }
+        });
+    </script>
+
+</body>
+</html>

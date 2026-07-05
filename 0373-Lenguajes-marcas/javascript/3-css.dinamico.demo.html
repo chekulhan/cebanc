@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change Content and CSS with JavaScript</title>
+    <style>
+        /* Initial styles for the paragraph */
+        p {
+            font-size: 16px;
+            color: blue;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <p id="myParagraph">This is the original text.</p>
+
+    <!-- Button to trigger the changes -->
+    <button onclick="changeContentAndStyle()">Click to Change Content and Style</button>
+
+    <script>
+        function changeContentAndStyle() {
+            // Change the text content of the paragraph
+            document.getElementById("myParagraph").innerText = "The content has been changed!";
+
+            // Change the CSS style of the paragraph
+            document.getElementById("myParagraph").style.color = "red";
+            document.getElementById("myParagraph").style.fontSize = "24px";
+            document.getElementById("myParagraph").style.textAlign = "left";
+            document.getElementById("myParagraph").style.marginTop = "50px";
+        }
+    </script>
+
+</body>
+</html>

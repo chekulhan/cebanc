@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Animado</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+
+        .banner {
+            background-color: #007bff;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInMove 2s ease-in-out; /* Animación que comienza al cargar */
+        }
+
+        .cta {
+            padding: 10px 20px;
+            background-color: white;
+            color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s; /* Transición para el botón */
+        }
+
+        .cta:hover {
+            transform: scale(1.1); /* Aumenta el tamaño del botón al pasar el ratón */
+        }
+
+        @keyframes fadeInMove {
+            0% {
+                opacity: 0;
+                transform: translateY(-50px); /* Comienza desde arriba */
+            }
+            50% {
+                opacity: 0.5; /* Totalmente visible */
+                transform: translateY(20px); /* Movimiento hacia abajo ligero */
+            }
+            100% {
+                opacity: 1; /* Totalmente visible */
+                transform: translateY(0); /* Regresa a su posición original */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>¡Bienvenidos a Nuestra Página!</h1>
+        <button class="cta">¡Comienza Ahora!</button>
+    </div>
+</body>
+</html>

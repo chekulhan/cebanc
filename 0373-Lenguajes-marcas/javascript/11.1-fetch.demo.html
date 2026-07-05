@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejemplo de Fetch</h1>
+    <input type="number" name="userId" id="userId">
+
+    <button onclick="getUser()">Get User</button>
+    <script>
+
+    /*
+        fetch(...)
+        .then(response => {
+            // Handle the successful response here
+        })
+        .then(data => {
+            // Process the data (the response JSON or transformed data)
+        })
+        .catch(error => {
+            // Handle any errors that occur during the fetch or promise processing
+        });
+
+        // optional
+        .finally(() => {
+            // Siempre se ejecuta, con error o éxito - usar para ocultar componente visuales (waiting...) 
+        });
+
+
+
+
+        // Esqueleto:
+         fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+            .then(reponse=>{})
+            .then(data=>{})
+            .catch(error={})
+
+        DEMO: Mostrar con console.log en cada .then...
+    */
+       
+        function getUser() {
+            const userId = document.getElementById('userId').value;
+
+            fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+                .then(response=>{
+                    if (!response.ok) {
+                        throw new Error('User not found'); 
+                    }
+                    console.log('THEN');
+                    console.log(response);
+                    return response.json();
+                })
+                .then(data =>{
+                    console.log("second then");
+                    console.log(data);
+                    // Display the user info - usar html
+                    // userInfoDiv.innerHTML = `
+                    // <p>${data.name}</p>
+
+                    console.log(data.name);
+                })
+                .catch(error => {
+                    console.log('error');
+                })
+                .finally(()=>{
+                    console.log('finally');
+                })
+
+
+        }
+
+    </script>
+</body>
+</html>

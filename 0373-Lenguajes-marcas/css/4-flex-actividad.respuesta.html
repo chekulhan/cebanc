@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Moda</title>
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+
+        .store {
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan en varias filas */
+            gap: 20px; /* Espacio entre los productos */
+            justify-content: center; /* Centra los productos horizontalmente */
+        }
+
+        .product {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px; /* Limita el tamaño máximo de cada producto */
+            width: 300px;
+        }
+
+        .product img {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .product p {
+            color: #555;
+        }
+
+        .product .price {
+            font-size: 1.2em;
+            color: #e44d26;
+            font-weight: bold;
+        }
+
+        .product button {
+            background-color: #e44d26;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .product button:hover {
+            background-color: #d63e20;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    Usar https://picsum.photos/
+
+    box-shadow: offset-x offset-y blur-radius spread-radius color;
+    
+    offset-x → horizontal shift (positive = right, negative = left)
+
+    offset-y → vertical shift (positive = down, negative = up)
+
+    blur-radius → how blurry the shadow is (larger = softer shadow)
+
+    spread-radius (optional) → how much the shadow grows or shrinks
+
+    color → the color of the shadow
+
+    -->
+
+    <h1 style="text-align:center;">🛍 Tienda de Moda</h1>
+
+    <div class="store">
+
+        <div class="product">
+            <img src="https://picsum.photos/200/300" alt="Producto 1">
+            <h3>Zapatos Modernos</h3>
+            <p>Comodidad y estilo.</p>
+            <p class="price">$9.99</p>
+            <button>Agregar al carrito</button>
+        </div>
+
+        
+        <div class="product">
+            <img src="https://picsum.photos/200/300" alt="Producto 2">
+            <h3>Chaqueta de Cuero</h3>
+            <p>Ideal para cualquier ocasión.</p>
+            <p class="price">$89.99</p>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <img src="https://picsum.photos/200/300" alt="Producto 3">
+            <h3>Bolso Elegante</h3>
+            <p>Diseño sofisticado y moderno.</p>
+            <p class="price">$39.99</p>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <img src="https://picsum.photos/200/300" alt="Producto 4">
+            <h3>Gafas de Sol</h3>
+            <p>Protección y estilo todo el año.</p>
+            <p class="price">$29.99</p>
+            <button>Agregar al carrito</button>
+        </div>
+    </div>
+
+</body>
+</html>

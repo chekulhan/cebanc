@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOMContentLoaded Activity</title>
+
+    <script>
+        let greeting = "";
+
+        // Function to change the greeting text
+        function changeText() {
+            greeting.textContent = 'Hello, DOMContentLoaded!';
+        }
+
+        document.addEventListener('DOMContentLoaded', function(){
+            
+            greeting = document.getElementById('greeting');
+            const button = document.getElementById('changeTextButton');
+
+            greeting.textContent = 'Welcome to the DOM Manipulation Activity!';
+
+            button.addEventListener('click', changeText);
+
+        });
+
+
+    </script>
+</head>
+<body>
+    <h1 id="greeting">Hola todo el mundo!</h1>
+    <button id="changeTextButton">Change Text</button>
+
+    
+</body>
+</html>

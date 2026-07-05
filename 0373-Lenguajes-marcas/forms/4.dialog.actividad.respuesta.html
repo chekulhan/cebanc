@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Modal</title>
+    <style>
+        dialog {
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        .stars {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="openModal">Nos Encantaria tu Feedback</button>
+
+    <dialog id="feedbackModal">
+        <p>Como fue tu experiencia?</p>
+        <div class="stars">
+            <span onclick="getRating();" class="star" data-rating="1">⭐</span>
+            <span onclick="getRating();" class="star" data-rating="2">⭐⭐</span>
+            <span onclick="getRating();" class="star" data-rating="3">⭐⭐⭐</span>
+        </div>
+    </dialog>
+
+    <script>
+        const modal = document.getElementById("feedbackModal");
+        const openModalBtn = document.getElementById("openModal");
+        const stars = document.querySelectorAll(".star");
+
+        openModalBtn.addEventListener("click", () => {
+            modal.showModal();
+        });
+
+        function getRating() {
+            const rating = event.target.getAttribute("data-rating");
+            console.log(`User ha seleccionado ${rating}`);
+            modal.close();
+        }
+        
+    </script>
+
+</body>
+</html>

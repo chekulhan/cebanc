@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magic Content Changer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 30px;
+        }
+        .magic-box {
+            border: 2px solid #4CAF50;
+            padding: 15px;
+            margin: 10px;
+            display: inline-block;
+            width: 300px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>🔮 Click the buttons to reveal the magic messages! 🔮</h2>
+
+    <!-- Using getElementById -->
+    <div class="magic-box">
+        <p id="myParagraph">This is a hidden clue.</p>
+        <button onclick="changeContent()">Click me to reveal a secret</button>
+    </div>
+
+    <!-- Using getElementsByClassName -->
+    <div class="magic-box">
+        <p class="myClass">This is a hidden clue.</p>
+        <p class="myClass">This is another hidden clue.</p>
+        <button onclick="changeContentByClass()">Click me to reveal more secrets</button>
+    </div>
+
+    <!-- Using querySelectorAll -->
+    <div class="magic-box">
+        <p class="myQueryClass">This is a hidden clue.</p>
+        <p class="myQueryClass">This is another hidden clue.</p>
+        <button onclick="changeContentByQuerySelector()">Click me to reveal the final hint</button>
+    </div>
+
+    <script>
+        function changeContent() {
+            let element = document.getElementById("myParagraph");
+            element.innerText = "🎩 A magician never reveals his secrets... or does he? ✨";
+            element.style.color = "blue";
+        }
+
+        function changeContentByClass() {
+            let elements = document.getElementsByClassName("myClass");
+            elements[0].innerText = "🔍 Clue #1: Look under the old oak tree!";
+            elements[1].innerText = "📜 Clue #2: The treasure map is hidden in a book!";
+            elements[0].style.color = "red";
+            elements[1].style.color = "purple";
+        }
+
+        function changeContentByQuerySelector() {
+            let elements = document.querySelectorAll(".myQueryClass");
+            elements[0].innerText = "🚪 The final door is locked... find the golden key!";
+            elements[1].innerText = "🔑 The key is hidden inside the clock!";
+            elements[0].style.color = "orange";
+            elements[1].style.color = "green";
+        }
+    </script>
+
+</body>
+</html>
