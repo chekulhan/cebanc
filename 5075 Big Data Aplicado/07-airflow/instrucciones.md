@@ -220,3 +220,15 @@ o através de cron:
 Y un ejemplo de fallo:
 
 ![GUI](images/airflow.fail.png)
+
+
+
+Para cerrar, usar:
+```bash
+docker compose down
+```
+
+y para **eliminar y empezar todo de nuevo**:
+```bash
+docker compose down -v
+```
