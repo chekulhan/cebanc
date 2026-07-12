@@ -35,7 +35,7 @@ docker node ls
 Este comando no va a funcionar en la misma maquina, pero si hubiera más servidores, se contectará al cluster:
 
 ```
-docker swarm join --token SWMTKN-1-0psehghih0di24utgamrd0y9yk8f451xy2f7y7bcazcmglrmrc-9j4nfplth4romozw8z9b2xfpc 192.xxx.xxx.3:2377
+docker swarm join --token SWMTKN-1-xxxxx- 192.xxx.xxx.3:2377
 ```
 
 
