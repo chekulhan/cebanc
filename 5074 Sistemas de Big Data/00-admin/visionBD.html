@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plan de Estudios - Especialización en Big Data</title>
+    <style>
+        :root {
+            /* Paleta de colores optimizada para contraste y limpieza */
+            --bg-color: #f1f5f9; 
+            --gantt-bg: #ffffff;
+            --border-color: #cbd5e1;
+            --text-color: #334155;
+            --header-bg: #e2e8f0;
+            --header-text: #0f172a;
+
+            /* Colores de énfasis para las materias */
+            --color-sistemas: #0284c7;  /* Azul analítico */
+            --color-aplicado: #10b981;  /* Verde ingeniería */
+        }
+
+        /* Ajuste estricto de pantalla absoluta para visualización en una sola página */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 2px 0 10px 0;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contenedor principal ajustado sin márgenes superiores excesivos */
+        .gantt-container {
+            flex: 1;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        /* Rejilla de distribución de las dos columnas de Semestres */
+        .gantt-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            flex: 1;
+            min-height: 0;
+            gap: 18px;
+        }
+
+        /* Contenedor individual de cada columna para pegar la tarjeta a su título */
+        .semester-column {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            min-height: 0;
+        }
+
+        /* Encabezados de Semestres estilizados y pegados a la tarjeta */
+        .gantt-header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            font-weight: 800;
+            font-size: 0.85rem;
+            height: 32px; 
+            text-align: center;
+            border-radius: 8px 8px 0 0; /* Unificado con las esquinas superiores de la tarjeta */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            border-bottom: none;
+            margin-bottom: 0; /* Elimina cualquier separación con la tarjeta */
+        }
+
+        /* Tarjetas de Asignatura pegadas al título */
+        .gantt-card {
+            background-color: #ffffff;
+            border-radius: 0 0 12px 12px; /* Solo redondeado abajo para fusionarse con el título */
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06), 0 1px 3px rgba(15, 23, 42, 0.02);
+            display: flex;
+            flex-direction: column;
+            padding: 14px 18px;
+            box-sizing: border-box;
+            flex: 1; /* Ocupa todo el alto disponible de la columna */
+            justify-content: space-between;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 6px solid transparent; 
+        }
+
+        .semester-column:hover .gantt-card {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(15, 23, 42, 0.1);
+        }
+
+        .card-sistemas { border-left-color: var(--color-sistemas); }
+        .card-aplicado { border-left-color: var(--color-aplicado); }
+
+        /* Títulos e información de cabecera de las tarjetas */
+        .card-header-block {
+            margin-bottom: 6px;
+        }
+
+        .subject-title {
+            font-weight: 800;
+            font-size: 1.05rem; 
+            color: #0f172a;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .subject-objective {
+            font-size: 0.78rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        .card-sistemas .subject-objective { color: #0369a1; }
+        .card-aplicado .subject-objective { color: #047857; }
+
+        /* Bloques de Perfil con fondo sutil */
+        .profile-embed {
+            border-radius: 8px;
+            padding: 6px 10px;
+            margin: 4px 0 8px 0;
+        }
+        .card-sistemas .profile-embed { background: #f0f9ff; border: 1px solid #e0f2fe; }
+        .card-aplicado .profile-embed { background: #ecfdf5; border: 1px solid #d1fae5; }
+
+        .profile-embed-title {
+            font-size: 0.72rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            display: block;
+            margin-bottom: 2px;
+        }
+        .card-sistemas .profile-embed-title { color: #0369a1; }
+        .card-aplicado .profile-embed-title { color: #047857; }
+
+        .profile-embed-desc {
+            font-size: 0.74rem;
+            line-height: 1.35;
+            color: #475569;
+            margin: 0;
+        }
+
+        /* Listas de características */
+        .features-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 8px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .feature-item {
+            font-size: 0.76rem;
+            line-height: 1.3;
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            color: #475569;
+        }
+
+        .feature-item strong {
+            color: #0f172a;
+        }
+
+        /* Contenedor de iconos alineados de forma limpia */
+        .feature-icon {
+            flex-shrink: 0;
+            display: inline-block;
+            width: 16px;
+            text-align: center;
+        }
+
+        /* Bloques de Resultados de Aprendizaje */
+        .result-block {
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 5px 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background: #f8fafc;
+            color: #1e293b;
+            border: 1px solid #e2e8f0;
+            border-left: 3px solid #94a3b8;
+        }
+        .card-sistemas .result-block { border-left-color: var(--color-sistemas); }
+        .card-aplicado .result-block { border-left-color: var(--color-aplicado); }
+
+        /* Píldoras Tecnológicas */
+        .tech-container {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+            padding-top: 6px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .tech-pill {
+            font-size: 0.6rem; 
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+        
+        .card-sistemas .tech-pill { background: #e0f2fe; color: #0369a1; }
+        .card-aplicado .tech-pill { background: #d1fae5; color: #047857; }
+
+    </style>
+</head>
+<body>
+
+    <h1>Curso de Especialización en Big Data</h1>
+
+    <div class="gantt-container">
+        <div class="gantt-grid">
+            
+            <div class="semester-column">
+                <div class="gantt-header">Semestre 1</div>
+                
+                <div class="gantt-card card-sistemas">
+                    <div>
+                        <div class="card-header-block">
+                            <span class="subject-title">Sistemas de Big Data (Módulo 5074)</span>
+                            <span class="subject-objective">🎯 Objetivo: Analizar datos y convertirlos en información útil (en una sola máquina)</span>
+                        </div>
+
+                        <div class="profile-embed">
+                            <span class="profile-embed-title">👥 Perfil Profesional: Data Analyst & BI Specialist</span>
+                            <p class="profile-embed-desc">Especialista orientado al procesamiento ETL local, modelado analítico y la creación de capas semánticas visuales para resolver problemas de negocio.</p>
+                        </div>
+
+                        <ul class="features-list">
+                            <li class="feature-item"><span class="feature-icon">🖥️</span><span><strong>Single machine:</strong> Trabajo enfocado en local con datasets estables.</span></li>
+                            <li class="feature-item"><span class="feature-icon">🐍</span><span><strong>R, Python:</strong> Uso de librerías nativas como Pandas, NumPy y scripts SQL.</span></li>
+                            <li class="feature-item"><span class="feature-icon">📊</span><span><strong>Procesamiento ETL:</strong> Limpieza, modelado y transformación de JSON y CSV.</span></li>
+                            <li class="feature-item"><span class="feature-icon">📈</span><span><strong>Visualización:</strong> Diseño de reportes corporativos y cuadros de mando en Power BI.</span></li>
+                            <li class="feature-item"><span class="feature-icon">📉</span><span><strong>Estadística básica:</strong> Análisis predictivo elemental para estimar tendencias.</span></li>
+                            <li class="feature-item"><span class="feature-icon">🧠</span><span><strong>KPIs de negocio:</strong> Interpretación de objetivos basados en métricas analíticas.</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="result-block">
+                            🎓 Resultado: El alumno analiza datos masivos locales y lidera la toma de decisiones.
+                        </div>
+                        <div class="tech-container">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">R</span>
+                            <span class="tech-pill">Open Data</span>
+                            <span class="tech-pill">Pandas</span>
+                            <span class="tech-pill">Power BI</span>
+                            <span class="tech-pill">CRISP-DM</span>
+                            <span class="tech-pill">SEMMA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="semester-column">
+                <div class="gantt-header">Semestre 2</div>
+                
+                <div class="gantt-card card-aplicado">
+                    <div>
+                        <div class="card-header-block">
+                            <span class="subject-title">Big Data Aplicado (Módulo 5075)</span>
+                            <span class="subject-objective">🎯 Objetivo: Construir y operar sistemas de datos a gran escala</span>
+                        </div>
+
+                        <div class="profile-embed">
+                            <span class="profile-embed-title">⚙️ Perfil Profesional: Data Engineer & Cloud Architect</span>
+                            <p class="profile-embed-desc">Ingeniero especializado en el despliegue de infraestructuras de datos distribuidas, almacenamiento masivo y automatización de pipelines.</p>
+                        </div>
+
+                        <ul class="features-list">
+                            <li class="feature-item"><span class="feature-icon">🌐</span><span><strong>Distributed systems:</strong> Gestión avanzada de clústeres y escalabilidad horizontal.</span></li>
+                            <li class="feature-item"><span class="feature-icon">⚙️</span><span><strong>PySpark:</strong> Procesamiento analítico distribuido en memoria de alta velocidad.</span></li>
+                            <li class="feature-item"><span class="feature-icon">🔁</span><span><strong>Pipelines de datos:</strong> Construcción de arquitecturas estables de ingesta de datos.</span></li>
+                            <li class="feature-item"><span class="feature-icon">🧩</span><span><strong>Airflow / dbt:</strong> Orquestación automatizada de tareas y workflows de datos.</span></li>
+                            <li class="feature-item"><span class="feature-icon">💾</span><span><strong>Data lakes:</strong> Modelos de almacenamiento masivo distribuidos y Cloud.</span></li>
+                            <li class="feature-item"><span class="feature-icon">📡</span><span><strong>Monitorización:</strong> Control proactivo de la salud del sistema (logs y alertas).</span></li>
+                            <li class="feature-item"><span class="feature-icon">✔️</span><span><strong>Calidad de datos:</strong> Validación estricta mediante sumas de verificación.</span></li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <div class="result-block">
+                            🎓 Resultado: El alumno construye, optimiza y opera sistemas distribuidos de datos masivos.
+                        </div>
+                        <div class="tech-container">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">PySpark</span>
+                            <span class="tech-pill">Hadoop</span>
+                            <span class="tech-pill">HBase</span>
+                            <span class="tech-pill">Kafka</span>
+                            <span class="tech-pill">Apache NiFi</span>
+                            <span class="tech-pill">Airflow</span>
+                            <span class="tech-pill">Data Lakes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

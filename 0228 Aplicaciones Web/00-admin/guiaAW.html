@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicaciones Web: Guía Docente</title>
+    <!-- Cargamos iconos profesionales para el ecosistema tecnológico -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Mantenemos la paleta del dashboard original */
+            --bg-color: #e2e8f0;
+            --container-bg: #f8fafc;
+            --border-color: #cbd5e1;
+            --text-color: #1e293b;
+            --header-bg: #1e293b;
+            --accent-purple: #7c3aed;
+            --accent-teal: #0d9488;
+            --accent-orange: #f97316;
+            --accent-blue: #2563eb;
+            --accent-yellow: #ca8a04;
+            --warning-red: #dc2626;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Cabecera */
+        header {
+            background-color: var(--header-bg);
+            color: #ffffff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        header .subtitle {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Tarjetas de sección */
+        .section-card {
+            background-color: var(--container-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            padding: 24px;
+        }
+
+        .section-card h2 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #0f172a;
+            border-left: 5px solid var(--accent-purple);
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-card h2.blue-title { border-left-color: var(--accent-blue); }
+        .section-card h2.teal-title { border-left-color: var(--accent-teal); }
+        .section-card h2.orange-title { border-left-color: var(--accent-orange); }
+        .section-card h2.yellow-title { border-left-color: var(--accent-yellow); }
+
+        /* Estructuras de listas y flujos */
+        .objectives-list, .methodology-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .objective-item, .methodology-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+
+        .objective-item:hover, .methodology-item:hover {
+            transform: translateX(4px);
+            border-color: #cbd5e1;
+        }
+
+        .objective-num, .methodology-badge {
+            background-color: #f1f5f9;
+            color: #475569;
+            font-weight: 800;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .methodology-badge {
+            background-color: rgba(37, 99, 235, 0.08);
+            color: var(--accent-blue);
+        }
+
+        .objective-text, .methodology-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0;
+            color: #334155;
+        }
+
+        .objective-item.omitted {
+            background-color: #fafafa;
+            border-style: dashed;
+            opacity: 0.85;
+        }
+
+        .note-tag {
+            display: inline-block;
+            background-color: #ffedd5;
+            color: #c2410c;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 6px;
+        }
+
+        /* Grid de Evaluación */
+        .evaluation-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .evaluation-grid {
+                grid-template-columns: 4fr 6fr;
+            }
+        }
+
+        .eval-panel {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        .panel-title {
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .panel-percentage {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--accent-purple);
+            background: rgba(124, 58, 237, 0.08);
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .panel-percentage.teal-badge {
+            color: var(--accent-teal);
+            background: rgba(13, 148, 136, 0.08);
+        }
+
+        .eval-desc {
+            font-size: 0.88rem;
+            color: #475569;
+            margin: 0 0 14px 0;
+        }
+
+        .tasks-callout {
+            background-color: #f0fdf4;
+            border-left: 4px solid var(--accent-teal);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 12px;
+        }
+
+        .tasks-callout h4 {
+            margin: 0 0 6px 0;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #14532d;
+            text-transform: uppercase;
+        }
+
+        .tasks-callout p {
+            font-size: 0.82rem;
+            margin: 0;
+            color: #166534;
+        }
+
+        /* Competencias Transversales */
+        .transversal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .comp-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comp-head {
+            background-color: #f8fafc;
+            padding: 10px 14px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: #1e293b;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .comp-weight {
+            color: var(--accent-teal);
+            font-weight: bold;
+        }
+
+        .comp-body {
+            padding: 12px 14px;
+            background: #ffffff;
+            margin: 0;
+            font-size: 0.82rem;
+            color: #475569;
+        }
+
+        .comp-body ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .comp-body li {
+            margin-bottom: 4px;
+        }
+
+        /* Avisos e Info */
+        .alerts-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .alert-box {
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 0.88rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .alert-danger {
+            background-color: #fef2f2;
+            border: 1px solid #fca5a5;
+            border-left: 6px solid var(--warning-red);
+            color: #991b1b;
+        }
+
+        .alert-warning {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 6px solid var(--accent-yellow);
+            color: #92400e;
+        }
+
+        .alert-info {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-left: 6px solid var(--accent-blue);
+            color: #1e40af;
+        }
+
+        .alert-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .alert-desc {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* GRID DE HERRAMIENTAS */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .tool-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 18px 12px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+            border-color: #cbd5e1;
+        }
+
+        .tool-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #475569;
+            transition: all 0.2s;
+        }
+
+        /* Dinámica de colores de tecnologías */
+        .tool-card:hover .tool-icon-wrapper.html { color: #e34f26; background-color: #ffedd5; }
+        .tool-card:hover .tool-icon-wrapper.css { color: #1572b6; background-color: #e0f2fe; }
+        .tool-card:hover .tool-icon-wrapper.js { color: #f7df1e; background-color: #fef9c3; }
+        .tool-card:hover .tool-icon-wrapper.docker { color: #2496ed; background-color: #e0f2fe; }
+        .tool-card:hover .tool-icon-wrapper.vm { color: #a855f7; background-color: #f3e8ff; }
+        .tool-card:hover .tool-icon-wrapper.linux { color: #000000; background-color: #fef08a; }
+        .tool-card:hover .tool-icon-wrapper.wp { color: #21759b; background-color: #e0f2fe; }
+        .tool-card:hover .tool-icon-wrapper.moodle { color: #f7931e; background-color: #ffedd5; }
+        .tool-card:hover .tool-icon-wrapper.nginx { color: #009639; background-color: #dcfce7; }
+
+        .tool-name {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #334155;
+            margin: 0;
+        }
+
+        .highlight-red { font-weight: 700; color: #b91c1c; }
+        .highlight-dark { font-weight: 700; color: #0f172a; }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- CABECERA -->
+        <header>
+            <div class="subtitle">Módulo Formativo</div>
+            <h1>Aplicaciones Web</h1>
+        </header>
+
+        <!-- SECCIÓN 1: OBJETIVOS -->
+        <div class="section-card">
+            <h2>Resultados de Aprendizaje y Objetivos</h2>
+            <div class="objectives-list">
+                <div class="objective-item">
+                    <span class="objective-num">Obj 1</span>
+                    <p class="objective-text">Crea páginas web sencillas, utilizando HTML y hojas de estilo.</p>
+                </div>
+                <div class="objective-item">
+                    <span class="objective-num">Obj 2</span>
+                    <p class="objective-text">Instala gestores de contenidos, identificando sus aplicaciones y configurándolos según requerimientos.</p>
+                </div>
+                <div class="objective-item">
+                    <span class="objective-num">Obj 3</span>
+                    <p class="objective-text">Instala sistemas de gestión de aprendizaje a distancia, describiendo la estructura del sitio y la jerarquía de directorios generada.</p>
+                </div>
+                <div class="objective-item">
+                    <span class="objective-num">Obj 4</span>
+                    <p class="objective-text">Instala servicios de gestión de archivos web, identificando sus aplicaciones y verificando su integridad.</p>
+                </div>
+                <div class="objective-item">
+                    <span class="objective-num">Obj 5</span>
+                    <p class="objective-text">Instala aplicaciones de ofimática web, describiendo sus características y entornos de uso.</p>
+                </div>
+                <div class="objective-item omitted">
+                    <span class="objective-num">Obj 6</span>
+                    <div>
+                        <p class="objective-text" style="color: #64748b; text-decoration: line-through;">Instala aplicaciones web de escritorio, describiendo sus características y entornos de uso.</p>
+                        <span class="note-tag">⚠️ Nota importante: Es probable que este bloque no se imparta en este módulo debido a que se cubre transversalmente en otras materias del ciclo formativo.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 2: METODOLOGÍA -->
+        <div class="section-card">
+            <h2 class="blue-title">Metodología de Aprendizaje</h2>
+            <div class="methodology-steps">
+                <div class="methodology-item">
+                    <span class="methodology-badge">Fase 1</span>
+                    <p class="methodology-text"><strong>Actividades Prácticas Guiadas:</strong> Arrancamos cada bloque con prácticas muy pautadas y estructuradas en el aula con el fin de asimilar y garantizar los conocimientos mínimos obligatorios.</p>
+                </div>
+                <div class="methodology-item">
+                    <span class="methodology-badge">Fase 2</span>
+                    <p class="methodology-text"><strong>Aprendizaje Basado en Proyectos (ABP):</strong> Avanzamos hacia un escenario basado en retos prácticos reales. Se plantearán tareas autónomas, mucho más abiertas y menos dirigidas, requiriendo un mayor grado de diseño e iniciativa propia.</p>
+                </div>
+                <div class="methodology-item">
+                    <span class="methodology-badge">Soporte</span>
+                    <p class="methodology-text"><strong>Integración Teórica:</strong> Los fundamentos técnicos se asimilan mediante explicaciones directas del profesor en el aula o recursos multimedia de soporte (píldoras en vídeo).</p>
+                </div>
+                <div class="methodology-item">
+                    <span class="methodology-badge">Investigación</span>
+                    <p class="methodology-text"><em>Ampliación autónoma:</em> Para dominar las arquitecturas se recomienda que el alumnado realice investigaciones y lecturas adicionales por su cuenta fuera del aula. **Esta profundización es opcional y no obligatoria**.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: CRITERIOS DE EVALUACIÓN -->
+        <div class="section-card">
+            <h2 class="teal-title">Criterios de Evaluación y Calificación</h2>
+            <div class="evaluation-grid">
+                <!-- PARTE TÉCNICA -->
+                <div class="eval-panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Evaluación Técnica</span>
+                        <span class="panel-percentage">70%</span>
+                    </div>
+                    <p class="eval-desc">Estructurada sobre la asimilación del despliegue tecnológico y el desarrollo front-end.</p>
+                    <p class="eval-desc"><strong>Distribución del bloque técnico:</strong> Se dividirá en exámenes tradicionales (controles prácticos o tests teóricos) y en el seguimiento de tareas del día a día (30%).</p>
+                    
+                    <div class="tasks-callout">
+                        <h4>🎯 Peso Mayoritario: Proyectos</h4>
+                        <p>Dentro de los cálculos y ponderaciones de la nota final de las evaluaciones, **los proyectos prácticos globales (ABP) tendrán una carga y un peso muy superior** respecto a los exámenes o controles individuales rutinarios.</p>
+                    </div>
+                </div>
+
+                <!-- PARTE TRANSVERSAL -->
+                <div class="eval-panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Competencias Transversales</span>
+                        <span class="panel-percentage teal-badge">30%</span>
+                    </div>
+                    <p class="eval-desc">Evaluación actitudinal imprescindible en entornos profesionales de desarrollo técnico:</p>
+                    <div class="transversal-list">
+                        <div class="comp-card">
+                            <div class="comp-head"><span>1. Responsabilidad e implicación</span><span class="comp-weight">25% s/30</span></div>
+                            <div class="comp-body">Normas básicas del aula, mantenimiento de equipos, puntualidad y entrega rigurosa en plazo de hitos de desarrollo.</div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-head"><span>2. Aprender a ser</span><span class="comp-weight">10% s/30</span></div>
+                            <div class="comp-body">Gestión de la frustración ante bugs de código, asimilación constructiva de revisiones (code reviews) y comunicación respetuosa.</div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-head"><span>3. Aprender a aprender</span><span class="comp-weight">15% s/30</span></div>
+                            <div class="comp-body">Estrategias autónomas de resolución de problemas de software y monitorización crítica del progreso técnico.</div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-head"><span>4. Trabajo en equipo</span><span class="comp-weight">25% s/30</span></div>
+                            <div class="comp-body">Cohesión en metodologías ágiles, reparto equilibrado de tareas y compromiso con el repositorio común.</div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-head"><span>5. Saber estar y comunicación oral</span><span class="comp-weight">25% s/30</span></div>
+                            <div class="comp-body">Comportamiento profesional en defensas de proyectos, lenguaje formal y adecuación al contexto de desarrollo empresarial.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4: NORMATIVAS GENERALES -->
+        <div class="section-card">
+            <h2 class="orange-title">Normativas Generales y Bloqueos</h2>
+            <div class="alerts-section">
+                <div class="alert-box alert-danger">
+                    <div class="alert-title">⚠️ Absentismo escolar</div>
+                    <p class="alert-desc">Superar el <span class="highlight-red">20% de faltas de asistencia</span> (tanto justificadas computables como injustificadas) degrada automáticamente la nota parcial o final del periodo a una <span class="highlight-red">calificación de 1</span>.</p>
+                </div>
+                <div class="alert-box alert-warning">
+                    <div class="alert-title">⚖️ Aprobado por bloques obligatorio</div>
+                    <p class="alert-desc"><span class="highlight-dark">Es obligatorio superar de forma independiente el bloque técnico y el transversal</span> para poder promediar la asignatura. Suspender la parte transversal al final de curso anula los aprobados técnicos, obligando al alumno a un examen final completo de la materia.</p>
+                </div>
+                <div class="alert-box alert-info">
+                    <div class="alert-title">🤖 Inteligencia Artificial como Asistente</div>
+                    <p class="alert-desc">Se permite la utilización de Modelos de Lenguaje e Inteligencia Artificial como copilotos de aprendizaje y depuración de código, <span class="highlight-dark">únicamente bajo propósitos educativos y de consulta</span>. No sustituye la autoría ni el entendimiento de la lógica de los proyectos desarrollados.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 5: HERRAMIENTAS Y TECNOLOGÍAS -->
+        <div class="section-card">
+            <h2 class="yellow-title">Ecosistema Tecnológico y Herramientas</h2>
+            <div class="tools-grid">
+                
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper html"><i class="fa-brands fa-html5"></i></div>
+                    <p class="tool-name">HTML5</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper css"><i class="fa-brands fa-css3-alt"></i></div>
+                    <p class="tool-name">CSS3</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper js"><i class="fa-brands fa-js"></i></div>
+                    <p class="tool-name">JavaScript</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper docker"><i class="fa-brands fa-docker"></i></div>
+                    <p class="tool-name">Docker</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper vm"><i class="fa-solid fa-cubes"></i></div>
+                    <p class="tool-name">Virtual Machines</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper linux"><i class="fa-brands fa-linux"></i></div>
+                    <p class="tool-name">Linux OS</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper wp"><i class="fa-brands fa-wordpress"></i></div>
+                    <p class="tool-name">WordPress</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper moodle"><i class="fa-solid fa-graduation-cap"></i></div>
+                    <p class="tool-name">Moodle (LMS)</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper nginx"><i class="fa-solid fa-server"></i></div>
+                    <p class="tool-name">Nginx</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

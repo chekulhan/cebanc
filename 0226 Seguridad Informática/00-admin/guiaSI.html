@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0226 - Seguridad Informática: Guía Docente</title>
+    <!-- Cargamos iconos profesionales para la sección de herramientas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Palette principal para mantener coherencia visual */
+            --bg-color: #e2e8f0;
+            --container-bg: #f8fafc;
+            --border-color: #cbd5e1;
+            --text-color: #1e293b;
+            --header-bg: #334155;
+            --accent-purple: #7c3aed;
+            --accent-teal: #0d9488;
+            --accent-orange: #f97316;
+            --accent-blue: #2563eb;
+            --accent-yellow: #ca8a04;
+            --warning-red: #dc2626;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            line-height: 1.5;
+        }
+
+        .main-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        /* Cabecera Principal */
+        header {
+            background-color: var(--header-bg);
+            color: #ffffff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        header .subtitle {
+            font-size: 0.95rem;
+            color: #cbd5e1;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Bloques de sección */
+        .section-card {
+            background-color: var(--container-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            padding: 24px;
+        }
+
+        .section-card h2 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: #0f172a;
+            border-left: 5px solid var(--accent-purple);
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-card h2.blue-title { border-left-color: var(--accent-blue); }
+        .section-card h2.teal-title { border-left-color: var(--accent-teal); }
+        .section-card h2.orange-title { border-left-color: var(--accent-orange); }
+        .section-card h2.yellow-title { border-left-color: var(--accent-yellow); }
+
+        /* Lista de objetivos y bloques de metodología */
+        .objectives-list, .methodology-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .objective-item, .methodology-item {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 14px 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: transform 0.2s;
+        }
+
+        .objective-item:hover, .methodology-item:hover {
+            transform: translateX(4px);
+            border-color: #cbd5e1;
+        }
+
+        .objective-num, .methodology-badge {
+            background-color: #f1f5f9;
+            color: #475569;
+            font-weight: 800;
+            font-size: 0.75rem;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .methodology-badge {
+            background-color: rgba(37, 99, 235, 0.08);
+            color: var(--accent-blue);
+        }
+
+        .objective-text, .methodology-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin: 0;
+            color: #334155;
+        }
+
+        .methodology-text strong {
+            color: #0f172a;
+        }
+
+        /* Criterios de Evaluación Layout */
+        .evaluation-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .evaluation-grid {
+                grid-template-columns: 4fr 6fr;
+            }
+        }
+
+        .eval-panel {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 10px;
+            margin-bottom: 14px;
+        }
+
+        .panel-title {
+            font-weight: 800;
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .panel-percentage {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--accent-purple);
+            background: rgba(124, 58, 237, 0.08);
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+
+        .panel-percentage.teal-badge {
+            color: var(--accent-teal);
+            background: rgba(13, 148, 136, 0.08);
+        }
+
+        .eval-desc {
+            font-size: 0.88rem;
+            color: #475569;
+            margin: 0 0 14px 0;
+        }
+
+        /* Lista de tareas/evidencias */
+        .tasks-callout {
+            background-color: #fafafa;
+            border-left: 4px solid var(--accent-orange);
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 12px;
+        }
+
+        .tasks-callout h4 {
+            margin: 0 0 6px 0;
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #7c2d12;
+            text-transform: uppercase;
+        }
+
+        .tasks-callout p {
+            font-size: 0.82rem;
+            margin: 0;
+            color: #431407;
+        }
+
+        /* Competencias transversales accordion style list */
+        .transversal-list {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .comp-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comp-head {
+            background-color: #f8fafc;
+            padding: 10px 14px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: #1e293b;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .comp-weight {
+            color: var(--accent-teal);
+            font-weight: bold;
+        }
+
+        .comp-body {
+            padding: 12px 14px;
+            background: #ffffff;
+            margin: 0;
+            font-size: 0.82rem;
+            color: #475569;
+        }
+
+        .comp-body ul {
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .comp-body li {
+            margin-bottom: 4px;
+        }
+
+        /* Avisos e Importante */
+        .alerts-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .alert-box {
+            border-radius: 10px;
+            padding: 16px 20px;
+            font-size: 0.88rem;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+        }
+
+        .alert-danger {
+            background-color: #fef2f2;
+            border: 1px solid #fca5a5;
+            border-left: 6px solid var(--warning-red);
+            color: #991b1b;
+        }
+
+        .alert-warning {
+            background-color: #fffbeb;
+            border: 1px solid #fde68a;
+            border-left: 6px solid var(--accent-yellow);
+            color: #92400e;
+        }
+
+        .alert-info {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-left: 6px solid var(--accent-blue);
+            color: #1e40af;
+        }
+
+        .alert-title {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .alert-desc {
+            margin: 0;
+            line-height: 1.4;
+        }
+
+        /* SECCIÓN DE HERRAMIENTAS - GRID */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
+            margin-top: 10px;
+        }
+
+        .tool-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            transition: all 0.2s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+            border-color: #cbd5e1;
+        }
+
+        .tool-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: #475569;
+            transition: background-color 0.2s;
+        }
+
+        /* Personalización de colores de iconos de herramientas */
+        .tool-card:hover .tool-icon-wrapper.linux { color: #000000; background-color: #fef08a; }
+        .tool-card:hover .tool-icon-wrapper.windows { color: #0078d4; background-color: #e0f2fe; }
+        .tool-card:hover .tool-icon-wrapper.nginx { color: #009639; background-color: #dcfce7; }
+        .tool-card:hover .tool-icon-wrapper.wireshark { color: #167ce9; background-color: #e0f2fe; }
+        .tool-card:hover .tool-icon-wrapper.postgres { color: #336791; background-color: #dbeafe; }
+        .tool-card:hover .tool-icon-wrapper.vm { color: #a855f7; background-color: #f3e8ff; }
+
+        .tool-name {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: #334155;
+            margin: 0;
+        }
+
+        .highlight-red { font-weight: 700; color: #b91c1c; }
+        .highlight-dark { font-weight: 700; color: #0f172a; }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <!-- CABECERA -->
+        <header>
+            <div class="subtitle">Módulo Formativo</div>
+            <h1>0226 - Seguridad Informática</h1>
+        </header>
+
+        <!-- SECCIÓN 1: OBJETIVOS -->
+        <div class="section-card">
+            <h2>Resultados de Aprendizaje y Objetivos</h2>
+            <div class="objectives-list">
+                <div class="objective-item">
+                    <span class="objective-num">Obj 1</span>
+                    <p class="objective-text">Aplica medidas de seguridad pasiva en sistemas informáticos describiendo características de entornos y relacionándolas con sus necesidades.</p>
+                </div>
+                <div class="objective-item">
+                    <span class="objective-num">Obj 2</span>
+                    <p class="objective-text">Gestiona dispositivos de almacenamiento describiendo los procedimientos efectuados y aplicando técnicas para asegurar la integridad de la información.</p>
+                </div>
+                <div class="objective-item">
+                    <span class="objective-num">Obj 3</span>
+                    <p class="objective-text">Aplica mecanismos de seguridad activa describiendo sus características y relacionándolas con las necesidades de uso del sistema informático.</p>
+                </div>
+                <div class="objective-item">
+                    <span class="objective-num">Obj 4</span>
+                    <p class="objective-text">Asegura la privacidad de la información transmitida en redes informáticas describiendo vulnerabilidades e instalando software específico.</p>
+                </div>
+                <div class="objective-item">
+                    <span class="objective-num">Obj 5</span>
+                    <p class="objective-text">Reconoce la legislación y normativa sobre seguridad y protección de datos analizando las repercusiones de su incumplimiento.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NUEVA SECCIÓN: METODOLOGÍA -->
+        <div class="section-card">
+            <h2 class="blue-title">Metodología de Aprendizaje</h2>
+            <div class="methodology-steps">
+                <div class="methodology-item">
+                    <span class="methodology-badge">Paso 1</span>
+                    <p class="methodology-text"><strong>Fundamentos teóricos e introducción:</strong> El marco conceptual se incorpora de forma dinámica a través de explicaciones directas del profesor o mediante el soporte de píldoras en formato vídeo.</p>
+                </div>
+                <div class="methodology-item">
+                    <span class="methodology-badge">Paso 2</span>
+                    <p class="methodology-text"><strong>Pequeñas tareas prácticas guiadas:</strong> Se realizan actividades dirigidas directamente en el aula para asentar los conceptos básicos, aprender configuraciones iniciales y familiarizarse con los entornos de trabajo de forma segura.</p>
+                </div>
+                <div class="methodology-item">
+                    <span class="methodology-badge">Paso 3</span>
+                    <p class="methodology-text"><strong>Proyectos y actividades abiertas:</strong> Se proponen retos menos dirigidos y más flexibles para poner en práctica todo lo aprendido, obligando al estudiante a tomar decisiones de arquitectura, defensa o despliegue por sí mismo.</p>
+                </div>
+                <div class="methodology-item">
+                    <span class="methodology-badge">Aviso</span>
+                    <p class="methodology-text"><em>Trabajo autónomo:</em> Se aconseja que el alumno realice investigaciones adicionales o lecturas complementarias fuera del horario lectivo para profundizar en la materia. No obstante, este trabajo complementario **no es obligatorio**.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 3: CRITERIOS DE EVALUACIÓN -->
+        <div class="section-card">
+            <h2 class="teal-title">Criterios de Evaluación y Calificación</h2>
+            <div class="evaluation-grid">
+                <!-- PARTE TÉCNICA -->
+                <div class="eval-panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Evaluación Técnica</span>
+                        <span class="panel-percentage">70%</span>
+                    </div>
+                    <p class="eval-desc">Se valora el aprendizaje demostrado mediante la realización y entrega en los plazos determinados de las evidencias académicas programadas.</p>
+                    <p class="eval-desc"><strong>Distribución de la nota técnica:</strong> Exámenes y controles escritos o prácticos representarán un <strong>100%</strong> de la nota.</p>
+                    <p class="eval-desc"><em>Nota de tareas grupales:</em> Será idéntica para todos los integrantes siempre y cuando se demuestre un nivel de aportación y trabajo adecuado.</p>
+                    
+                    <div class="tasks-callout">
+                        <h4>📋 Estructura de Evidencias</h4>
+                        <p>Cada trimestre constará de <strong>múltiples evaluaciones y entregas</strong>. Cada una tendrá asignado un peso específico que sumará para la nota final. Podrán consistir tanto en tests, controles rápidos o exámenes tradicionales, como en tareas de despliegue práctico.</p>
+                    </div>
+                </div>
+
+                <!-- PARTE TRANSVERSAL -->
+                <div class="eval-panel">
+                    <div class="panel-header">
+                        <span class="panel-title">Competencias Transversales</span>
+                        <span class="panel-percentage teal-badge">30%</span>
+                    </div>
+                    <p class="eval-desc">Evaluación del desempeño actitudinal, metodológico y profesional a través de 5 ejes fundamentales:</p>
+                    <div class="transversal-list">
+                        <div class="comp-card">
+                            <div class="comp-head"><span>1. Responsabilidad e implicación</span><span class="comp-weight">25% s/30</span></div>
+                            <div class="comp-body">
+                                <ul>
+                                    <li>Cumplimiento de las normas básicas del aula y centro.</li>
+                                    <li>Uso y mantenimiento correcto de recursos digitales.</li>
+                                    <li>Trabajo autónomo sin supervisión constante.</li>
+                                    <li>Entrega de tareas rigurosamente a tiempo.</li>
+                                    <li>Puntualidad constante y justificación proactiva de faltas.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-head"><span>2. Aprender a ser</span><span class="comp-weight">10% s/30</span></div>
+                            <div class="comp-body">
+                                <ul>
+                                    <li>Autoconocimiento emocional ante entornos bajo presión.</li>
+                                    <li>Comunicación respetuosa y reconocimiento de logros propios y ajenos.</li>
+                                    <li>Control reflexivo de reacciones complejas.</li>
+                                    <li>Asimilación constructiva de las críticas sin bloqueos.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-head"><span>3. Aprender a aprender</span><span class="comp-weight">15% s/30</span></div>
+                            <div class="comp-body">
+                                <ul>
+                                    <li>Demostrar interés genuino por mejorar.</li>
+                                    <li>Formular preguntas reflexivas para perfeccionar ejecuciones.</li>
+                                    <li>Flexibilidad para pivotar metodologías de trabajo ineficaces.</li>
+                                    <li>Uso del pensamiento crítico para revisar su progreso técnico.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-head"><span>4. Trabajo en equipo</span><span class="comp-weight">25% s/30</span></div>
+                            <div class="comp-body">
+                                <ul>
+                                    <li>Compromiso y cohesión grupal activa.</li>
+                                    <li>Planificación compartida con asignación de roles, tareas y tiempos.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="comp-card">
+                            <div class="comp-head"><span>5. Saber estar y comunicación oral</span><span class="comp-weight">25% s/30</span></div>
+                            <div class="comp-body">
+                                <ul>
+                                    <li>Comportamiento profesional, lenguaje formal y normas de cortesía.</li>
+                                    <li>Control de comentarios o bromas fuera del contexto académico.</li>
+                                    <li>Cuidado de la imagen e identidad en entornos profesionales.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECCIÓN 4: REQUISITOS, ASISTENCIA Y ADVERTENCIAS -->
+        <div class="section-card">
+            <h2 class="orange-title">Normativas Generales y Bloqueos</h2>
+            <div class="alerts-section">
+                <div class="alert-box alert-danger">
+                    <div class="alert-title">⚠️ Control de asistencia crítico</div>
+                    <p class="alert-desc">Alcanzar o superar un <span class="highlight-red">20% de faltas de asistencia</span> (incluyendo tanto las injustificadas como las justificadas computables) implicará automáticamente una <span class="highlight-red">calificación de 1</span> en la nota parcial o final del periodo evaluado.</p>
+                </div>
+                <div class="alert-box alert-warning">
+                    <div class="alert-title">⚖️ Criterio de Ponderación Obligatorio</div>
+                    <p class="alert-desc">Al finalizar el curso, la nota definitiva resultará de la combinación de ambos bloques. Sin embargo, <span class="highlight-dark">es obligatorio aprobar de forma independiente tanto la parte técnica como la transversal</span> para recibir calificación.</p>
+                    <p class="alert-desc"><em>Consecuencia grave:</em> No superar la sección transversal al cierre de curso obligará al alumno a presentarse a un <strong>examen final global con toda la asignatura</strong>, independientemente de haber aprobado la parte técnica.</p>
+                </div>
+                <div class="alert-box alert-info">
+                    <div class="alert-title">🤖 Uso Responsable de Inteligencia Artificial</div>
+                    <p class="alert-desc">Las herramientas de Inteligencia Artificial Generativa pueden integrarse en el flujo de trabajo diario, <span class="highlight-dark">únicamente bajo propósitos estrictamente educativos, de consulta y de asistencia al aprendizaje</span>.</p>
+                    <p class="alert-desc">Queda prohibida la delegación o automatización completa de tareas evaluables sin análisis propio. El plagio o uso no transparente de la IA sin fines pedagógicos será penalizado de acuerdo a la normativa académica.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- NUEVA SECCIÓN: HERRAMIENTAS UTILIZADAS -->
+        <div class="section-card">
+            <h2 class="yellow-title">Ecosistema Tecnológico y Herramientas</h2>
+            <div class="tools-grid">
+                
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper linux"><i class="fa-brands fa-linux"></i></div>
+                    <p class="tool-name">Linux OS</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper windows"><i class="fa-brands fa-windows"></i></div>
+                    <p class="tool-name">Windows OS</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper nginx"><i class="fa-solid fa-server"></i></div>
+                    <p class="tool-name">Nginx Server</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper wireshark"><i class="fa-solid fa-network-wired"></i></div>
+                    <p class="tool-name">Wireshark</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper postgres"><i class="fa-solid fa-database"></i></div>
+                    <p class="tool-name">PostgreSQL</p>
+                </div>
+
+                <div class="tool-card">
+                    <div class="tool-icon-wrapper vm"><i class="fa-solid fa-cubes"></i></div>
+                    <p class="tool-name">Virtual Machines</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
