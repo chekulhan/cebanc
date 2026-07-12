@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicaciones Web</title>
+    <style>
+        :root {
+            /* Palette principal */
+            --bg-color: #e2e8f0;
+            --gantt-bg: #f8fafc;
+            --border-color: #cbd5e1;
+            --text-color: #1e293b;
+            --header-bg: #cbd5e1;
+            --header-text: #334155;
+
+            /* Colores de las Barras del Gantt */
+            --color-paginas-web: #0d9488;      
+            --color-gestores-contenido: #f97316;   
+            --color-aprendizaje-distancia: #2563eb;  
+            --color-aplicaciones-web: #7c3aed;      
+            --color-ofimaticas: #ca8a04;  
+        }
+
+        /* Bloqueo de pantalla absoluta para visualización exacta */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 10px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 2px 0 6px 0;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contenedor Principal del Gantt */
+        .gantt-container {
+            flex: 1;
+            background-color: var(--gantt-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-height: 0;
+            margin-bottom: 12px;
+        }
+
+        /* Rejilla Base del Gantt (3 Columnas de tiempo idénticas) */
+        .gantt-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            flex: 1;
+            min-height: 0;
+        }
+
+        /* Encabezados de las Columnas - ALTURA MÍNIMA SOLICITADA */
+        .gantt-header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            font-weight: 800;
+            font-size: 0.8rem;
+            height: 24px; /* Forzado a una línea mínima */
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .gantt-header:not(:last-child) {
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Cuerpo del Gantt */
+        .gantt-body {
+            grid-column: span 3;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            position: relative;
+        }
+
+        /* Líneas verticales de fondo de la cuadrícula */
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .grid-line {
+            height: 100%;
+        }
+        .grid-line:not(:last-child) {
+            border-right: 1px dashed rgba(203, 213, 225, 0.6);
+        }
+
+        /* Filas de Asignaturas de Gantt */
+        .gantt-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+            flex: 1; 
+            align-items: center;
+            padding: 4px 15px; /* Lieve padding interno */
+            z-index: 2;
+        }
+
+        /* Contenedor interno que maneja la posición de la barra dentro del grid */
+        .bar-wrapper {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            height: 100%;
+        }
+
+        .bar-description {
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.9); /* Un blanco sutilmente transparente */
+            margin: 0 0 8px 0; /* Espaciado inferior para separar de las píldoras */
+            line-height: 1.3;
+            word-wrap: break-word;
+        }
+
+        /* Barras del Gantt Adaptativas (Evita desbordamientos externos) */
+        .gantt-bar {
+            min-height: 54px; 
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 6px 14px;
+            box-sizing: border-box;
+            transition: transform 0.2s;
+        }
+
+        .gantt-bar:hover {
+            transform: scale(1.01);
+        }
+
+        /* Ubicaciones Secuenciales Estrictas en Cascada */
+        .start-s1-half1 { grid-column: 1 / 2; margin-right: 52%; } 
+        .start-s1-half2 { grid-column: 1 / 2; margin-left: 52%; }  
+        .start-s2-half1 { grid-column: 2 / 3; margin-right: 52%; } 
+        .start-s2-half2 { grid-column: 2 / 3; margin-left: 52%; }  
+        .start-s3-half1 { grid-column: 3 / 4; margin-right: 52%; } 
+        .start-s3-half2 { grid-column: 3 / 4; margin-left: 52%; }  
+
+        /* Títulos Flexibles */
+        .subject-title {
+            font-weight: 800;
+            font-size: 0.9rem; 
+            color: #fff;
+            margin-bottom: 5px;
+            line-height: 1.1;
+            word-wrap: break-word; /* Asegura contención si la pantalla reduce */
+        }
+
+        .tech-container {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap; /* Flujo natural hacia abajo dentro de la tarjeta */
+        }
+
+        .tech-pill {
+            font-size: 0.65rem; 
+            font-weight: 700;
+            padding: 1px 6px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Clases de colores para identificar barras */
+        .paginas-web { background-color: var(--color-paginas-web); }
+        .gestores-contenido { background-color: var(--color-gestores-contenido); }
+        .aprendizaje-distancia { background-color: var(--color-aprendizaje-distancia); }
+        .aplicaciones-web { background-color: var(--color-aplicaciones-web); }
+        .ofimaticas { background-color: var(--color-ofimaticas); }
+
+        /* SECCIÓN PREMIUM: PERFIL DEL ESTUDIANTE DESTACADO */
+        .profile-container {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            padding: 12px 20px; 
+            border: 1px solid #cbd5e1;
+            border-left: 6px solid #4f46e5; 
+            box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-label {
+            font-size: 0.9rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4f46e5;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .profile-badges {
+            display: flex;
+            gap: 6px;
+        }
+
+        .profile-badge {
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: rgba(79, 70, 229, 0.08);
+            color: #4f46e5;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* Grid de competencias del estudiante */
+        .profile-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 2px;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-title {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 3px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-desc {
+            font-size: 0.78rem;
+            line-height: 1.3;
+            color: #475569;
+            margin: 0;
+        }
+
+        .highlight {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Aplicaciones Web</h1>
+
+    <div class="gantt-container">
+        <div class="gantt-grid">
+            
+            <!-- EJE HORIZONTAL / CABECERA TEMPORAL COMPACTA (24PX) -->
+            <div class="gantt-header">Semestre 1</div>
+            <div class="gantt-header">Semestre 2</div>
+            <div class="gantt-header">Semestre 3</div>
+
+            <!-- CUERPO DEL DIAGRAMA DE GANTT -->
+            <div class="gantt-body">
+                
+                <!-- Rejilla de Fondo -->
+                <div class="grid-lines">
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                </div>
+
+                <!-- PASO 1: Páginas Web (Semestre 1 - Inicio) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar paginas-web start-s1-half1">
+                            <span class="subject-title">Páginas Web</span>
+                            <p class="bar-description">Aprenderá a crear páginas web sencillas con HTML y CSS y, además, a publicarlas y administrarlas en un servidor web.</p>
+                            <div class="tech-container">
+                                <span class="tech-pill">HTML</span>
+                                <span class="tech-pill">CSS</span>
+                                <span class="tech-pill">JS</span>
+                                <span class="tech-pill">Nginx</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 2: Gestores de Contenidos (Semestre 1 - Final) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar gestores-contenido start-s1-half2">
+                            <span class="subject-title">Gestores de Contenidos</span>
+                            <div class="tech-container">
+                                <span class="tech-pill">WordPress</span>
+                                <span class="tech-pill">Drupal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 3: Sistemas de Aprendizaje a Distancia (Semestre 2 - Inicio) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar aprendizaje-distancia start-s2-half1">
+                            <span class="subject-title">Aprendizaje a Distancia</span>
+                            <div class="tech-container">
+                                <span class="tech-pill">Moodle</span>
+                                <span class="tech-pill">Frappe</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 4: Gestión de Aplicaciones Web I (Semestre 2 - Final) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar aplicaciones-web start-s2-half2">
+                            <span class="subject-title">Gestión de Aplicaciones Web I</span>
+                            <div class="tech-container">
+                                <span class="tech-pill">Nginx</span>
+                                <span class="tech-pill">Node</span>
+                                <span class="tech-pill">PHP</span>
+                                <span class="tech-pill">Python Flask / Fast API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 5: Gestión de Aplicaciones Web II (Semestre 3 - Inicio) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar aplicaciones-web start-s3-half1">
+                            <span class="subject-title">Gestión de Aplicaciones Web II</span>
+                            <div class="tech-container">
+                                <span class="tech-pill">Nginx</span>
+                                <span class="tech-pill">Node</span>
+                                <span class="tech-pill">PHP</span>
+                                 <span class="tech-pill">Python Flask / Fast API</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 6: Sistemas Ofimáticos (Semestre 3 - Final) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar ofimaticas start-s3-half2">
+                            <span class="subject-title">Sistemas Ofimáticos</span>
+                            <div class="tech-container">
+                                <span class="tech-pill">Nextcloud</span>
+                                <span class="tech-pill">SaaS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN INFERIOR COMPACTA Y DESTACADA: PERFIL DEL ESTUDIANTE -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <span class="profile-label">🚀 Perfil Profesional del Estudiante</span>
+            <div class="profile-badges">
+                <span class="profile-badge">Full-Stack Cloud</span>
+                <span class="profile-badge">SysAdmin</span>
+                <span class="profile-badge">DevOps Ready</span>
+            </div>
+        </div>
+        
+        <div class="profile-features">
+            <!-- Bloque 1 -->
+            <div class="feature-box">
+                <span class="feature-title">💻 Desarrollo e Interactividad</span>
+                <p class="feature-desc">Capaz de estructurar y diseñar <span class="highlight">interfaces web interactivas modernas</span> utilizando HTML5, CSS avanzado y programación estructurada en JavaScript.</p>
+            </div>
+            <!-- Bloque 2 -->
+            <div class="feature-box">
+                <span class="feature-title">🛠️ Arquitectura y Servidores</span>
+                <p class="feature-desc">Experto en despliegue backend, aprovisionamiento de servidores con <span class="highlight">Nginx</span>, entornos de ejecución en <span class="highlight">Node.js</span> y desarrollo dinámico en PHP.</p>
+            </div>
+            <!-- Bloque 3 -->
+            <div class="feature-box">
+                <span class="feature-title">☁️ Soluciones Cloud y SaaS</span>
+                <p class="feature-desc">Especializado en la integración de plataformas empresariales CMS, entornos educativos a gran escala (<span class="highlight">Moodle</span>) y nubes privadas corporativas con <span class="highlight">Nextcloud</span>.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

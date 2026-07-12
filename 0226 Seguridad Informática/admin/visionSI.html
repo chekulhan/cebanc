@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad Informática</title>
+    <style>
+        :root {
+            /* Palette principal */
+            --bg-color: #e2e8f0;
+            --gantt-bg: #f8fafc;
+            --border-color: #cbd5e1;
+            --text-color: #1e293b;
+            --header-bg: #cbd5e1;
+            --header-text: #334155;
+
+            /* Colores de las Barras del Gantt */
+            --color-paginas-web: #0d9488;      
+            --color-gestores-contenido: #f97316;   
+            --color-aprendizaje-distancia: #2563eb;  
+            --color-aplicaciones-web: #7c3aed;      
+            --color-ofimaticas: #ca8a04;  
+        }
+
+        /* Bloqueo de pantalla absoluta para visualización exacta sin scroll */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--bg-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            padding: 8px 16px; /* Ajuste sutil de padding exterior */
+        }
+
+        h1 {
+            text-align: center;
+            margin: 0 0 6px 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: #0f172a;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contenedor Principal del Gantt */
+        .gantt-container {
+            flex: 1;
+            background-color: var(--gantt-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-height: 0;
+            margin-bottom: 8px; /* Reducido para evitar scroll */
+        }
+
+        /* Rejilla Base del Gantt (3 Columnas de tiempo idénticas) */
+        .gantt-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            flex: 1;
+            min-height: 0;
+        }
+
+        /* Encabezados de las Columnas */
+        .gantt-header {
+            background-color: var(--header-bg);
+            color: var(--header-text);
+            font-weight: 800;
+            font-size: 0.75rem;
+            height: 22px; /* Reducido mínimamente */
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .gantt-header:not(:last-child) {
+            border-right: 1px solid rgba(0,0,0,0.1);
+        }
+
+        /* Cuerpo del Gantt */
+        .gantt-body {
+            grid-column: span 3;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            min-height: 0;
+            position: relative;
+        }
+
+        /* Líneas verticales de fondo de la cuadrícula */
+        .grid-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .grid-line {
+            height: 100%;
+        }
+        .grid-line:not(:last-child) {
+            border-right: 1px dashed rgba(203, 213, 225, 0.6);
+        }
+
+        /* Filas de Asignaturas de Gantt */
+        .gantt-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid rgba(203, 213, 225, 0.3);
+            flex: 1; 
+            align-items: center;
+            padding: 2px 12px; /* Optimizado para ajustar altura global */
+            z-index: 2;
+        }
+
+        /* Contenedor interno que maneja la posición de la barra dentro del grid */
+        .bar-wrapper {
+            grid-column: span 3;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            align-items: center;
+            height: 100%;
+        }
+
+        .bar-description {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 0 4px 0; /* Margen inferior ajustado */
+            line-height: 1.2;
+            word-wrap: break-word;
+        }
+
+        /* Barras del Gantt Adaptativas (Evita desbordamientos externos) */
+        .gantt-bar {
+            min-height: 45px; /* Reducido para garantizar entrada en una sola pantalla */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 3px 5px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 4px 12px;
+            box-sizing: border-box;
+            transition: transform 0.2s;
+        }
+
+        .gantt-bar:hover {
+            transform: scale(1.01);
+        }
+
+        /* Ubicaciones Secuenciales Estrictas en Cascada */
+        .start-s1-half1 { grid-column: 1 / 2; margin-right: 52%; } 
+        .start-s1-half2 { grid-column: 1 / 2; margin-left: 52%; }  
+        .start-s2-half1 { grid-column: 2 / 3; margin-right: 52%; } 
+        .start-s2-half2 { grid-column: 2 / 3; margin-left: 52%; }  
+        .start-s3-half1 { grid-column: 3 / 4; margin-right: 52%; } 
+        .start-s3-half2 { grid-column: 3 / 4; margin-left: 52%; }  
+        
+        /* Ajuste responsivo transversal */
+        .full-timeline { grid-column: 1 / 4; width: 100%; }
+
+        /* Títulos Flexibles */
+        .subject-title {
+            font-weight: 800;
+            font-size: 0.85rem; 
+            color: #fff;
+            margin-bottom: 3px;
+            line-height: 1.1;
+            word-wrap: break-word;
+        }
+
+        .tech-container {
+            display: flex;
+            gap: 4px;
+            flex-wrap: wrap;
+        }
+
+        .tech-pill {
+            font-size: 0.62rem; 
+            font-weight: 700;
+            padding: 1px 5px;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.25);
+            color: #fff;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        /* Clases de colores para identificar barras */
+        .paginas-web { background-color: var(--color-paginas-web); }
+        .gestores-contenido { background-color: var(--color-gestores-contenido); }
+        .aprendizaje-distancia { background-color: var(--color-aprendizaje-distancia); }
+        .aplicaciones-web { background-color: var(--color-aplicaciones-web); }
+        .ofimaticas { background-color: var(--color-ofimaticas); }
+
+        /* SECCIÓN PREMIUM: PERFIL DEL ESTUDIANTE DESTACADO */
+        .profile-container {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            padding: 10px 16px; 
+            border: 1px solid #cbd5e1;
+            border-left: 6px solid #4f46e5; 
+            box-shadow: 0 6px 20px -5px rgba(79, 70, 229, 0.08);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .profile-label {
+            font-size: 0.85rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #4f46e5;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .profile-badges {
+            display: flex;
+            gap: 6px;
+        }
+
+        .profile-badge {
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 20px;
+            background: rgba(79, 70, 229, 0.08);
+            color: #4f46e5;
+            border: 1px solid rgba(79, 70, 229, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* Grid de competencias del estudiante */
+        .profile-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-top: 1px;
+        }
+
+        .feature-box {
+            background: #ffffff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .feature-title {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: #0f172a;
+            margin-bottom: 2px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-desc {
+            font-size: 0.72rem;
+            line-height: 1.25;
+            color: #475569;
+            margin: 0;
+        }
+
+        .highlight {
+            color: #4f46e5;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Seguridad Informática</h1>
+
+    <div class="gantt-container">
+        <div class="gantt-grid">
+            
+            <!-- EJE HORIZONTAL / CABECERA TEMPORAL COMPACTA -->
+            <div class="gantt-header">Trimestre 1</div>
+            <div class="gantt-header">Trimestre 2</div>
+            <div class="gantt-header">Trimestre 3</div>
+
+            <!-- CUERPO DEL DIAGRAMA DE GANTT -->
+            <div class="gantt-body">
+                
+                <!-- Rejilla de Fondo -->
+                <div class="grid-lines">
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                    <div class="grid-line"></div>
+                </div>
+
+                <!-- PASO 1: Introducción (Trimestre 1 - Inicio) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar paginas-web start-s1-half1">
+                            <span class="subject-title">Introducción</span>
+                            <p class="bar-description">Conceptos fundamentales de seguridad y normativas internacionales.</p>
+                            <div class="tech-container">
+                                <span class="tech-pill">ISO</span>
+                                <span class="tech-pill">Tríada CIA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 2: Seguridad Pasiva (Trimestre 1 - Final) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar gestores-contenido start-s1-half2">
+                            <span class="subject-title">Seguridad Pasiva</span>
+                            <div class="tech-container">
+                                <span class="tech-pill">SAI</span>
+                                <span class="tech-pill">Hardware redundante</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 3: Seguridad Activa (Trimestre 2 - Inicio) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar aprendizaje-distancia start-s2-half1">
+                            <span class="subject-title">Seguridad Activa</span>
+                            <p class="bar-description">Instalación de herramientas de protección y gestión de accesos.</p>
+                            <div class="tech-container">
+                                <span class="tech-pill">Antivirus</span>
+                                <span class="tech-pill">Firewall</span>
+                                <span class="tech-pill">ACLs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 4: Gestión de Dispositivos de Almacenamiento (Trimestre 2 - Final) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar aplicaciones-web start-s2-half2">
+                            <span class="subject-title">Gestión de Dispositivos</span>
+                            <p class="bar-description">Sistemas de almacenamiento y directivas eficientes de respaldo.</p>
+                            <div class="tech-container">
+                                <span class="tech-pill">Backup</span>
+                                <span class="tech-pill">RAID</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 5: Privacidad de la Información (Trimestre 3 - Inicio) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar aplicaciones-web start-s3-half1">
+                            <span class="subject-title">Privacidad y Networking</span>
+                            <p class="bar-description">Seguridad mediante técnicas avanzadas de red y encriptación.</p>
+                            <div class="tech-container">
+                                <span class="tech-pill">Networking</span>
+                                <span class="tech-pill">Criptografía</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PASO 6: Legislación (Abarca de forma transversal todo el curso) -->
+                <div class="gantt-row">
+                    <div class="bar-wrapper">
+                        <div class="gantt-bar ofimaticas full-timeline">
+                            <span class="subject-title">Legislación</span>
+                            <p class="bar-description">Marco regulatorio digital, cumplimiento y derechos de privacidad.</p>
+                            <div class="tech-container">
+                                <span class="tech-pill">RGPD</span>
+                                <span class="tech-pill">DSA</span>
+                                <span class="tech-pill">CRA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- SECCIÓN INFERIOR COMPACTA Y DESTACADA: PERFIL DEL ESTUDIANTE -->
+    <div class="profile-container">
+        <div class="profile-header">
+            <span class="profile-label">🚀 Perfil Profesional del Estudiante</span>
+            <div class="profile-badges">
+                <span class="profile-badge">SecOps Specialist</span>
+                <span class="profile-badge">SysAdmin</span>
+                <span class="profile-badge">Compliance Ready</span>
+            </div>
+        </div>
+        
+        <div class="profile-features">
+            <!-- Bloque 1 -->
+            <div class="feature-box">
+                <span class="feature-title">🛡️ Defensa Activa y Mitigación</span>
+                <p class="feature-desc">Despliega auditorías de <span class="highlight">seguridad activa</span>, mitigación ante malware y administración de directivas robustas de acceso.</p>
+            </div>
+            <!-- Bloque 2 -->
+            <div class="feature-box">
+                <span class="feature-title">💾 Resiliencia de Datos</span>
+                <p class="feature-desc">Experto en políticas críticas de <span class="highlight">copias de seguridad</span>, redundancia de hardware y protección por criptografía.</p>
+            </div>
+            <!-- Bloque 3 -->
+            <div class="feature-box">
+                <span class="feature-title">⚖️ Cumplimiento Legal</span>
+                <p class="feature-desc">Especializado en marcos de ciberseguridad europeos modernos, dominando normativas clave como <span class="highlight">RGPD, DSA y CRA</span>.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
