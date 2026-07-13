@@ -160,6 +160,11 @@ Vamos a mount el volumen, para poder modificar el html, ya que estamos en la fas
 docker run -d  -p 8080:80 -v "$(pwd)/index.html:/usr/share/nginx/html/index.html"  nginx
 ```
 
+Si queremos montar el directorio entero, cambiar el volumen a: 
+```
+-v "$(pwd)/html:/usr/share/nginx/html"
+```
+
 Otra opcion, más cerca a la fase de producción, seria lo siguiente, sin poder modificar los archivos:
 
 ```bash
@@ -503,6 +508,8 @@ Verificar que:
 Vamos a empezar con un nuevo contenedor, basado en la imagen original:
 
 docker run -d --name nginx-https -p 443:443 -v "$(pwd)/index.html:/usr/share/nginx/html/index.html" nginx
+
+
 
 
 Creamos un nuevo directorio 'certs' y ejecutamos el comando 'openssl genra' para crear una clave privada.
