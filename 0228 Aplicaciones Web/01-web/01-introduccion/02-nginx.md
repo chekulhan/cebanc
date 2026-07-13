@@ -1,5 +1,7 @@
 # Nginx
 
+https://www.youtube.com/watch?v=QiUV9b6sC_U. (vocabulario: páginas estáticas vs dinámicas, Apache vs Nginx)
+
 El problema **C10k** es el desafío clásico de optimizar servidores de red para que puedan gestionar 10.000 conexiones simultáneas de clientes.
 
 El término fue acuñado por *Dan Kegel* en 1999 y se centra en la gestión de la concurrencia, es decir, en cómo mantener de forma eficiente miles de conexiones abiertas, ya sean inactivas, de larga duración o activas.
@@ -70,6 +72,9 @@ Cuando instalas Nginx en Linux, los directorios más importantes suelen ser:
 /usr/share/nginx/html/     Sitio web por defecto
 /var/log/nginx/            Logs
 ```
+
+![Intro](../images/intro.webservers.png)
+
 
 ### /etc/nginx/ → Configuración
 
@@ -568,3 +573,9 @@ docker cp nginx-https:/etc/nginx/certs/nginx.crt ./nginx.crt
 
 
 ## Nginx reverse proxy
+
+
+
+
+# Recursos
+[Servidores Web en inglés - ventajas](https://www.youtube.com/watch?v=9nyiY-psbMs)
