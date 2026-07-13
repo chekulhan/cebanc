@@ -1,0 +1,19 @@
+services:
+  - name: backend
+    env: node
+    plan: starter
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    autoDeploy: true
+    branch: main
+    # Add envVars here if needed
+
+  - name: frontend
+    env: static
+    plan: starter
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
+    autoDeploy: true
+    branch: main
