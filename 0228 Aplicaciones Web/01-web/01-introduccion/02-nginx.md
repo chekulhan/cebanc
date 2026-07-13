@@ -574,8 +574,79 @@ docker cp nginx-https:/etc/nginx/certs/nginx.crt ./nginx.crt
 
 ## Nginx reverse proxy
 
+TO DO:
+Agregar este código a default en /etc/nginx/sites-available usando nano o vi:
+
+location / {
+        proxy_pass http://127.0.0.1:8081;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+Guardar los cambios en el archivo de configuración.
+
+sudo nginx -t  # test cambios en configuración.
+
+sudo nginx -s reload
 
 
 
 # Recursos
 [Servidores Web en inglés - ventajas](https://www.youtube.com/watch?v=9nyiY-psbMs)
+
+---
+
+
+## Proyecto: Publicación de un Portal Web Corporativo
+
+Una pequeña empresa ha decidido abandonar el servicio de alojamiento web que utilizaba hasta ahora y quiere desplegar internamente un nuevo servidor web basado en Nginx.
+
+El departamento de marketing ha preparado una página web estática compuesta por un archivo HTML y varias imágenes corporativas. La dirección de la empresa quiere que el sitio sea seguro, fácil de mantener y preparado para futuras ampliaciones.
+
+Has sido contratado como administrador de sistemas para diseñar y desplegar la solución.
+
+El equipo directivo únicamente te proporciona las siguientes necesidades:
+
+- El sitio web debe estar accesible desde un navegador.
+- El contenido debe ejecutarse dentro de un contenedor Docker.
+- Los cambios realizados durante el desarrollo deben poder probarse rápidamente.
+- Debe existir una zona reservada para administradores que no sea accesible públicamente. Aqui, habrá una página sencilla de HTML con los nombres de los líderes de la empresa.
+- El acceso al sitio debe realizarse mediante HTTPS.
+- El sistema debe generar registros que permitan analizar el uso del servidor y diagnosticar problemas.
+- La empresa quiere entender cómo Nginx es capaz de atender miles de usuarios simultáneamente con pocos procesos.
+
+No se proporciona ninguna guía técnica adicional.
+
+Deberias investigar, diseñar e implementar una solución funcional utilizando los conocimientos adquiridos durante la unidad.
+
+Además de la solución técnica, deberá elaborar una breve documentación donde explique las decisiones adoptadas, los problemas encontrados y cómo fueron resueltos.
+
+### Reflexión técnica
+
+Al finalizar el proyecto, cada estudiante deberá ser capaz de **responder con evidencias** a preguntas como:
+
+1. ¿Cómo está organizado el contenido web dentro de la solución desplegada?
+2. ¿Por qué se ha elegido una determinada estrategia para trabajar con los archivos durante el desarrollo?
+3. ¿Qué función tiene cada uno de los procesos principales de Nginx?
+4. ¿Cómo se puede comprobar que la configuración es correcta antes de aplicarla?
+5. ¿Qué información aportan los registros del servidor? 
+6. ¿Cómo se ha protegido el área de administración?
+7. ¿Qué diferencias existen entre acceder al sitio mediante HTTP y HTTPS?
+8. ¿Por qué el navegador muestra advertencias cuando se utiliza un certificado autofirmado?
+9. ¿Qué ocurriría si el número de usuarios conectados aumentara considerablemente, como en C10k?
+10. ¿Qué ventajas ofrece Nginx frente a un servidor tradicional basado en un proceso o hilo por conexión? Seria genial 
+11. ¿Qué problemas podrían diagnosticarse utilizando los logs y las herramientas vistas en clase?
+12. La empresa espera recibir hasta 5.000 usuarios simultáneos durante una campaña de marketing. Diseña y ejecuta una prueba que permita demostrar si tu servidor Nginx puede soportar la carga esperada.
+
+
+### Recursos adicionales
+apache2-utils, wrk, apache2
+
+| Criterio                                                                                                                                                                                           | Puntos       |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
+| Responde a todas las preguntas planteadas en el proyecto aportando evidencias (capturas, comandos, logs, configuraciones, resultados de pruebas, etc.)                                             | **3 puntos** |
+| La solución técnica cumple los requisitos solicitados (sitio web, Docker, HTTPS, autenticación, logs, etc.)                                                                                        | **2 puntos** |
+| Justifica las decisiones técnicas adoptadas y demuestra comprensión de los conceptos utilizados                                                                                                    | **2 puntos** |
+| Utiliza herramientas adicionales para verificar, contrastar o diagnosticar el comportamiento del sistema (curl, wget, ab, wrk, ss, netstat, top, htop, ps, docker stats, navegador, OpenSSL, etc.) | **2 puntos** |
+| Calidad de la documentación técnica, organización y claridad de las evidencias presentadas                                                                                                         | **1 punto**  |
