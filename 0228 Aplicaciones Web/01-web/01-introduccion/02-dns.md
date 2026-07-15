@@ -4,7 +4,7 @@
 Cisco Packet Tracer
 Filtrar por HTTP, HTTPS y DNS
 
-
+arp -a
 exit, exit in router
 show ip route
 
