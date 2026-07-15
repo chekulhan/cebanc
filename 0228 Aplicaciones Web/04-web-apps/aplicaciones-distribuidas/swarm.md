@@ -26,7 +26,7 @@ docker swarm init
 ![Swarm Active](images/swarm2.png)
 
 
-
+Y comprobar:
 ```
 docker node ls
 ```
@@ -39,6 +39,10 @@ docker swarm join --token SWMTKN-1-xxxxx- 192.xxx.xxx.3:2377
 ```
 
 
+
+
+
+
 Swarm has both nodes and services, but they represent different things.
 
 A useful way to think about it is:
@@ -46,6 +50,17 @@ A useful way to think about it is:
 Nodes = Where work can run.
 Services = What work should run.
 
+
+# Docker Swarm comandos 
+
+Creamos un servicio llamado 'web' usando la imagen 'nginx', con 3 contenedores y exponiendoles al puerto 80 en el swarm.
+
+```
+docker service create --name web --replicas 3  -p 80:80  nginx
+```
+
+
+# Stacks
 
 docker stack deploy -c stack.yml demo
 
