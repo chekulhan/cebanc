@@ -1,3 +1,17 @@
+
+![Web Server Toopologia](../images/webserver.png)
+
+Cisco Packet Tracer
+Filtrar por HTTP, HTTPS y DNS
+
+
+exit, exit in router
+show ip route
+
+show ip interface brief
+
+
+# DNS 
 Vamos a usar Docker para las actividades de DNS
 
 
