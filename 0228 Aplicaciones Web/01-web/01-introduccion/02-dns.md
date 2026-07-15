@@ -4,7 +4,12 @@
 Cisco Packet Tracer
 Filtrar por HTTP, HTTPS y DNS
 
+IP4 address:  192.168.10.1   and 2
+IP6 address: 2001:DB8:acad::1   64  and 2
+
+
 arp -a
+switch: show mac address-table
 exit, exit in router
 show ip route
 
