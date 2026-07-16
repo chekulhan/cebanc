@@ -57,8 +57,31 @@ Creamos un servicio llamado 'web' usando la imagen 'nginx', con 3 contenedores y
 
 ```
 docker service create --name web --replicas 3  -p 80:80  nginx
+
+
+docker service ls
+
+docker service scale web=3
+
+docker service inspect web
+docker service logs web
+docker service logs web -f
+
 ```
 
+BORRAR un contenedor (manualmente) y verás como actua swarm 
+
+
+curl http://localhost:8080/ o acceder através del web
+
+
+Y actualizar el servicio con una version diferente de nginx:
+docker service update  --image nginx:1.27  web
+
+
+```
+docker service rm web
+```
 
 # Stacks
 
