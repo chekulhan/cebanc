@@ -4,8 +4,8 @@ https://www.boe.es/diario_boe/txt.php?id=BOE-A-2021-7686
 
 Objetivo: analizar datos y convertirlos en información útil (en una sola máquina)
 🖥️ Single machine: trabajo local con datasets
-🐍 R, Python: pandas, NumPy, SQL
-📊 Limpieza, transformación y análisis de datos (ETL, JSON, CSV)
+🐍 R, Python: pandas, NumPy, SQL, DuckDB
+📊 Importación, limpieza, transformación y análisis de datos (ETL, JSON, CSV, Parquet)
 📈 Visualización y dashboards (Power BI)
 📉 Estadística básica y predicción simple (tendencias)
 🧠 Interpretación de KPIs de negocio
