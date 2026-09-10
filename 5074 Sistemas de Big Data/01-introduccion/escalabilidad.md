@@ -44,6 +44,13 @@ Primero dividimos el archivo en cuatro partes:
 ```
 *Fíjate que es un l, no un 1.*
 
+OJO! Si usamos la imagen de Docker de BusyBox, tenemos que hacerlo manualmente, calculando las lineas.
+
+```bash
+split -l 25 numbers.txt part_
+```
+
+
 Imaginemos que cada archivo está almacenado en un ordenador diferente del clúster.
 
 ## Paso 4. Procesamiento distribuido
