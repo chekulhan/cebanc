@@ -80,6 +80,14 @@ Si el archivo sigue creciendo, ¿qué ocurre con la escalabilidad vertical?
 
 # Actividad
 
+SUGERENCIA: Usar Linux Alpine imagen
+
+```bash
+docker run -it --name alpine-lab alpine:latest sh
+```
+
+
+$  cat > generar_logs.sh << EOF
 
 ```bash
 #!/bin/sh
@@ -90,4 +98,13 @@ for i in $(seq 1 10000); do
     STATUS=$(shuf -n 1 -e 200 200 200 200 404)
 
     echo "$(date '+%Y-%m-%d %H:%M:%S') GET $PAGE $STATUS"
+
+done > access.log
 ```
+
+EOF
+
+
+
+chmod +x generar_logs.sh
+./generar_logs.sh
