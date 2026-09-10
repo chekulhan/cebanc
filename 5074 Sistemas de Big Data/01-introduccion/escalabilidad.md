@@ -77,3 +77,17 @@ Si el archivo sigue creciendo, ¿qué ocurre con la escalabilidad vertical?
 - Podemos seguir aumentando la CPU y la memoria, pero llega un momento en que resulta muy caro o simplemente no es posible.
 ¿Y con la escalabilidad horizontal?
 - Podemos añadir más ordenadores al clúster y repartir el trabajo entre ellos.
+
+# Actividad
+
+
+```bash
+#!/bin/sh
+
+for i in $(seq 1 10000); do
+
+    PAGE=$(shuf -n 1 -e /products /login /contact /about)
+    STATUS=$(shuf -n 1 -e 200 200 200 200 404)
+
+    echo "$(date '+%Y-%m-%d %H:%M:%S') GET $PAGE $STATUS"
+```
