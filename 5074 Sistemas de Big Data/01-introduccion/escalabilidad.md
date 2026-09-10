@@ -80,14 +80,47 @@ Si el archivo sigue creciendo, ¿qué ocurre con la escalabilidad vertical?
 
 # Actividad
 
-SUGERENCIA: Usar Linux Alpine imagen
+Simular un sistema de procesamiento distribuido de datos utilizando comandos Linux.
+
+Trabajarás con un archivo de logs que contiene peticiones realizadas a diferentes APIs de una aplicación.
+
+Ejemplo:
+
+```
+2026-09-10 17:40:14 GET /products 200
+2026-09-10 17:40:14 GET /users 200
+2026-09-10 17:40:14 GET /products 404
+2026-09-10 17:40:15 GET /orders 200
+2026-09-10 17:40:15 GET /users 200
+```
+
+**Objetivo**: Crea un archivo independiente para cada API. Lo podrias colocar en la carpeta "plata o silver":
+- products.log
+- users.log
+- orders.log
+
+Una vez separados, contar las peticiones (MAP) y mostrar el resultado total de cada API y posteriormente de todos los datos (REDUCE).
+
+Y contestar las preguntas que tiene tu equipo sobre datos distribuidos (usa la IA para comprobar):
+- ¿Por qué puede ser útil dividir un archivo grande en diferentes partes?
+- ¿Qué ocurriría si tuviéramos millones de registros?
+- ¿Qué ventajas tendría procesar los datos en varios ordenadores?
+- ¿Qué problema podría aparecer si un nodo tarda mucho más que los demás?
+
+
+
+**SUGERENCIA: Usar Linux Alpine imagen**
 
 ```bash
 docker run -it --name alpine-lab alpine:latest sh
 ```
 
+AYUDA para la generacion de datos de logs
+```
+$  cat > generar_logs.sh << 'EOF'
+```
 
-$  cat > generar_logs.sh << EOF
+Para generar datos de logs, usar este script de bash, con el nombre de archivo generar_logs.sh
 
 ```bash
 #!/bin/sh
@@ -105,6 +138,7 @@ done > access.log
 EOF
 
 
+## Pistas
 
 chmod +x generar_logs.sh
 ./generar_logs.sh
