@@ -21,15 +21,23 @@ Encontrar:
 
 # Paso 3: CONOCIMIENTO (patrones + comprensión)
 ## Observaciones (Verdadero / Falso):
+
 Los “likes” aumentan fuertemente hacia el fin de semana. → ________
+
 El martes es el día con mayor engagement de toda la semana. → ________
+
 Los fines de semana tienen aproximadamente el doble de interacción que los días laborables. → ________
+
 Los comentarios disminuyen durante el fin de semana en comparación con los días laborables. → ________
 
 ## Interpretación (Verdadero / Falso):
+
 Los usuarios están más activos durante los fines de semana. → ________
+
 Las personas tienen más tiempo libre para interactuar con el contenido. → ________
+
 El día de publicación no tiene ningún impacto en la visibilidad del contenido. → ________
+
 El engagement depende únicamente del número de seguidores, no del día. → ________
 
 # Paso 4: WISDOM (decision-making)
