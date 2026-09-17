@@ -19,7 +19,7 @@ CSV ───────┐
 JSON ──────┼──→ Pandas → MERGE → TRANSFORM → FILTER → SORT
            │                                           │
 TXT ───────┘                                           ▼
-                                                final_orders.csv
+                                                final_orders.parquet
 ```
 
 Tienes la siguiente esstructura de datos:
@@ -95,7 +95,7 @@ orders.txt
 ```
 
 ## Tareas 
-Tareas para incluir (no estan en órden) y mostrar en el resultado final. 
+Tareas para incluir (no estan en órden) y mostrar en el resultado final.  Es un ejemplo, y puedes añadir/modificar según tu interés.
 
 - añadir una columna => total = quantity* price
 - incluir un precio con IVA
@@ -121,8 +121,8 @@ df = orders.merge(
 | Criterio                                                                                                                                                                                                                                                                                                                                                                           |       Puntos |
 | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -----------: |
 | No entregar la actividad o no presentar un resultado funcional.                                                                                                                                                                                                                                                                                                                    |  **1 punto** |
-| Entregar el notebook de **Google Colab** con las tareas realizadas y funcionando. El código está organizado y contiene **comentarios que explican las partes principales**. Los archivos pueden estar preparados previamente para ejecutar el notebook.                                                                                                                            | **3 puntos** |
-| Notebook de **Google Colab totalmente automatizado**. Al utilizar **“Ejecutar todo”**, el proceso completo funciona desde el principio: se crean/preparan los archivos necesarios, se leen los datos, se realizan todas las transformaciones y se genera automáticamente `final_orders.csv` con el resultado final. El código incluye comentarios claros en las partes relevantes. | **5 puntos** |
+| Entregar el notebook de **Google Colab o Jupyter Notebook** con las tareas realizadas y funcionando. El código está organizado y contiene **comentarios que explican las partes principales**. Los archivos pueden estar preparados previamente para ejecutar el notebook.                                                                                                                            | **3 puntos** |
+| Notebook de **Google Colab o Jupyter Notebook totalmente automatizado**. Al utilizar **“Ejecutar todo”**, el proceso completo funciona desde el principio: se crean/preparan los archivos necesarios, se leen los datos, se realizan todas las transformaciones y se genera automáticamente `final_orders.parquet` con el resultado final. El código incluye comentarios claros en las partes relevantes. | **5 puntos** |
 
 
 **Importante**: Para obtener 5 puntos, no debe ser necesario realizar pasos manuales entre la ejecución de las diferentes celdas. El objetivo es que el notebook pueda reproducir todo el proceso de principio a fin mediante “Ejecutar todo”.
