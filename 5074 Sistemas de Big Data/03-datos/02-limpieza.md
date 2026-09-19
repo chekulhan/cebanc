@@ -1,38 +1,20 @@
 
-Guardar los datos en CSV
+
 ```csv
-fecha,producto,categoria,ciudad,unidades,precio,cliente
-2026-09-01,Portatil,Informática,Donostia,2,850,Empresa A
-2026-09-01,Raton,Accesorios,Donostia,10,18,Empresa B
-2026-09-02,Teclado,Accesorios,Irún,5,35,Empresa C
-2026-09-02,Portatil,Informatica,Bilbao,1,850,Empresa D
-2026-09-03,Monitor,Informática,Donostia,3,220,Empresa A
-2026-09-03,Raton,Accesorios,Bilbao,8,18,Empresa E
-2026-09-04,Teclado,Accesorios,Irún,,35,Empresa B
-2026-09-04,Portatil,Informática,Donostia,-2,850,Empresa F
-2026-09-05,Monitor,Informática,Bilbao,2,-220,Empresa C
-2026-09-05,Raton,Accesorios,Donostia,15,18,Empresa D
-2026-09-06,Portatil,Informática,Irún,1,850,Empresa A
-2026-09-06,Monitor,Informática,Donostia,4,220,Empresa E
-2026-09-07,Teclado,Accesorios,Bilbao,6,35,Empresa F
-2026-09-07,Raton,Accesorios,Donostia,12,18,Empresa B
-2026-09-07,Raton,Accesorios,Donostia,12,18,Empresa B
-2026-09-08,Portatil,Informática,Donostia,3,850,
-2026-09-08,Monitor,Informática,Bilbao,200,220,Empresa C
-2026-09-09,Teclado,Accesorios,Donostia,4,35,Empresa G
-2026-09-09,teclado,Accesorios,Donostia,4,35,Empresa G
-2026-09-10,Portatil,Informática,Donostia,2,850,Empresa A
-2026-09-10,Monitor,Informatica,Bilbao,3,220,Empresa C
-2026-09-11,Raton,Accesorios,Donostia,10,18,Empresa B
-2026-09-11,Raton,Accesorios,Donostia,10,18,Empresa B
-2026-09-12,Portatil,Informática,Bilbao,1,850,Empresa H
-2026-09-12,Monitor,Informática,Donostia,5,220,Empresa I
-2026-09-13,Tablet,Electrónica,Donostia,2,300,Empresa J
-2026-09-13,Tablet,Electronica,Donostia,2,300,Empresa J
-2026-09-14,Portatil,Informática,Donostia,abc,850,Empresa A
-2026-09-14,Monitor,Informática,Bilbao,4,220,Empresa C
-2026-09-15,Raton,Accesorios,Donostia,8,18,Empresa K
-2026-09-15,Raton,Accesorios,Donostia,8,18,Empresa K
+import pandas as pd
+
+df = pd.DataFrame({
+    "nombre": ["Ana", "Luis", "Marta", "Ana", "Jon", None, "Ana"],
+    "edad": [23, 35, None, 23, 150, 28, 23],
+    "ciudad": ["Donostia", "Bilbao", "donostia ", "Donostia", "Bilbao", "Vitoria    ", "Donostia"],
+    "email": ["ana@mail.com", "luis@mail.com", "marta@mail.com",
+              "ana@mail.com", "jon@mail.com", "incorrecto", "ana@mail.com"],
+    "ventas": [1200, 850, 900, 1200, -50, None, 1200],
+    "fecha": ["15/09/2026", "2026-09-16", "17-09-2026",
+              "31/02/2026", "18/09/2026", "20/09/2026", "2026/09/21"]
+})
+
+df
 ```
 
 
@@ -56,12 +38,7 @@ fecha,producto,categoria,ciudad,unidades,precio,cliente
 5. ¿Están escritos igual?      → Consistencia
 6. ¿La información es válida?   → Reglas de negocio
 
-
 ```
-import pandas as pd
-
-df = pd.read_csv("ventas.csv")
-
 df.head()
 
 df.info()
@@ -69,13 +46,99 @@ df.describe()
 
 # Nulos
 df.isna().sum()
+df2 = df.dropna() # quitar FILAS con nulos
+df2 = df.dropna(axis="columns") # quitar COLUMNAS con nulos
+```
+![Nulo](images/limpieza.nulo.png)
+
+
+# Rellenar datos sin valores (None o nulo)
+```
+df.fillna("ABCD")
+df["ventas"].fillna("ABC")
+
+df["ventas"] = df["ventas"].fillna(df["ventas"].median())
+```
 
 # Filas Duplicadas
+```
+df.duplicated()
 df.duplicated().sum()
-df[df.duplicated(keep=False)]
+df[df.duplicated()]
+df[~df.duplicated()]
+df.duplicated(keep="last")
+df.duplicated(subset=["edad"]) # buscar por la columna
+df2 = df.drop_duplicates()
+```
 
-# convertir texto a NaN. Mirad los datos
-pd.to_numeric(df["unidades"], errors='coerce')
-df["unidadesNEW"] = pd.to_numeric(df["unidades"], errors='coerce')
-df.drop(columns="unidades")
+# Detectar valores invalidos (fuera del rango)
+```
+df["edad"]>100
+df.loc[df["edad"] > 100]
+df.loc[df["edad"]>100, "edad"] = df["edad"].median()
+```
+
+# Limpieza de Texto
+```
+ "A" + df["ciudad"].str.strip() + "A"
+df["ciudad"] = df["ciudad"].str.strip()
+
+df["ciudad"].str.upper()
+df["email"].str.contains("@")
+df2 = df[df["email"].str.contains("@")] # borrar la fila que no contenga @
+```
+
+
+
+
+# Fechas
+`errors="coerce"` es útil ya que la fecha inválida se convierte en NaT
+
+```
+pd.to_datetime(df["fecha"], errors="coerce")
+df["fecha"] = pd.to_datetime(df["fecha"], errors="coerce")
+
+df.dropna(subset = "fecha")
+```
+
+![Fechas](images/limpieza.dates.png)
+
+
+
+
+![isna vs isnull](images/limpieza.nanull.png)
+
+
+# Actividad
+
+!Te toca!
+
+```
+import pandas as pd
+
+df = pd.DataFrame({
+    "propietario": [
+        "  Iker ", "MARIA", "Ane", "Jon ", "  Iker ", "Unai", None, "Nerea"
+    ],
+    "localidad": [
+        "donostia", "BILBAO ", " Donostia ", "bilbao", "donostia",
+        "Vitoria-Gasteiz", "vitoria-gasteiz ", "Bilbao"
+    ],
+    "email": [
+        "iker@mail.com", "maria@mail.com", "ane@mail.com", "jonmail.com",
+        "iker@mail.com", "unai@mail.com", "incorrecto", "nerea@mail.com"
+    ],
+    "superficie_m2": [
+        "85", "72", "veintidós", "110", "85", "65", "3500", None
+    ],
+    "cuota_mensual": [
+        "125.50", "85.00", "90", "120", "125.50", "75", "abc", None
+    ],
+    "fecha_ultimo_pago": [
+        "15/09/2026", "2026-09-16", "17-09-2026", "31/02/2026",
+        "15/09/2026", "20/09/2026", "2026/09/21", "22/09/2026"
+    ]
+})
+
+df
 ```
