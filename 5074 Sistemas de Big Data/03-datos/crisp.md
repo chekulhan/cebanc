@@ -6,12 +6,32 @@
 
 ![Agente](images/agente.inmobiliaria.png)
 
-Vais a tener que interactuar con el agente y producir lo siguiente:
-- Crisp - Comprensión del negocio 
-- AWS Working Backwards
-    - Nota de prensa
-    - FAQ
+### Actividad
 
+Vais a interactuar con un agente que representa a un cliente real. A través de vuestras preguntas, tendréis que investigar y comprender las necesidades del negocio para plantear una propuesta basada en datos e IA.
+
+Al finalizar, deberéis entregar:
+
+* **CRISP-DM — Comprensión del negocio**
+
+  * Identificar y definir el problema u oportunidad de negocio.
+  * Establecer los objetivos y criterios de éxito.
+
+* **AWS Working Backwards**
+
+  * **Nota de prensa:** presentar la solución desde el punto de vista del cliente y su valor para el negocio.
+  * **FAQ:** responder a las principales preguntas que podría plantear el cliente sobre la solución.
+
+
+
+| Criterio                        | Nivel 1 — Básico                                                                                               | Nivel 2 — Adecuado                                                                                    | Nivel 3 — Avanzado                                                                                                                                                 |
+| ------------------------------- | -------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **Análisis de negocio**         | Describe la empresa y detecta alguna necesidad o problema, pero de forma poco concreta.                        | Identifica un problema de negocio concreto, sus objetivos y los datos que podrían ayudar a abordarlo. | Analiza el problema en profundidad, relaciona objetivos, datos, impacto, limitaciones y criterios de éxito.                                                        |
+| **Propuesta de solución**       | Propone una solución general, con poca justificación.                                                          | Propone una solución de análisis de datos/IA coherente con el problema y justifica su utilidad.       | Propone una solución viable, bien justificada y alineada con las necesidades, datos, recursos y limitaciones del negocio.                                          |
+| **Comunicación de la solución** | El AWS FAQ y la nota de prensa explican parcialmente la solución y se centran principalmente en la tecnología. | El FAQ y la nota de prensa explican claramente la solución, sus beneficios y su funcionamiento.       | El FAQ anticipa las dudas relevantes del cliente y la nota de prensa comunica claramente el valor, impacto y experiencia del cliente mediante *Working Backwards*. |
+
+
+**No leas el siguiente prompt**. Simplemente copiarlo y pegarlo en Relevance AI.
 
 ```text
 # ROL: GERENTE DE UNA EMPRESA INMOBILIARIA
