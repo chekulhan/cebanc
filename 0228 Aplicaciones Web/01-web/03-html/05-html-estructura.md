@@ -36,11 +36,11 @@ Representa el pie de página de un documento o sección. Usualmente contiene inf
 ## `<div>`:
 No es una etiqueta semantica. Una etiqueta de contenedor genérica utilizada para agrupar elementos sin ningún significado semántico. Se usa para aplicar estilos o estructurar el contenido de manera flexible.
 
-![HTML Estructura](../../x-assets/0373/html.estructura.png)
+![HTML Estructura](../images/html.estructura.png)
 
 **Actividad 1:**
 
-![HTML Estructura Actividad](../../x-assets/0373/html.estructura.actividad.png)
+![HTML Estructura Actividad](../images/html.estructura.actividad.png)
 
 Usar la siguiente CSS para aplicar estilos
 ```css

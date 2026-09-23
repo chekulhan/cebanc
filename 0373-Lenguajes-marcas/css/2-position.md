@@ -1,6 +1,6 @@
 # Position
 
-![Position](../../x-assets/0373/css.position.png)
+![Position](../images/css.position.png)
 
 https://developer.mozilla.org/en-US/docs/Web/CSS/position
 
@@ -14,11 +14,11 @@ Resumen de los Valores de position:
 ## Actividad 1
 Queremos emular una página de ChatGPT, con HTML y CSS básico. Usar los elementos position, overflow-y para hacer lo más parecido a esta imágen:
 
-![Position](../../x-assets/0373/css.chatgpt.example.png)
+![Position](../images/css.chatgpt.example.png)
 
 
 ## Actividad 2
 Al scroll, queremos que el usuario sigue viendo la primera fila (th) de la tabla. 
 
-![Position Table 1](../../x-assets/0373/css.position.table1.png)
-![Position Table 1](../../x-assets/0373/css.position.table2.png)
+![Position Table 1](../images/css.position.table1.png)
+![Position Table 1](../images/css.position.table2.png)

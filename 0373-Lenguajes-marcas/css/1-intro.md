@@ -2,6 +2,17 @@
 
 CSS (Cascading Style Sheets) es un lenguaje utilizado para describir la presentación de un documento escrito en HTML o XML. Permite controlar la apariencia de los elementos, como colores, fuentes, márgenes y más. Fue creado en 1996 por Håkon Wium Lie y Bert Bos con el objetivo de separar el contenido de la presentación en la web. Esto permitió un diseño más flexible y eficiente. A lo largo de los años, CSS ha evolucionado, agregando nuevas propiedades y características que mejoran la accesibilidad, la usabilidad y la estética de las páginas web.
 
+### Especificidad en CSS
+Elemento  <  Clase  <  ID
+ - Elemento (p, h1, div) → menor especificidad.
+ - Clase (.texto) → mayor especificidad.
+ - ID (#principal) → mayor especificidad.
+ 
+👉 Cuanto más específico es el selector, más prioridad tiene.
+
+
+
+
 ## 1. color
 Descripción: Establece el color del texto.
 Ejemplo:
@@ -98,7 +109,7 @@ CSS (Cascading Style Sheets) es un lenguaje que permite dar estilo y formato a l
 
 
 
-![CSS](../../x-assets/0373/css.devtools.png)
+![CSS](../images/css.devtools.png)
 
 # Actividad 1:
 ## Galeria de photos
@@ -132,7 +143,7 @@ Aplicar CSS propiedades a una aplicacion de galeria de fotos. Usar las fotos de 
 # Actividad 2:
 Con tus conocimientos hasta ahora de HTML y CSS, repasar para emular esta página:
 
-![BBC](../../x-assets/0373/bbc.ejemplo.png)
+![BBC](../images/bbc.ejemplo.png)
 
 
 
