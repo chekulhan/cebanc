@@ -1,0 +1,16 @@
+services:
+  streamlit:
+    build: .
+    working_dir: /app
+
+    volumes:
+      - ./app:/app
+
+    ports:
+      - "8501:8501"
+
+    command: >
+      streamlit run app.py
+      --server.address=0.0.0.0
+      --server.port=8501
+      --server.runOnSave=true
