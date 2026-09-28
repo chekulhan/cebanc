@@ -1,0 +1,501 @@
+﻿id_venta,fecha,tienda,ciudad,provincia,categoria,producto,unidades,precio_unitario,ventas,metodo_pago,cliente_tipo
+374,2026-01-03,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Crema hidratante,3,6.8,20.4,Efectivo,Nuevo
+231,2026-01-04,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Pasta de dientes,3,3.5,10.5,Bizum,Nuevo
+409,2026-01-09,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,2,8.9,17.8,Tarjeta,Recurrente
+430,2026-01-09,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Refresco,7,1.8,12.6,Efectivo,Recurrente
+488,2026-01-12,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Detergente,2,5.9,11.8,Bizum,Recurrente
+67,2026-01-13,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Papel de cocina,6,3.2,19.2,Efectivo,Recurrente
+313,2026-01-14,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pan,8,1.2,9.6,Bizum,Nuevo
+149,2026-01-14,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,1,8.9,8.9,Bizum,Nuevo
+230,2026-01-15,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pasta,5,1.75,8.75,Efectivo,Nuevo
+331,2026-01-15,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Café,5,4.5,22.5,Bizum,Recurrente
+107,2026-01-16,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,1,8.9,8.9,Bizum,Recurrente
+449,2026-01-17,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Crema hidratante,6,6.8,40.8,Tarjeta,Recurrente
+359,2026-01-17,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Papel de cocina,2,3.2,6.4,Tarjeta,Recurrente
+3,2026-01-17,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Leche,4,1.35,5.4,Tarjeta,Recurrente
+154,2026-01-19,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Leche,6,1.35,8.1,Efectivo,Nuevo
+175,2026-01-19,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Leche,4,1.35,5.4,Bizum,Nuevo
+73,2026-01-20,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,7,1.25,8.75,Efectivo,Nuevo
+200,2026-01-20,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Zumo,2,2.1,4.2,Tarjeta,Recurrente
+150,2026-01-21,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,8,2.1,16.8,Efectivo,Recurrente
+261,2026-01-21,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Papel de cocina,8,3.2,25.6,Efectivo,Recurrente
+148,2026-01-21,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Papel de cocina,6,3.2,19.2,Bizum,Nuevo
+190,2026-01-21,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Champú,8,4.75,38.0,Tarjeta,Nuevo
+64,2026-01-22,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Chocolate,1,2.4,2.4,Efectivo,Recurrente
+113,2026-01-22,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Refresco,7,1.8,12.6,Bizum,Nuevo
+369,2026-01-22,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Papel de cocina,2,3.2,6.4,Efectivo,Nuevo
+8,2026-01-23,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Zumo,2,2.1,4.2,Efectivo,Recurrente
+292,2026-01-23,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Agua,6,0.8,4.8,Efectivo,Recurrente
+273,2026-01-23,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,4,2.4,9.6,Efectivo,Nuevo
+168,2026-01-23,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Papel de cocina,8,3.2,25.6,Bizum,Nuevo
+85,2026-01-24,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,2,2.1,4.2,Efectivo,Nuevo
+239,2026-01-24,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Agua,1,0.8,0.8,Tarjeta,Recurrente
+351,2026-01-24,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pan,6,1.2,7.2,Efectivo,Nuevo
+207,2026-01-26,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Aceite de oliva,3,8.9,26.7,Bizum,Recurrente
+106,2026-01-27,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Aceite de oliva,2,8.9,17.8,Bizum,Recurrente
+226,2026-01-27,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Cerveza sin alcohol,5,1.25,6.25,Efectivo,Recurrente
+131,2026-01-28,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pasta,3,1.75,5.25,Bizum,Nuevo
+453,2026-01-28,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Agua,4,0.8,3.2,Tarjeta,Nuevo
+445,2026-01-29,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Café,3,4.5,13.5,Tarjeta,Nuevo
+48,2026-01-30,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Leche,3,1.35,4.05,Tarjeta,Recurrente
+47,2026-01-30,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,8,1.25,10.0,Bizum,Recurrente
+44,2026-01-31,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Agua,1,0.8,0.8,Efectivo,Nuevo
+376,2026-01-31,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Detergente,4,5.9,23.6,Bizum,Recurrente
+401,2026-01-31,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Crema hidratante,8,6.8,54.4,Tarjeta,Nuevo
+39,2026-02-01,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Papel de cocina,6,3.2,19.2,Tarjeta,Recurrente
+394,2026-02-01,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Crema hidratante,4,6.8,27.2,Bizum,Recurrente
+96,2026-02-02,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Agua,6,0.8,4.8,Bizum,Nuevo
+213,2026-02-02,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,6,2.1,12.6,Bizum,Recurrente
+318,2026-02-03,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,5,1.8,9.0,Efectivo,Recurrente
+264,2026-02-03,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Leche,7,1.35,9.45,Efectivo,Nuevo
+322,2026-02-03,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Agua,8,0.8,6.4,Bizum,Nuevo
+223,2026-02-04,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Pasta de dientes,2,3.5,7.0,Tarjeta,Nuevo
+232,2026-02-05,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Papel de cocina,1,3.2,3.2,Tarjeta,Recurrente
+29,2026-02-05,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Tarjeta,Nuevo
+114,2026-02-05,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,6,5.9,35.4,Tarjeta,Nuevo
+208,2026-02-05,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Aceite de oliva,4,8.9,35.6,Tarjeta,Nuevo
+10,2026-02-05,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Detergente,4,5.9,23.6,Efectivo,Recurrente
+143,2026-02-06,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,5,8.9,44.5,Bizum,Recurrente
+243,2026-02-06,Kosta Market,Zarautz,Gipuzkoa,Higiene,Pasta de dientes,1,3.5,3.5,Efectivo,Recurrente
+13,2026-02-06,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,3,5.9,17.7,Bizum,Recurrente
+334,2026-02-07,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Café,3,4.5,13.5,Efectivo,Nuevo
+217,2026-02-07,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Chocolate,3,2.4,7.2,Tarjeta,Recurrente
+400,2026-02-07,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Agua,6,0.8,4.8,Bizum,Recurrente
+435,2026-02-08,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Café,1,4.5,4.5,Efectivo,Recurrente
+303,2026-02-10,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Cerveza sin alcohol,3,1.25,3.75,Bizum,Nuevo
+50,2026-02-11,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Detergente,6,5.9,35.4,Efectivo,Recurrente
+457,2026-02-12,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Pan,7,1.2,8.4,Bizum,Recurrente
+463,2026-02-13,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Crema hidratante,4,6.8,27.2,Bizum,Recurrente
+83,2026-02-13,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Refresco,6,1.8,10.8,Tarjeta,Recurrente
+460,2026-02-14,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Agua,8,0.8,6.4,Bizum,Nuevo
+317,2026-02-14,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Pasta de dientes,6,3.5,21.0,Bizum,Nuevo
+118,2026-02-14,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,8,6.8,54.4,Tarjeta,Nuevo
+20,2026-02-16,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Pasta de dientes,2,3.5,7.0,Tarjeta,Recurrente
+7,2026-02-17,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Leche,6,1.35,8.1,Efectivo,Nuevo
+444,2026-02-17,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Agua,7,0.8,5.6,Bizum,Nuevo
+329,2026-02-17,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,3,5.9,17.7,Bizum,Recurrente
+421,2026-02-17,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Papel de cocina,4,3.2,12.8,Tarjeta,Nuevo
+37,2026-02-18,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Detergente,7,5.9,41.3,Efectivo,Nuevo
+224,2026-02-19,Hernani Plaza,Hernani,Gipuzkoa,Limpieza,Papel de cocina,6,3.2,19.2,Tarjeta,Recurrente
+339,2026-02-19,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pasta,7,1.75,12.25,Bizum,Nuevo
+42,2026-02-20,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Detergente,1,5.9,5.9,Tarjeta,Recurrente
+482,2026-02-20,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Aceite de oliva,4,8.9,35.6,Efectivo,Nuevo
+129,2026-02-21,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pasta,4,1.75,7.0,Efectivo,Recurrente
+171,2026-02-21,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Crema hidratante,8,6.8,54.4,Tarjeta,Recurrente
+53,2026-02-21,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Refresco,4,1.8,7.2,Bizum,Nuevo
+112,2026-02-22,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,5,4.75,23.75,Bizum,Recurrente
+132,2026-02-22,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,5,1.25,6.25,Efectivo,Nuevo
+461,2026-02-22,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Leche,6,1.35,8.1,Bizum,Recurrente
+260,2026-02-22,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Papel de cocina,2,3.2,6.4,Bizum,Recurrente
+57,2026-02-24,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Refresco,3,1.8,5.4,Efectivo,Nuevo
+480,2026-02-25,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Detergente,6,5.9,35.4,Tarjeta,Recurrente
+345,2026-02-25,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pan,5,1.2,6.0,Bizum,Nuevo
+286,2026-02-26,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Aceite de oliva,5,8.9,44.5,Tarjeta,Recurrente
+1,2026-02-27,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Papel de cocina,5,3.2,16.0,Tarjeta,Recurrente
+62,2026-02-27,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Crema hidratante,3,6.8,20.4,Bizum,Recurrente
+194,2026-02-28,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Leche,3,1.35,4.05,Tarjeta,Nuevo
+134,2026-02-28,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Agua,8,0.8,6.4,Tarjeta,Recurrente
+155,2026-03-01,Kosta Market,Zarautz,Gipuzkoa,Higiene,Pasta de dientes,1,3.5,3.5,Bizum,Nuevo
+136,2026-03-02,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Champú,7,4.75,33.25,Bizum,Recurrente
+314,2026-03-02,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Champú,5,4.75,23.75,Bizum,Nuevo
+32,2026-03-03,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,2,8.9,17.8,Efectivo,Recurrente
+89,2026-03-04,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pan,8,1.2,9.6,Bizum,Nuevo
+77,2026-03-05,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Crema hidratante,5,6.8,34.0,Bizum,Nuevo
+196,2026-03-05,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,5,2.4,12.0,Bizum,Nuevo
+170,2026-03-06,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Cerveza sin alcohol,6,1.25,7.5,Tarjeta,Nuevo
+325,2026-03-08,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Refresco,1,1.8,1.8,Tarjeta,Recurrente
+397,2026-03-09,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Agua,8,0.8,6.4,Bizum,Recurrente
+191,2026-03-09,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Crema hidratante,5,6.8,34.0,Efectivo,Nuevo
+54,2026-03-09,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,2,6.8,13.6,Tarjeta,Nuevo
+404,2026-03-10,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Pasta de dientes,6,3.5,21.0,Tarjeta,Recurrente
+498,2026-03-10,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Leche,4,1.35,5.4,Efectivo,Recurrente
+103,2026-03-11,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pan,1,1.2,1.2,Efectivo,Nuevo
+201,2026-03-11,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,6,2.1,12.6,Bizum,Nuevo
+296,2026-03-11,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Papel de cocina,8,3.2,25.6,Tarjeta,Nuevo
+316,2026-03-11,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Zumo,3,2.1,6.3,Bizum,Nuevo
+270,2026-03-12,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Leche,5,1.35,6.75,Tarjeta,Recurrente
+362,2026-03-12,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Aceite de oliva,6,8.9,53.4,Bizum,Nuevo
+277,2026-03-12,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Café,8,4.5,36.0,Efectivo,Recurrente
+320,2026-03-13,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,8,4.75,38.0,Tarjeta,Nuevo
+2,2026-03-13,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Leche,2,1.35,2.7,Bizum,Nuevo
+485,2026-03-14,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Pasta,6,1.75,10.5,Efectivo,Recurrente
+350,2026-03-15,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,7,1.25,8.75,Bizum,Recurrente
+450,2026-03-15,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Pasta de dientes,7,3.5,24.5,Tarjeta,Nuevo
+289,2026-03-15,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Agua,1,0.8,0.8,Bizum,Nuevo
+179,2026-03-16,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Refresco,7,1.8,12.6,Bizum,Recurrente
+283,2026-03-16,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Café,5,4.5,22.5,Efectivo,Recurrente
+209,2026-03-17,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Café,5,4.5,22.5,Tarjeta,Recurrente
+352,2026-03-18,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Crema hidratante,3,6.8,20.4,Efectivo,Nuevo
+265,2026-03-18,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Leche,3,1.35,4.05,Efectivo,Nuevo
+135,2026-03-19,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,5,4.75,23.75,Tarjeta,Recurrente
+252,2026-03-20,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Leche,3,1.35,4.05,Bizum,Nuevo
+116,2026-03-20,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pan,5,1.2,6.0,Bizum,Nuevo
+161,2026-03-20,Kosta Market,Zarautz,Gipuzkoa,Higiene,Crema hidratante,5,6.8,34.0,Bizum,Nuevo
+26,2026-03-20,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Bizum,Recurrente
+66,2026-03-21,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Pasta de dientes,3,3.5,10.5,Tarjeta,Nuevo
+202,2026-03-21,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Detergente,2,5.9,11.8,Efectivo,Nuevo
+140,2026-03-22,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pan,2,1.2,2.4,Tarjeta,Recurrente
+24,2026-03-22,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Café,5,4.5,22.5,Bizum,Recurrente
+235,2026-03-22,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Café,2,4.5,9.0,Efectivo,Nuevo
+183,2026-03-22,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Zumo,6,2.1,12.6,Bizum,Nuevo
+91,2026-03-23,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Pasta de dientes,8,3.5,28.0,Efectivo,Nuevo
+389,2026-03-23,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Detergente,5,5.9,29.5,Bizum,Recurrente
+61,2026-03-24,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Zumo,7,2.1,14.7,Bizum,Recurrente
+153,2026-03-24,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Agua,8,0.8,6.4,Efectivo,Nuevo
+14,2026-03-25,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Agua,5,0.8,4.0,Bizum,Recurrente
+353,2026-03-25,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Cerveza sin alcohol,5,1.25,6.25,Bizum,Nuevo
+451,2026-03-25,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Aceite de oliva,7,8.9,62.3,Bizum,Nuevo
+12,2026-03-25,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Chocolate,4,2.4,9.6,Bizum,Nuevo
+110,2026-03-25,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Leche,1,1.35,1.35,Efectivo,Nuevo
+30,2026-03-26,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Refresco,7,1.8,12.6,Tarjeta,Recurrente
+193,2026-03-26,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,8,6.8,54.4,Efectivo,Nuevo
+395,2026-03-26,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Pasta de dientes,8,3.5,28.0,Tarjeta,Recurrente
+43,2026-03-27,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,8,2.1,16.8,Tarjeta,Nuevo
+180,2026-03-29,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Leche,7,1.35,9.45,Bizum,Recurrente
+330,2026-03-29,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Cerveza sin alcohol,6,1.25,7.5,Bizum,Recurrente
+192,2026-03-31,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pan,6,1.2,7.2,Bizum,Nuevo
+242,2026-03-31,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Agua,4,0.8,3.2,Bizum,Nuevo
+295,2026-03-31,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Zumo,8,2.1,16.8,Bizum,Recurrente
+377,2026-03-31,Kosta Market,Zarautz,Gipuzkoa,Higiene,Crema hidratante,3,6.8,20.4,Tarjeta,Nuevo
+319,2026-03-31,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Refresco,4,1.8,7.2,Tarjeta,Recurrente
+440,2026-04-02,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Crema hidratante,2,6.8,13.6,Bizum,Recurrente
+272,2026-04-03,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Bizum,Nuevo
+41,2026-04-04,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Zumo,4,2.1,8.4,Tarjeta,Nuevo
+499,2026-04-04,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Papel de cocina,3,3.2,9.6,Bizum,Nuevo
+128,2026-04-05,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,8,8.9,71.2,Efectivo,Nuevo
+385,2026-04-05,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,6,2.1,12.6,Tarjeta,Recurrente
+491,2026-04-06,Hernani Plaza,Hernani,Gipuzkoa,Limpieza,Detergente,7,5.9,41.3,Efectivo,Recurrente
+494,2026-04-06,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Chocolate,4,2.4,9.6,Efectivo,Recurrente
+167,2026-04-07,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,7,8.9,62.3,Tarjeta,Nuevo
+408,2026-04-07,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,2,4.75,9.5,Tarjeta,Nuevo
+341,2026-04-08,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,8,2.1,16.8,Efectivo,Nuevo
+299,2026-04-08,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Chocolate,1,2.4,2.4,Bizum,Nuevo
+40,2026-04-09,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Refresco,8,1.8,14.4,Tarjeta,Nuevo
+365,2026-04-09,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pasta,5,1.75,8.75,Tarjeta,Nuevo
+79,2026-04-09,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Detergente,7,5.9,41.3,Bizum,Recurrente
+86,2026-04-10,Hernani Plaza,Hernani,Gipuzkoa,Limpieza,Papel de cocina,7,3.2,22.4,Efectivo,Nuevo
+275,2026-04-10,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Detergente,8,5.9,47.2,Efectivo,Nuevo
+328,2026-04-11,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Refresco,5,1.8,9.0,Tarjeta,Nuevo
+431,2026-04-11,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Aceite de oliva,7,8.9,62.3,Bizum,Recurrente
+4,2026-04-12,Hernani Plaza,Hernani,Gipuzkoa,Limpieza,Detergente,7,5.9,41.3,Tarjeta,Nuevo
+492,2026-04-12,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Cerveza sin alcohol,7,1.25,8.75,Efectivo,Recurrente
+471,2026-04-13,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,3,2.4,7.2,Efectivo,Nuevo
+474,2026-04-13,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,3,1.8,5.4,Bizum,Recurrente
+297,2026-04-14,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Champú,4,4.75,19.0,Tarjeta,Nuevo
+139,2026-04-17,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,5,8.9,44.5,Bizum,Recurrente
+58,2026-04-18,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Chocolate,4,2.4,9.6,Bizum,Nuevo
+81,2026-04-18,Kosta Market,Zarautz,Gipuzkoa,Higiene,Champú,6,4.75,28.5,Efectivo,Nuevo
+424,2026-04-19,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Papel de cocina,2,3.2,6.4,Bizum,Nuevo
+493,2026-04-20,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pasta,2,1.75,3.5,Bizum,Recurrente
+315,2026-04-20,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pasta,8,1.75,14.0,Tarjeta,Recurrente
+269,2026-04-20,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Champú,8,4.75,38.0,Tarjeta,Recurrente
+220,2026-04-21,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,4,2.1,8.4,Efectivo,Nuevo
+237,2026-04-21,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Leche,6,1.35,8.1,Efectivo,Recurrente
+392,2026-04-22,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Detergente,2,5.9,11.8,Bizum,Nuevo
+423,2026-04-22,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Aceite de oliva,6,8.9,53.4,Efectivo,Recurrente
+88,2026-04-23,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,8,4.75,38.0,Tarjeta,Recurrente
+124,2026-04-24,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Papel de cocina,4,3.2,12.8,Efectivo,Nuevo
+249,2026-04-24,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Tarjeta,Recurrente
+372,2026-04-26,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,1,8.9,8.9,Tarjeta,Nuevo
+443,2026-04-26,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Detergente,2,5.9,11.8,Bizum,Recurrente
+70,2026-04-27,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Café,4,4.5,18.0,Efectivo,Nuevo
+176,2026-04-27,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Leche,7,1.35,9.45,Tarjeta,Recurrente
+455,2026-04-27,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Refresco,7,1.8,12.6,Efectivo,Recurrente
+407,2026-04-28,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,6,2.1,12.6,Tarjeta,Nuevo
+33,2026-04-28,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Aceite de oliva,1,8.9,8.9,Tarjeta,Recurrente
+34,2026-04-28,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Crema hidratante,1,6.8,6.8,Efectivo,Recurrente
+95,2026-04-29,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Papel de cocina,3,3.2,9.6,Bizum,Recurrente
+127,2026-04-29,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Papel de cocina,4,3.2,12.8,Efectivo,Recurrente
+436,2026-04-29,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Papel de cocina,3,3.2,9.6,Tarjeta,Recurrente
+142,2026-04-29,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Papel de cocina,5,3.2,16.0,Bizum,Nuevo
+11,2026-04-30,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Agua,5,0.8,4.0,Efectivo,Nuevo
+49,2026-05-01,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Leche,4,1.35,5.4,Bizum,Recurrente
+251,2026-05-01,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pan,5,1.2,6.0,Tarjeta,Recurrente
+388,2026-05-01,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Detergente,2,5.9,11.8,Efectivo,Nuevo
+413,2026-05-02,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,3,6.8,20.4,Bizum,Recurrente
+108,2026-05-03,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,2,2.1,4.2,Bizum,Recurrente
+159,2026-05-03,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pan,5,1.2,6.0,Bizum,Recurrente
+287,2026-05-03,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Detergente,8,5.9,47.2,Tarjeta,Recurrente
+28,2026-05-03,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,2,8.9,17.8,Tarjeta,Nuevo
+343,2026-05-04,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,6,1.25,7.5,Tarjeta,Recurrente
+441,2026-05-04,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,5,1.25,6.25,Efectivo,Nuevo
+290,2026-05-04,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Agua,3,0.8,2.4,Bizum,Recurrente
+477,2026-05-04,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Detergente,3,5.9,17.7,Bizum,Nuevo
+87,2026-05-05,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Detergente,1,5.9,5.9,Tarjeta,Nuevo
+425,2026-05-05,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Cerveza sin alcohol,4,1.25,5.0,Efectivo,Recurrente
+489,2026-05-05,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pan,3,1.2,3.6,Efectivo,Nuevo
+18,2026-05-07,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Refresco,5,1.8,9.0,Bizum,Nuevo
+92,2026-05-07,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pasta,8,1.75,14.0,Bizum,Recurrente
+467,2026-05-07,Hernani Plaza,Hernani,Gipuzkoa,Limpieza,Detergente,8,5.9,47.2,Bizum,Recurrente
+340,2026-05-08,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Pasta de dientes,6,3.5,21.0,Bizum,Nuevo
+65,2026-05-08,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Leche,6,1.35,8.1,Bizum,Nuevo
+210,2026-05-09,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Leche,1,1.35,1.35,Tarjeta,Recurrente
+189,2026-05-09,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Bizum,Recurrente
+420,2026-05-11,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Chocolate,2,2.4,4.8,Efectivo,Nuevo
+75,2026-05-11,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Papel de cocina,7,3.2,22.4,Tarjeta,Recurrente
+285,2026-05-12,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Pasta de dientes,3,3.5,10.5,Bizum,Nuevo
+370,2026-05-12,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Zumo,4,2.1,8.4,Tarjeta,Nuevo
+386,2026-05-14,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Aceite de oliva,8,8.9,71.2,Efectivo,Nuevo
+495,2026-05-15,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Pasta de dientes,8,3.5,28.0,Bizum,Nuevo
+357,2026-05-16,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,4,4.75,19.0,Bizum,Recurrente
+212,2026-05-16,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pan,7,1.2,8.4,Bizum,Recurrente
+68,2026-05-17,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,2,4.75,9.5,Efectivo,Recurrente
+145,2026-05-17,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Leche,1,1.35,1.35,Tarjeta,Nuevo
+23,2026-05-17,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Chocolate,2,2.4,4.8,Efectivo,Nuevo
+16,2026-05-18,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,6,8.9,53.4,Tarjeta,Nuevo
+448,2026-05-19,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Crema hidratante,2,6.8,13.6,Bizum,Nuevo
+371,2026-05-20,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Leche,4,1.35,5.4,Tarjeta,Recurrente
+381,2026-05-20,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,2,4.75,9.5,Efectivo,Recurrente
+100,2026-05-20,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,1,2.1,2.1,Efectivo,Nuevo
+300,2026-05-20,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Champú,6,4.75,28.5,Efectivo,Nuevo
+307,2026-05-21,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,1,4.75,4.75,Tarjeta,Nuevo
+93,2026-05-21,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Leche,5,1.35,6.75,Tarjeta,Nuevo
+218,2026-05-21,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,6,5.9,35.4,Efectivo,Nuevo
+439,2026-05-21,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pasta,1,1.75,1.75,Bizum,Nuevo
+187,2026-05-21,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,1,1.25,1.25,Bizum,Nuevo
+121,2026-05-22,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Café,4,4.5,18.0,Tarjeta,Recurrente
+60,2026-05-22,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Café,6,4.5,27.0,Tarjeta,Nuevo
+105,2026-05-23,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pasta,2,1.75,3.5,Efectivo,Recurrente
+5,2026-05-23,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Bizum,Nuevo
+71,2026-05-23,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Champú,5,4.75,23.75,Efectivo,Nuevo
+348,2026-05-24,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,2,5.9,11.8,Tarjeta,Recurrente
+203,2026-05-24,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Papel de cocina,6,3.2,19.2,Tarjeta,Nuevo
+344,2026-05-25,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Cerveza sin alcohol,8,1.25,10.0,Efectivo,Recurrente
+55,2026-05-26,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,5,2.1,10.5,Bizum,Recurrente
+238,2026-05-26,Hernani Plaza,Hernani,Gipuzkoa,Limpieza,Detergente,8,5.9,47.2,Bizum,Nuevo
+188,2026-05-27,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,6,1.25,7.5,Tarjeta,Recurrente
+257,2026-05-27,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Detergente,2,5.9,11.8,Bizum,Nuevo
+366,2026-05-28,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,8,8.9,71.2,Efectivo,Nuevo
+146,2026-05-28,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Leche,8,1.35,10.8,Bizum,Nuevo
+158,2026-05-28,Kosta Market,Zarautz,Gipuzkoa,Higiene,Crema hidratante,8,6.8,54.4,Tarjeta,Recurrente
+472,2026-05-30,Hernani Plaza,Hernani,Gipuzkoa,Limpieza,Papel de cocina,8,3.2,25.6,Bizum,Recurrente
+9,2026-05-31,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Cerveza sin alcohol,6,1.25,7.5,Bizum,Recurrente
+46,2026-06-01,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Café,1,4.5,4.5,Bizum,Nuevo
+186,2026-06-01,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pasta,1,1.75,1.75,Bizum,Nuevo
+383,2026-06-01,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,4,5.9,23.6,Tarjeta,Nuevo
+390,2026-06-01,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Cerveza sin alcohol,4,1.25,5.0,Tarjeta,Recurrente
+406,2026-06-02,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Detergente,7,5.9,41.3,Bizum,Nuevo
+165,2026-06-02,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Cerveza sin alcohol,8,1.25,10.0,Tarjeta,Nuevo
+379,2026-06-02,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Cerveza sin alcohol,2,1.25,2.5,Efectivo,Nuevo
+56,2026-06-03,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Leche,3,1.35,4.05,Efectivo,Recurrente
+418,2026-06-03,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pan,8,1.2,9.6,Tarjeta,Nuevo
+417,2026-06-03,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pan,8,1.2,9.6,Tarjeta,Recurrente
+240,2026-06-04,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Efectivo,Nuevo
+199,2026-06-04,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Agua,2,0.8,1.6,Tarjeta,Recurrente
+80,2026-06-04,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Refresco,1,1.8,1.8,Efectivo,Nuevo
+333,2026-06-04,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Aceite de oliva,7,8.9,62.3,Efectivo,Nuevo
+387,2026-06-04,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Papel de cocina,1,3.2,3.2,Efectivo,Nuevo
+130,2026-06-04,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Papel de cocina,3,3.2,9.6,Efectivo,Recurrente
+326,2026-06-05,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pan,6,1.2,7.2,Bizum,Recurrente
+255,2026-06-05,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Cerveza sin alcohol,1,1.25,1.25,Efectivo,Recurrente
+305,2026-06-06,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Cerveza sin alcohol,7,1.25,8.75,Tarjeta,Nuevo
+138,2026-06-06,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Cerveza sin alcohol,1,1.25,1.25,Bizum,Recurrente
+459,2026-06-07,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,5,2.4,12.0,Tarjeta,Recurrente
+427,2026-06-07,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Chocolate,8,2.4,19.2,Efectivo,Recurrente
+84,2026-06-08,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,4,4.75,19.0,Tarjeta,Recurrente
+256,2026-06-08,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,1,2.1,2.1,Tarjeta,Nuevo
+298,2026-06-08,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Agua,8,0.8,6.4,Efectivo,Recurrente
+234,2026-06-09,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Chocolate,2,2.4,4.8,Tarjeta,Recurrente
+31,2026-06-09,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Detergente,6,5.9,35.4,Efectivo,Nuevo
+51,2026-06-10,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pasta,7,1.75,12.25,Tarjeta,Nuevo
+222,2026-06-10,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pasta,6,1.75,10.5,Tarjeta,Nuevo
+336,2026-06-10,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Chocolate,6,2.4,14.4,Efectivo,Recurrente
+254,2026-06-11,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,2,2.1,4.2,Efectivo,Nuevo
+259,2026-06-14,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Zumo,3,2.1,6.3,Tarjeta,Nuevo
+304,2026-06-14,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Leche,6,1.35,8.1,Bizum,Nuevo
+426,2026-06-14,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Agua,8,0.8,6.4,Bizum,Nuevo
+27,2026-06-15,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Café,2,4.5,9.0,Efectivo,Nuevo
+462,2026-06-16,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Café,5,4.5,22.5,Efectivo,Nuevo
+473,2026-06-16,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pasta,7,1.75,12.25,Efectivo,Recurrente
+15,2026-06-16,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,1,8.9,8.9,Efectivo,Nuevo
+178,2026-06-16,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pasta,6,1.75,10.5,Efectivo,Nuevo
+104,2026-06-17,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,6,2.1,12.6,Efectivo,Nuevo
+198,2026-06-17,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Aceite de oliva,2,8.9,17.8,Bizum,Nuevo
+241,2026-06-17,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Café,8,4.5,36.0,Bizum,Nuevo
+267,2026-06-18,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Detergente,2,5.9,11.8,Bizum,Nuevo
+174,2026-06-18,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Pasta de dientes,7,3.5,24.5,Efectivo,Nuevo
+225,2026-06-18,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Leche,7,1.35,9.45,Efectivo,Nuevo
+373,2026-06-19,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Zumo,2,2.1,4.2,Bizum,Recurrente
+72,2026-06-19,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Leche,5,1.35,6.75,Tarjeta,Nuevo
+294,2026-06-20,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Café,6,4.5,27.0,Bizum,Nuevo
+469,2026-06-20,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Agua,6,0.8,4.8,Efectivo,Nuevo
+94,2026-06-21,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,2,6.8,13.6,Tarjeta,Recurrente
+271,2026-06-22,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pan,7,1.2,8.4,Tarjeta,Recurrente
+263,2026-06-23,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Cerveza sin alcohol,1,1.25,1.25,Bizum,Nuevo
+173,2026-06-23,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Papel de cocina,7,3.2,22.4,Bizum,Recurrente
+6,2026-06-24,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Pan,4,1.2,4.8,Efectivo,Recurrente
+327,2026-06-27,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Crema hidratante,5,6.8,34.0,Tarjeta,Nuevo
+152,2026-06-28,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,6,2.4,14.4,Bizum,Recurrente
+367,2026-06-28,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Crema hidratante,5,6.8,34.0,Efectivo,Recurrente
+306,2026-06-29,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Café,6,4.5,27.0,Bizum,Nuevo
+228,2026-06-29,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Chocolate,2,2.4,4.8,Efectivo,Recurrente
+126,2026-06-30,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Zumo,5,2.1,10.5,Efectivo,Nuevo
+364,2026-07-01,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,5,4.75,23.75,Bizum,Nuevo
+293,2026-07-02,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Chocolate,4,2.4,9.6,Bizum,Recurrente
+211,2026-07-03,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,6,1.25,7.5,Tarjeta,Recurrente
+205,2026-07-03,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Agua,5,0.8,4.0,Tarjeta,Recurrente
+310,2026-07-05,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Cerveza sin alcohol,1,1.25,1.25,Bizum,Recurrente
+347,2026-07-05,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pasta,2,1.75,3.5,Efectivo,Nuevo
+247,2026-07-05,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Agua,2,0.8,1.6,Tarjeta,Nuevo
+76,2026-07-06,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Leche,6,1.35,8.1,Bizum,Nuevo
+308,2026-07-06,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Tarjeta,Recurrente
+262,2026-07-06,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,5,6.8,34.0,Efectivo,Nuevo
+312,2026-07-07,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,5,2.4,12.0,Tarjeta,Recurrente
+195,2026-07-07,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Champú,7,4.75,33.25,Tarjeta,Nuevo
+321,2026-07-08,Kosta Market,Zarautz,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Bizum,Recurrente
+302,2026-07-08,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pasta,2,1.75,3.5,Bizum,Nuevo
+63,2026-07-09,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,3,1.8,5.4,Efectivo,Recurrente
+337,2026-07-09,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,2,1.8,3.6,Efectivo,Recurrente
+197,2026-07-10,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Detergente,4,5.9,23.6,Efectivo,Recurrente
+282,2026-07-11,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Café,6,4.5,27.0,Tarjeta,Nuevo
+403,2026-07-11,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,7,2.1,14.7,Efectivo,Recurrente
+233,2026-07-12,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,6,2.1,12.6,Tarjeta,Nuevo
+422,2026-07-13,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Cerveza sin alcohol,1,1.25,1.25,Tarjeta,Recurrente
+478,2026-07-13,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Zumo,8,2.1,16.8,Bizum,Nuevo
+464,2026-07-14,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pan,5,1.2,6.0,Efectivo,Nuevo
+98,2026-07-14,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Café,6,4.5,27.0,Efectivo,Nuevo
+368,2026-07-14,Kosta Market,Zarautz,Gipuzkoa,Higiene,Pasta de dientes,6,3.5,21.0,Tarjeta,Nuevo
+456,2026-07-14,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Champú,5,4.75,23.75,Tarjeta,Recurrente
+119,2026-07-14,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Café,8,4.5,36.0,Efectivo,Recurrente
+276,2026-07-15,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,7,1.8,12.6,Tarjeta,Recurrente
+163,2026-07-16,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Crema hidratante,3,6.8,20.4,Tarjeta,Nuevo
+452,2026-07-16,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pan,2,1.2,2.4,Bizum,Nuevo
+185,2026-07-16,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Leche,4,1.35,5.4,Efectivo,Nuevo
+169,2026-07-17,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Efectivo,Recurrente
+496,2026-07-18,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Agua,2,0.8,1.6,Efectivo,Nuevo
+458,2026-07-19,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Chocolate,2,2.4,4.8,Tarjeta,Recurrente
+266,2026-07-20,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,2,1.25,2.5,Efectivo,Nuevo
+483,2026-07-20,Kosta Market,Zarautz,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Efectivo,Recurrente
+102,2026-07-21,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Cerveza sin alcohol,1,1.25,1.25,Tarjeta,Nuevo
+405,2026-07-21,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pan,4,1.2,4.8,Tarjeta,Recurrente
+349,2026-07-21,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Champú,6,4.75,28.5,Bizum,Nuevo
+17,2026-07-22,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Zumo,3,2.1,6.3,Efectivo,Recurrente
+281,2026-07-22,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Chocolate,4,2.4,9.6,Efectivo,Recurrente
+399,2026-07-22,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Pasta de dientes,1,3.5,3.5,Bizum,Recurrente
+111,2026-07-23,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,2,8.9,17.8,Bizum,Recurrente
+442,2026-07-23,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Chocolate,7,2.4,16.8,Efectivo,Recurrente
+454,2026-07-23,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Café,5,4.5,22.5,Efectivo,Nuevo
+19,2026-07-24,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Aceite de oliva,3,8.9,26.7,Bizum,Nuevo
+481,2026-07-24,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Champú,7,4.75,33.25,Tarjeta,Recurrente
+411,2026-07-25,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Aceite de oliva,4,8.9,35.6,Tarjeta,Recurrente
+248,2026-07-25,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Leche,7,1.35,9.45,Efectivo,Nuevo
+147,2026-07-26,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Refresco,8,1.8,14.4,Efectivo,Recurrente
+346,2026-07-26,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Café,7,4.5,31.5,Tarjeta,Recurrente
+101,2026-07-27,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pan,8,1.2,9.6,Tarjeta,Recurrente
+245,2026-07-27,Hernani Plaza,Hernani,Gipuzkoa,Limpieza,Detergente,7,5.9,41.3,Efectivo,Recurrente
+246,2026-07-27,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Chocolate,3,2.4,7.2,Bizum,Nuevo
+122,2026-07-28,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Refresco,4,1.8,7.2,Bizum,Nuevo
+160,2026-07-28,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,2,8.9,17.8,Efectivo,Recurrente
+402,2026-07-29,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,3,4.75,14.25,Bizum,Nuevo
+172,2026-07-29,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pan,2,1.2,2.4,Efectivo,Nuevo
+476,2026-07-29,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Zumo,3,2.1,6.3,Bizum,Nuevo
+141,2026-07-29,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Papel de cocina,8,3.2,25.6,Efectivo,Recurrente
+323,2026-07-29,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Leche,3,1.35,4.05,Efectivo,Recurrente
+78,2026-07-29,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Agua,5,0.8,4.0,Bizum,Recurrente
+38,2026-07-30,Kosta Market,Zarautz,Gipuzkoa,Higiene,Pasta de dientes,1,3.5,3.5,Bizum,Recurrente
+361,2026-07-30,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Champú,8,4.75,38.0,Bizum,Recurrente
+156,2026-07-31,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,6,8.9,53.4,Bizum,Nuevo
+429,2026-07-31,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Cerveza sin alcohol,4,1.25,5.0,Bizum,Recurrente
+414,2026-07-31,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Pasta,1,1.75,1.75,Bizum,Recurrente
+162,2026-08-01,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,4,2.1,8.4,Efectivo,Recurrente
+97,2026-08-01,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,7,8.9,62.3,Efectivo,Recurrente
+164,2026-08-01,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,5,6.8,34.0,Tarjeta,Nuevo
+332,2026-08-02,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,1,5.9,5.9,Efectivo,Nuevo
+356,2026-08-02,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pasta,1,1.75,1.75,Bizum,Nuevo
+419,2026-08-02,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,3,1.8,5.4,Efectivo,Recurrente
+99,2026-08-03,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Papel de cocina,4,3.2,12.8,Efectivo,Recurrente
+500,2026-08-03,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pan,7,1.2,8.4,Efectivo,Recurrente
+466,2026-08-04,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Zumo,2,2.1,4.2,Efectivo,Nuevo
+21,2026-08-05,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Leche,7,1.35,9.45,Efectivo,Nuevo
+184,2026-08-06,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pasta,8,1.75,14.0,Efectivo,Recurrente
+236,2026-08-06,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Cerveza sin alcohol,8,1.25,10.0,Efectivo,Nuevo
+144,2026-08-06,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Refresco,4,1.8,7.2,Bizum,Recurrente
+216,2026-08-07,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Leche,8,1.35,10.8,Bizum,Nuevo
+384,2026-08-07,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Chocolate,2,2.4,4.8,Efectivo,Recurrente
+415,2026-08-07,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Zumo,1,2.1,2.1,Efectivo,Nuevo
+229,2026-08-08,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Champú,1,4.75,4.75,Bizum,Nuevo
+470,2026-08-09,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Cerveza sin alcohol,3,1.25,3.75,Efectivo,Nuevo
+446,2026-08-11,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,6,4.75,28.5,Bizum,Recurrente
+151,2026-08-12,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Pasta de dientes,8,3.5,28.0,Tarjeta,Nuevo
+74,2026-08-12,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,2,1.8,3.6,Efectivo,Recurrente
+309,2026-08-13,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pan,2,1.2,2.4,Tarjeta,Nuevo
+301,2026-08-14,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,3,2.4,7.2,Efectivo,Nuevo
+133,2026-08-14,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Pan,1,1.2,1.2,Efectivo,Nuevo
+360,2026-08-14,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Agua,3,0.8,2.4,Efectivo,Recurrente
+82,2026-08-15,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,8,8.9,71.2,Bizum,Recurrente
+90,2026-08-15,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Pasta de dientes,7,3.5,24.5,Bizum,Nuevo
+157,2026-08-15,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,5,8.9,44.5,Bizum,Recurrente
+177,2026-08-16,Benta Berri Alimentación,Donostia,Gipuzkoa,Limpieza,Papel de cocina,5,3.2,16.0,Tarjeta,Recurrente
+204,2026-08-16,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Pasta de dientes,6,3.5,21.0,Tarjeta,Nuevo
+410,2026-08-17,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,1,5.9,5.9,Tarjeta,Recurrente
+274,2026-08-18,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Refresco,4,1.8,7.2,Efectivo,Nuevo
+324,2026-08-19,Kosta Market,Zarautz,Gipuzkoa,Limpieza,Detergente,6,5.9,35.4,Tarjeta,Recurrente
+279,2026-08-19,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pan,7,1.2,8.4,Tarjeta,Recurrente
+280,2026-08-19,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,1,6.8,6.8,Efectivo,Recurrente
+311,2026-08-19,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Chocolate,8,2.4,19.2,Tarjeta,Recurrente
+214,2026-08-20,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Aceite de oliva,1,8.9,8.9,Bizum,Nuevo
+487,2026-08-20,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Leche,5,1.35,6.75,Tarjeta,Recurrente
+380,2026-08-21,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Refresco,8,1.8,14.4,Tarjeta,Nuevo
+221,2026-08-21,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Agua,2,0.8,1.6,Efectivo,Nuevo
+219,2026-08-21,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Cerveza sin alcohol,7,1.25,8.75,Tarjeta,Recurrente
+206,2026-08-21,Supermercado Easo,Donostia,Gipuzkoa,Limpieza,Detergente,4,5.9,23.6,Bizum,Recurrente
+45,2026-08-21,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Agua,8,0.8,6.4,Tarjeta,Recurrente
+215,2026-08-23,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Café,1,4.5,4.5,Efectivo,Nuevo
+382,2026-08-23,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pasta,3,1.75,5.25,Tarjeta,Nuevo
+497,2026-08-23,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pan,5,1.2,6.0,Bizum,Recurrente
+468,2026-08-23,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pan,5,1.2,6.0,Tarjeta,Nuevo
+52,2026-08-23,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,2,6.8,13.6,Tarjeta,Nuevo
+244,2026-08-24,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Pasta de dientes,6,3.5,21.0,Bizum,Nuevo
+182,2026-08-24,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Detergente,1,5.9,5.9,Efectivo,Nuevo
+490,2026-08-25,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,7,4.75,33.25,Bizum,Recurrente
+398,2026-08-25,Hernani Plaza,Hernani,Gipuzkoa,Higiene,Champú,5,4.75,23.75,Bizum,Recurrente
+475,2026-08-25,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,8,8.9,71.2,Efectivo,Recurrente
+258,2026-08-25,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,1,1.8,1.8,Efectivo,Recurrente
+253,2026-08-26,Oiartzun Centro,Oiartzun,Gipuzkoa,Higiene,Champú,8,4.75,38.0,Bizum,Nuevo
+109,2026-08-27,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Pasta,6,1.75,10.5,Tarjeta,Recurrente
+117,2026-08-27,Kosta Market,Zarautz,Gipuzkoa,Higiene,Pasta de dientes,5,3.5,17.5,Efectivo,Recurrente
+338,2026-08-27,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pasta,8,1.75,14.0,Tarjeta,Recurrente
+69,2026-08-29,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,8,8.9,71.2,Efectivo,Nuevo
+284,2026-08-29,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Cerveza sin alcohol,1,1.25,1.25,Tarjeta,Recurrente
+428,2026-08-29,Urdaneta Market,Tolosa,Gipuzkoa,Higiene,Crema hidratante,4,6.8,27.2,Efectivo,Nuevo
+36,2026-08-31,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Champú,8,4.75,38.0,Efectivo,Recurrente
+125,2026-08-31,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,6,1.8,10.8,Efectivo,Nuevo
+355,2026-09-01,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Chocolate,6,2.4,14.4,Bizum,Recurrente
+391,2026-09-02,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Zumo,6,2.1,12.6,Efectivo,Nuevo
+375,2026-09-02,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Aceite de oliva,5,8.9,44.5,Efectivo,Nuevo
+358,2026-09-03,Benta Berri Alimentación,Donostia,Gipuzkoa,Bebidas,Refresco,7,1.8,12.6,Tarjeta,Recurrente
+335,2026-09-05,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Aceite de oliva,6,8.9,53.4,Bizum,Recurrente
+484,2026-09-05,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pasta,7,1.75,12.25,Tarjeta,Recurrente
+166,2026-09-05,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Chocolate,7,2.4,16.8,Efectivo,Nuevo
+120,2026-09-07,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Chocolate,5,2.4,12.0,Efectivo,Nuevo
+438,2026-09-07,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Café,7,4.5,31.5,Tarjeta,Recurrente
+434,2026-09-08,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Crema hidratante,1,6.8,6.8,Bizum,Recurrente
+115,2026-09-08,Supermercado Easo,Donostia,Gipuzkoa,Bebidas,Agua,6,0.8,4.8,Bizum,Nuevo
+396,2026-09-08,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Crema hidratante,8,6.8,54.4,Tarjeta,Nuevo
+123,2026-09-09,Kosta Market,Zarautz,Gipuzkoa,Higiene,Champú,1,4.75,4.75,Tarjeta,Nuevo
+433,2026-09-09,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pan,6,1.2,7.2,Tarjeta,Recurrente
+465,2026-09-10,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Leche,3,1.35,4.05,Efectivo,Nuevo
+378,2026-09-11,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Crema hidratante,5,6.8,34.0,Tarjeta,Recurrente
+181,2026-09-12,Oiartzun Centro,Oiartzun,Gipuzkoa,Alimentación,Pan,4,1.2,4.8,Efectivo,Nuevo
+342,2026-09-12,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Leche,7,1.35,9.45,Bizum,Nuevo
+288,2026-09-13,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,1,1.8,1.8,Bizum,Recurrente
+432,2026-09-13,Oiartzun Centro,Oiartzun,Gipuzkoa,Limpieza,Detergente,6,5.9,35.4,Efectivo,Nuevo
+412,2026-09-15,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Aceite de oliva,6,8.9,53.4,Bizum,Nuevo
+59,2026-09-16,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Pasta,1,1.75,1.75,Tarjeta,Nuevo
+437,2026-09-16,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,1,2.4,2.4,Bizum,Nuevo
+227,2026-09-17,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pan,8,1.2,9.6,Tarjeta,Recurrente
+479,2026-09-17,Hernani Plaza,Hernani,Gipuzkoa,Bebidas,Agua,1,0.8,0.8,Efectivo,Recurrente
+354,2026-09-17,Oiartzun Centro,Oiartzun,Gipuzkoa,Bebidas,Refresco,8,1.8,14.4,Bizum,Nuevo
+25,2026-09-17,Supermercado Easo,Donostia,Gipuzkoa,Higiene,Pasta de dientes,5,3.5,17.5,Bizum,Recurrente
+268,2026-09-18,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Café,6,4.5,27.0,Efectivo,Recurrente
+250,2026-09-19,Benta Berri Alimentación,Donostia,Gipuzkoa,Higiene,Crema hidratante,6,6.8,40.8,Efectivo,Recurrente
+35,2026-09-21,Benta Berri Alimentación,Donostia,Gipuzkoa,Alimentación,Pasta,8,1.75,14.0,Tarjeta,Recurrente
+278,2026-09-22,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Pasta,2,1.75,3.5,Tarjeta,Nuevo
+486,2026-09-24,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,8,2.4,19.2,Tarjeta,Nuevo
+137,2026-09-25,Kosta Market,Zarautz,Gipuzkoa,Bebidas,Zumo,8,2.1,16.8,Efectivo,Nuevo
+291,2026-09-26,Urdaneta Market,Tolosa,Gipuzkoa,Alimentación,Leche,1,1.35,1.35,Efectivo,Nuevo
+416,2026-09-26,Urdaneta Market,Tolosa,Gipuzkoa,Limpieza,Papel de cocina,7,3.2,22.4,Efectivo,Recurrente
+363,2026-09-27,Kosta Market,Zarautz,Gipuzkoa,Alimentación,Chocolate,3,2.4,7.2,Efectivo,Nuevo
+393,2026-09-28,Hernani Plaza,Hernani,Gipuzkoa,Alimentación,Chocolate,2,2.4,4.8,Bizum,Recurrente
+447,2026-09-28,Supermercado Easo,Donostia,Gipuzkoa,Alimentación,Aceite de oliva,4,8.9,35.6,Bizum,Nuevo
+22,2026-09-28,Urdaneta Market,Tolosa,Gipuzkoa,Bebidas,Refresco,1,1.8,1.8,Bizum,Recurrente
