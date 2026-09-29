@@ -1,11 +1,48 @@
 # Git
 
+
+
 Git es un sistema de **control de versiones distribuido** y de código abierto que se utiliza para rastrear los cambios en el código fuente de los proyectos de software.
 
 https://git-scm.com/cheat-sheet
 
 https://visualizegit.com/
 https://git-web-engine.vercel.app/
+
+## Demonstración
+
+Teniendo un archivo main.tf:
+
+```
+terraform {
+  required_providers {
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "~> 3.0"
+    }
+  }
+}
+
+provider "docker" {}
+
+resource "docker_image" "nginx" {
+  name = "nginx:alpine"
+}
+
+resource "docker_container" "webserver" {
+  name  = "webserver"
+  image = docker_image.nginx.image_id
+
+  ports {
+    internal = 80
+    external = 8080
+  }
+}
+```
+
+**Terraform** permite *describir* la infraestructura como código (IaC), comprobar los cambios antes de aplicarlos y crear, modificar o eliminar esa infraestructura automáticamente.
+
+**Infrastructure as Code (IaC)** es una forma de gestionar y configurar la infraestructura informática mediante archivos de código, en lugar de realizar todos los cambios manualmente.
 
 
 ## Iniciar un repositorio
