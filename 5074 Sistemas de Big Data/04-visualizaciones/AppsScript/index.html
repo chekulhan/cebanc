@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <base target="_top">
+
+  <script src="https://www.gstatic.com/charts/loader.js"></script>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f6f8;
+      color: #202124;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px;
+    }
+
+    h1 {
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 25px;
+    }
+
+    .controls {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    select {
+      padding: 8px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+
+    .kpis {
+      display: grid;
+      grid-template-columns:
+        repeat(4, 1fr);
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .kpi {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 5px solid #4285f4;
+    }
+
+    .kpi-title {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    .kpi-value {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .charts {
+      display: grid;
+      grid-template-columns:
+        repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .chart-card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      min-height: 400px;
+    }
+
+    .chart-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .chart {
+      width: 100%;
+      height: 330px;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 50px;
+      font-size: 20px;
+    }
+
+    @media (max-width: 800px) {
+
+      .kpis {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .charts {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Dashboard de ventas</h1>
+
+  <div class="subtitle">
+    Datos procedentes de Google Sheets
+  </div>
+
+
+  <div class="controls">
+
+    <label for="city">
+      <strong>Ciudad:</strong>
+    </label>
+
+    <select id="city">
+      <option value="ALL">Todas</option>
+    </select>
+
+  </div>
+
+
+  <div id="loading" class="loading">
+    Cargando datos...
+  </div>
+
+
+  <div id="dashboard" style="display:none">
+
+
+    <!-- KPI CARDS -->
+
+    <div class="kpis">
+
+      <div class="kpi">
+
+        <div class="kpi-title">
+          Ventas totales
+        </div>
+
+        <div id="totalSales"
+             class="kpi-value">
+          €0
+        </div>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <div class="kpi-title">
+          Pedidos
+        </div>
+
+        <div id="totalOrders"
+             class="kpi-value">
+          0
+        </div>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <div class="kpi-title">
+          Unidades
+        </div>
+
+        <div id="totalUnits"
+             class="kpi-value">
+          0
+        </div>
+
+      </div>
+
+
+      <div class="kpi">
+
+        <div class="kpi-title">
+          Ticket medio
+        </div>
+
+        <div id="averageOrder"
+             class="kpi-value">
+          €0
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- CHARTS -->
+
+    <div class="charts">
+
+
+      <div class="chart-card">
+
+        <div class="chart-title">
+          Ventas por mes
+        </div>
+
+        <div id="monthlyChart"
+             class="chart">
+        </div>
+
+      </div>
+
+
+      <div class="chart-card">
+
+        <div class="chart-title">
+          Ventas por ciudad
+        </div>
+
+        <div id="cityChart"
+             class="chart">
+        </div>
+
+      </div>
+
+
+      <div class="chart-card">
+
+        <div class="chart-title">
+          Ventas por canal
+        </div>
+
+        <div id="channelChart"
+             class="chart">
+        </div>
+
+      </div>
+
+
+      <div class="chart-card">
+
+        <div class="chart-title">
+          Ventas por producto
+        </div>
+
+        <div id="productChart"
+             class="chart">
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  google.charts.load(
+    'current',
+    {
+      packages: ['corechart']
+    }
+  );
+
+
+  let salesData = [];
+
+
+  /*
+   * Start the application
+   */
+
+  google.charts.setOnLoadCallback(loadData);
+
+
+  function loadData() {
+
+    google.script.run
+
+      .withSuccessHandler(function(data) {
+
+        salesData = data;
+
+        populateCityFilter();
+
+        document
+          .getElementById('loading')
+          .style.display = 'none';
+
+        document
+          .getElementById('dashboard')
+          .style.display = 'block';
+
+        updateDashboard();
+
+      })
+
+      .withFailureHandler(function(error) {
+
+        document.getElementById('loading')
+          .innerHTML =
+          '<strong>Error:</strong><br>' +
+          error.message;
+
+      })
+
+      .getSalesData();
+
+  }
+
+
+  /*
+   * CITY FILTER
+   */
+
+  function populateCityFilter() {
+
+    const cities = [
+      ...new Set(
+        salesData
+          .map(row => row.city)
+          .filter(city => city)
+      )
+    ];
+
+    cities.sort();
+
+    const select =
+      document.getElementById('city');
+
+    cities.forEach(city => {
+
+      const option =
+        document.createElement('option');
+
+      option.value = city;
+      option.textContent = city;
+
+      select.appendChild(option);
+
+    });
+
+    select.addEventListener(
+      'change',
+      updateDashboard
+    );
+
+  }
+
+
+  /*
+   * FILTER DATA
+   */
+
+  function getFilteredData() {
+
+    const city =
+      document.getElementById('city').value;
+
+    if (city === 'ALL') {
+      return salesData;
+    }
+
+    return salesData.filter(
+      row => row.city === city
+    );
+
+  }
+
+
+  /*
+   * UPDATE EVERYTHING
+   */
+
+  function updateDashboard() {
+
+    const data = getFilteredData();
+
+    updateKPIs(data);
+
+    drawMonthlyChart(data);
+
+    drawCityChart(data);
+
+    drawChannelChart(data);
+
+    drawProductChart(data);
+
+  }
+
+
+  /*
+   * KPI CALCULATIONS
+   */
+
+  function updateKPIs(data) {
+
+    const totalSales =
+      data.reduce(
+        (sum, row) =>
+          sum + row.amount_eur,
+        0
+      );
+
+
+    const totalOrders =
+      new Set(
+        data.map(row => row.order_id)
+      ).size;
+
+
+    const totalUnits =
+      data.reduce(
+        (sum, row) =>
+          sum + row.quantity,
+        0
+      );
+
+
+    const averageOrder =
+      totalOrders === 0
+        ? 0
+        : totalSales / totalOrders;
+
+
+    document.getElementById(
+      'totalSales'
+    ).textContent =
+      formatCurrency(totalSales);
+
+
+    document.getElementById(
+      'totalOrders'
+    ).textContent =
+      totalOrders.toLocaleString('es-ES');
+
+
+    document.getElementById(
+      'totalUnits'
+    ).textContent =
+      totalUnits.toLocaleString('es-ES');
+
+
+    document.getElementById(
+      'averageOrder'
+    ).textContent =
+      formatCurrency(averageOrder);
+
+  }
+
+
+  /*
+   * MONTHLY CHART
+   */
+
+  function drawMonthlyChart(data) {
+
+    const totals = {};
+
+
+    data.forEach(row => {
+
+      const month =
+        row.order_date.substring(0, 7);
+
+      if (!totals[month]) {
+        totals[month] = 0;
+      }
+
+      totals[month] += row.amount_eur;
+
+    });
+
+
+    const table = [
+      ['Mes', 'Ventas']
+    ];
+
+
+    Object.keys(totals)
+      .sort()
+      .forEach(month => {
+
+        table.push([
+          month,
+          totals[month]
+        ]);
+
+      });
+
+
+    const chart =
+      new google.visualization.LineChart(
+        document.getElementById(
+          'monthlyChart'
+        )
+      );
+
+
+    chart.draw(
+      google.visualization.arrayToDataTable(
+        table
+      ),
+      {
+        legend: {
+          position: 'none'
+        },
+        hAxis: {
+          title: 'Mes'
+        },
+        vAxis: {
+          title: 'Ventas (€)'
+        },
+        chartArea: {
+          width: '80%',
+          height: '70%'
+        }
+      }
+    );
+
+  }
+
+
+  /*
+   * CITY CHART
+   */
+
+  function drawCityChart(data) {
+
+    const totals = {};
+
+
+    data.forEach(row => {
+
+      if (!totals[row.city]) {
+        totals[row.city] = 0;
+      }
+
+      totals[row.city] += row.amount_eur;
+
+    });
+
+
+    const table = [
+      ['Ciudad', 'Ventas']
+    ];
+
+
+    Object.entries(totals)
+      .sort((a, b) => b[1] - a[1])
+      .forEach(([city, value]) => {
+
+        table.push([
+          city,
+          value
+        ]);
+
+      });
+
+
+    const chart =
+      new google.visualization.BarChart(
+        document.getElementById(
+          'cityChart'
+        )
+      );
+
+
+    chart.draw(
+      google.visualization.arrayToDataTable(
+        table
+      ),
+      {
+        legend: {
+          position: 'none'
+        },
+        hAxis: {
+          title: 'Ventas (€)'
+        },
+        chartArea: {
+          width: '70%',
+          height: '75%'
+        }
+      }
+    );
+
+  }
+
+
+  /*
+   * CHANNEL CHART
+   */
+
+  function drawChannelChart(data) {
+
+    const totals = {};
+
+
+    data.forEach(row => {
+
+      if (!totals[row.channel]) {
+        totals[row.channel] = 0;
+      }
+
+      totals[row.channel] += row.amount_eur;
+
+    });
+
+
+    const table = [
+      ['Canal', 'Ventas']
+    ];
+
+
+    Object.entries(totals)
+      .sort((a, b) => b[1] - a[1])
+      .forEach(([channel, value]) => {
+
+        table.push([
+          channel,
+          value
+        ]);
+
+      });
+
+
+    const chart =
+      new google.visualization.PieChart(
+        document.getElementById(
+          'channelChart'
+        )
+      );
+
+
+    chart.draw(
+      google.visualization.arrayToDataTable(
+        table
+      ),
+      {
+        pieHole: 0.4,
+        chartArea: {
+          width: '90%',
+          height: '80%'
+        }
+      }
+    );
+
+  }
+
+
+  /*
+   * PRODUCT CHART
+   */
+
+  function drawProductChart(data) {
+
+    const totals = {};
+
+
+    data.forEach(row => {
+
+      if (!totals[row.product]) {
+        totals[row.product] = 0;
+      }
+
+      totals[row.product] += row.amount_eur;
+
+    });
+
+
+    const table = [
+      ['Producto', 'Ventas']
+    ];
+
+
+    Object.entries(totals)
+      .sort((a, b) => b[1] - a[1])
+      .forEach(([product, value]) => {
+
+        table.push([
+          product,
+          value
+        ]);
+
+      });
+
+
+    const chart =
+      new google.visualization.BarChart(
+        document.getElementById(
+          'productChart'
+        )
+      );
+
+
+    chart.draw(
+      google.visualization.arrayToDataTable(
+        table
+      ),
+      {
+        legend: {
+          position: 'none'
+        },
+        hAxis: {
+          title: 'Ventas (€)'
+        },
+        chartArea: {
+          width: '70%',
+          height: '75%'
+        }
+      }
+    );
+
+  }
+
+
+  /*
+   * CURRENCY FORMAT
+   */
+
+  function formatCurrency(value) {
+
+    return new Intl.NumberFormat(
+      'es-ES',
+      {
+        style: 'currency',
+        currency: 'EUR',
+        maximumFractionDigits: 0
+      }
+    ).format(value);
+
+  }
+
+</script>
+
+</body>
+</html>
