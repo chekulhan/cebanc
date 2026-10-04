@@ -1,0 +1,52 @@
+import { useState } from "react";
+import { Button, ButtonGroup, Typography, Box } from "@mui/material";
+
+const NPS = () => {
+  const [score, setScore] = useState(null); // State to store NPS score
+
+  const handleClick = (value) => {
+    setScore(value); // Set the score when a button is clicked
+  };
+
+  const handleSubmit = () => {
+    if (score === null) {
+      alert("Por favor, selecciona una puntuación.");
+    } else {
+      console.log("Puntuación NPS enviada:", score);
+    }
+  };
+
+  return (
+    <Box>
+      <Typography gutterBottom variant="h6">
+        ¿Qué tan probable es que nos recomiendes a un amigo o colega?
+      </Typography>
+
+      <ButtonGroup variant="outlined" fullWidth>
+        {[...Array(11).keys()].map((value) => (
+          <Button
+            key={value}
+            onClick={() => handleClick(value)}
+            color={score === value ? "primary" : "default"}
+          >
+            {value}
+          </Button>
+        ))}
+      </ButtonGroup>
+
+      <Box mt={2}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleSubmit}
+          disabled={score === null}
+        >
+          Enviar Puntuación
+        </Button>
+      </Box>
+    </Box>
+  );
+};
+
+
+export default NPS;
