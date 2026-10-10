@@ -244,3 +244,34 @@ Se usa mucho junto con Schema.org para describir tipos de contenido: recetas, pr
 ```
 
 Ejemplos y más información: https://developers.google.com/search/docs/appearance/structured-data/sd-policies
+
+
+# Rem y px
+
+Fijate en los settings de Chrome
+
+chrome://settings/appearance
+
+![Default font](../images/default.fontsize.png)
+
+Diferencia entre px y rem en CSS
+- px (píxeles): unidad de medida fija. Por ejemplo, font-size: 16px establece un tamaño de fuente de 16 píxeles CSS.
+- rem (root em): unidad relativa al tamaño de fuente del elemento raíz (html). Por defecto, suele ser 16px en los navegadores.
+
+```css
+html {
+  font-size: 16px;
+}
+
+h1 {
+  font-size: 2rem;  /* 32px */
+}
+
+p {
+  font-size: 0.5rem;  /* 16px */
+}
+
+div {
+  border: 1px solid black;
+}
+```

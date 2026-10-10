@@ -35,3 +35,106 @@
      </div>
 </body>
 </html>
+
+
+<!--
+Aplicar poco a poco los atributos flex al contenedor
+display: flex;
+flex-direction: row-reverse;
+justify-content: center; y space-evenly
+flex-wrap: wrap;   dar width a los boxes para mostrar el efecto e.g 200px y flex-direction: row;
+
+Aplicar a los items:
+Agregar al item: style="flex-grow: 2;" - ocupar 2 veces el espacio de los demás
+-->
+
+
+<img src="../images/flex.actividad.png" alt="Resultado final">
+
+<!-- FLEX ACTIVIDID -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Moda</title>
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            padding: 20px;
+        }
+
+
+        .product img {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+
+        .product button:hover {
+            background-color: #d63e20;
+        }
+    </style>
+</head>
+<body>
+    <!--
+    Usar https://picsum.photos/
+
+    box-shadow: offset-x offset-y blur-radius spread-radius color;
+    
+    offset-x → horizontal shift (positive = right, negative = left)
+
+    offset-y → vertical shift (positive = down, negative = up)
+
+    blur-radius → how blurry the shadow is (larger = softer shadow)
+
+    spread-radius (optional) → how much the shadow grows or shrinks
+
+    color → the color of the shadow
+
+    -->
+
+    <h1 style="text-align:center;">🛍 Tienda de Moda</h1>
+
+    <div class="store"> <!-- flex container -->
+
+        <div>  <!-- flex item -->
+            <img src="https://picsum.photos/200/300" alt="Producto 1">
+            <h3>Zapatos Modernos</h3>
+            <p>Comodidad y estilo.</p>
+            <p class="price">$9.99</p>
+            <button>Agregar al carrito</button>
+        </div>
+
+        
+        <div> <!-- flex item -->
+            <img src="https://picsum.photos/200/300" alt="Producto 2">
+            <h3>Chaqueta de Cuero</h3>
+            <p>Ideal para cualquier ocasión.</p>
+            <p class="price">$89.99</p>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div> <!-- flex item -->
+            <img src="https://picsum.photos/200/300" alt="Producto 3">
+            <h3>Bolso Elegante</h3>
+            <p>Diseño sofisticado y moderno.</p>
+            <p class="price">$39.99</p>
+            <button>Agregar al carrito</button>
+        </div>
+
+        <div> <!-- flex item -->
+            <img src="https://picsum.photos/200/300" alt="Producto 4">
+            <h3>Gafas de Sol</h3>
+            <p>Protección y estilo todo el año.</p>
+            <p class="price">$29.99</p>
+            <button>Agregar al carrito</button>
+        </div>
+    </div>
+
+</body>
+</html>
