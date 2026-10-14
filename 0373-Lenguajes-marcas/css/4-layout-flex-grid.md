@@ -4,7 +4,7 @@ El layout es básicamente la disposición de los elementos en la pantalla. En es
 ## Flex
 [Más Información sobre Flex](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
 
-![Flex](../../x-assets/0373/flex.png)
+![Flex](../images/flex.png)
 
 ## Actividad
 En esta actividad, estarán trabajando en el diseño y distribución de productos en línea para una tienda de moda. El objetivo es crear una página web sencilla, pero efectiva, utilizando CSS Flexbox para distribuir los productos en diferentes filas y columnas.
@@ -24,7 +24,7 @@ Este ejercicio les ayudará a comprender mejor el uso de Flexbox para crear un d
 
 
 
-![Flex Actividad](../../x-assets/0373/flex.actividad.png)
+![Flex Actividad](../images/flex.actividad.png)
 
 ---
 
