@@ -1,6 +1,8 @@
 # Introducción a los Formularios en HTML
 Los formularios en HTML son una de las principales herramientas para interactuar con los usuarios, ya que permiten recopilar información, como nombres, correos electrónicos o comentarios. Se utilizan ampliamente en aplicaciones web para tareas como la autenticación de usuarios, el envío de datos y la retroalimentación. A continuación, explicaremos los conceptos básicos para crear y gestionar formularios en HTML.
 
+
+
 ## 1. Formulario Básico (```<form>```)
 El elemento ```<form>``` es el contenedor principal de todos los elementos de un formulario. Dentro de este contenedor, podemos incluir varios tipos de campos de entrada, como campos de texto, botones, casillas de verificación y más. La etiqueta <form> tiene varios atributos importantes:
 
@@ -17,6 +19,11 @@ El elemento ```<form>``` es el contenedor principal de todos los elementos de un
 **GET**: Los datos del formulario se envían como parámetros en la URL (en el caso de un enlace).
 
 **POST**: Los datos se envían en el cuerpo de la solicitud HTTP, lo que permite enviar una mayor cantidad de información de manera más segura.
+
+Demo de los modelos OSI y TCP/IP
+
+https://vizlearn.app/cs/networks/osi-model
+
 
 ## 2. Elementos del Formulario
 Dentro del ```<form>```, podemos incluir diferentes tipos de entradas, como:
