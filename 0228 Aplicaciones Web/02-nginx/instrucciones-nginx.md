@@ -14,7 +14,7 @@ Una forma sencilla de entender el problema C10k es comparando Apache tradicional
 
 ## Ventajas de Nginx
 
-![Ventajas de Nginx](../images/ventajas.nginx.png)
+![Ventajas de Nginx](images/ventajas.nginx.png)
 
 1. Alto rendimiento
 
@@ -73,8 +73,29 @@ Cuando instalas Nginx en Linux, los directorios más importantes suelen ser:
 /var/log/nginx/            Logs
 ```
 
-![Intro](../images/intro.webservers.png)
+![Intro](images/intro.webservers.png)
 
+
+### Docker
+
+Podriamos haber usando un Dockerfile, y copiar el archivo index.html. Pero vamos a ser más listos y ágiles, y 
+
+Linux / Mac
+```bash
+docker run -d --name nginx-web -p 8080:80 -v "$PWD/website:/usr/share/nginx/html" nginx:latest
+```
+
+Powershell
+
+```powershell
+docker run -d --name nginx-web -p 8080:80 -v "${PWD}/website:/usr/share/nginx/html" nginx:latest
+```
+
+Windows Command
+ 
+```bash
+docker run -d --name nginx-web -p 8080:80 -v "%cd%\website:/usr/share/nginx/html" nginx:latest
+```
 
 ### /etc/nginx/ → Configuración
 
@@ -183,7 +204,7 @@ Ahora, ¿qué ocurre si modifico el archivo index.html en mi PC local?
 
 Ahora, vamos a entrar en el contenedor de Docker de NGINX:
 
-![Docker exec](../images/docker.exec.png)
+![Docker exec](images/docker.exec.png)
 
 Fijáte donde esta ubicado el archivo de HTML. ¿Lo ves tambien en el Dockerfile?
 
@@ -293,7 +314,7 @@ Master configura y controla
 Workers sirven el contenido web
 
 
-![Nginx Workers](../images/nginx1.webp)
+![Nginx Workers](images/nginx1.webp)
 
 
 ```
@@ -338,7 +359,7 @@ y despues, mirar los procesos de nuevo:
 
 docker top adoring_darwin 
 
-![OSI](../images/nginx.reload.png)
+![OSI](images/nginx.reload.png)
 
 
 
@@ -383,7 +404,7 @@ Limitaciones:
 
 ### Balanceo de carga en Capa 7 (L7)
 
-![OSI](../images/osi.webp)
+![OSI](images/osi.webp)
 
 Trabaja sobre protocolos de aplicación como HTTP y HTTPS.
 
@@ -428,7 +449,7 @@ Inconvenientes:
 
 Fijate que los logs estan gestionados por Docker. Asi que hay que usar: docker logs adoring_darwin
 
-![Logs](../images/nginx.logs1.png)
+![Logs](images/nginx.logs1.png)
 
 Modificamos el config para agregar access_log y error_log, para hacer cambios en este web server solo, no en todos.
 
@@ -463,13 +484,13 @@ openssl passwd Secret123
 
 El resultado lo guardamos en /etc/nginx/passwd archivo.
 
-![Auth](../images/nginx.auth1.png)
+![Auth](images/nginx.auth1.png)
 
 Ahora, vamos a modificar el default.conf archivo, especificando la ubicación del archivo passed.
 
 /etc/nginx/conf.d/default.conf
 
-![Auth](../images/nginx.auth4.png)
+![Auth](images/nginx.auth4.png)
 
 nginx -t
 docker exec adoring_darwin nginx -s reload
@@ -478,8 +499,8 @@ docker exec adoring_darwin nginx -s reload
 
 echo "YWRtaW46U2VjcmV0MTIz" | base64 -d
 
-![Auth](../images/nginx.auth2.png)
-![Auth](../images/nginx.auth3.png)
+![Auth](images/nginx.auth2.png)
+![Auth](images/nginx.auth3.png)
 
 
 
@@ -496,7 +517,7 @@ El objetivo es configurar Nginx para que:
 - Nginx valide las credenciales antes de permitir el acceso al contenido protegido.
 
 
-![Auth](../images/nginx.auth5.png)
+![Auth](images/nginx.auth5.png)
 
 
 Comprobación final
@@ -561,10 +582,10 @@ Browser checks:
    - Is it signed by a trusted Certificate Authority? NO => FAIL
 (Certificate issuer: localhost, Certificate owner: localhost)
 
-![SSL](../images/nginx.ssl.png)
+![SSL](images/nginx.ssl.png)
 
 
-![SSL](../images/nginx.ssl.overview.png)
+![SSL](images/nginx.ssl.overview.png)
 
 
 ```
