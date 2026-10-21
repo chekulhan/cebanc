@@ -178,20 +178,12 @@ Ejemplo de uso:
 ## Actividad
 **Contexto:**
 
-Imagina que eres un desarrollador web en un centro de formación profesional. El sistema de gestión de estudiantes necesita un formulario para que los profesores o administradores puedan registrar nuevos estudiantes en el sistema. Este formulario debe incluir varios campos que permitan recopilar información relevante sobre los estudiantes, como su nombre, edad, género, carrera, y otros detalles personales.
+ImImagina que trabajas como desarrollador web en una empresa que ofrece soporte informático a sus empleados. Cuando alguien tiene un problema con su ordenador, la conexión a Internet, una impresora o una aplicación, debe enviar una solicitud para que el equipo técnico pueda atenderlo.
 
-**Objetivo:**
+Actualmente, las solicitudes se realizan de manera informal y faltan datos para identificar y resolver los problemas. La empresa necesita un formulario web que permita recoger toda la información necesaria.
 
-Tu tarea será desarrollar un formulario en HTML que permita ingresar los siguientes datos de un estudiante:
+![Form Actividad](../images/form.activity.png)
 
-- Nombre completo (input text)
-- Edad (input number)
-F- echa de nacimiento (input date)
-- Género (radio buttons)
-- Carrera (select)
-- Dirección (textarea)
-- Aceptación de términos (checkbox)
-- Enviar (button o submit)
 
 ## Referencias para la actividad de clase
 The [] syntax in CSS is used for attribute selectors, which allow you to target elements based on their attributes and attribute values. This is particularly useful when you want to apply styles to elements that have a specific attribute, or an attribute with a certain value.
