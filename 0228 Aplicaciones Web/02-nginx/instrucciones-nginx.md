@@ -78,7 +78,7 @@ Cuando instalas Nginx en Linux, los directorios más importantes suelen ser:
 
 ### Docker
 
-Podriamos haber usando un Dockerfile, y copiar el archivo index.html. Pero vamos a ser más listos y ágiles, y 
+Podriamos haber usando un Dockerfile, y copiar el archivo index.html. Pero vamos a ser más listos y ágiles, y montar un volumen con la carpeta /website. **CONFIRMAR** que estas en la carpeta website.
 
 Linux / Mac
 ```bash
@@ -96,6 +96,11 @@ Windows Command
 ```bash
 docker run -d --name nginx-web -p 8080:80 -v "%cd%\website:/usr/share/nginx/html" nginx:latest
 ```
+
+**Paso 1:** Mirar por las carpetas. Pista: etc/nginx, usr/share/nginx, var/log/nginx
+
+**Paso 2:** 
+
 
 ### /etc/nginx/ → Configuración
 
@@ -350,9 +355,21 @@ Podemos cambiar el valoe de worker_processes auto; a worker_processes 1; y volve
 Comprobar el archivo. Aqui estamos ejecutando el comando nginx:
 
 ```
-docker exec adoring_darwin nginx -t
-docker exec adoring_darwin nginx -s reload
+which nginx
+nginx -t
+nginx -s reload
+
+systemctl status nginx  # no esta instalado en este version de Nginx
 ```
+
+
+Si intentas instalar systemctl, no funciona:
+*System has not been booted with systemd as init system (PID 1). Can't operate.*
+
+
+![OSI](images/nginx.comandos.png)
+
+
 
 
 y despues, mirar los procesos de nuevo:
@@ -362,8 +379,11 @@ docker top adoring_darwin
 ![OSI](images/nginx.reload.png)
 
 
+Y podemos executar fuera del contenedor:
 
-
+```
+docker exec nginx-web nginx -t
+```
 
 
 
