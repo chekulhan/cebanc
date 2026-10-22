@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GrowthBook A/B Test</title>
+</head>
+<body>
+    <h1>Try our product</h1>
+    <p id="message">Discover our products.</p>
+    <button id="buyButton" disabled>Loading...</button>
+    <p id="result"></p>
+
+    <script type="module">
+        import { GrowthBook } from
+            "https://esm.sh/@growthbook/growthbook";
+
+        async function startExperiment() {
+            let id = localStorage.getItem("ab-test-user-id");
+
+            if (!id) {
+                id = crypto.randomUUID();
+                localStorage.setItem("ab-test-user-id", id);
+            }
+
+            const gb = new GrowthBook({
+                apiHost: "http://localhost:3100",
+                clientKey: "sdk-xxxxxxx",
+                attributes: { id },
+
+                trackingCallback: (experiment, result) => {
+                    console.log("Experiment exposure:", {
+                        experiment: experiment.key,
+                        variation: result.key
+                    });
+                }
+            });
+
+            try {
+                await gb.init({ streaming: true });
+                console.log("Feature flag:", gb.evalFeature("test-1-button"));
+                console.log("All features:", gb.getFeatures());
+
+                // Must match a feature flag configured in GrowthBook.
+                const style = gb.getFeatureValue(
+                    "test-1-button",
+                    { text: "View products", color: "red" }
+                );
+
+                const button = document.getElementById("buyButton");
+
+                button.textContent = style.text;
+                button.style.backgroundColor = style.color;
+                button.style.color = "white";
+                button.disabled = false;
+
+                button.addEventListener("click", () => {
+                    document.getElementById("result").textContent =
+                        "You clicked: " + style.text;
+
+                    console.log("Button clicked", {
+                        id,
+                        buttonText: style.text
+                    });
+                });
+
+                console.log("User ID:", id);
+                console.log("Feature value:", style);
+            } catch (error) {
+                console.error("GrowthBook error:", error);
+                document.getElementById("message").textContent =
+                    "Could not load the experiment. Check the console.";
+            } finally {
+                gb.destroy();
+            }
+        }
+
+        startExperiment();
+    </script>
+</body>
+</html>

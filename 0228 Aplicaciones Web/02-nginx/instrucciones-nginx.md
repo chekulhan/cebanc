@@ -426,6 +426,12 @@ Limitaciones:
 
 ![OSI](images/osi.webp)
 
+
+Demo de los modelos OSI y TCP/IP
+
+https://vizlearn.app/cs/networks/osi-model
+
+
 Trabaja sobre protocolos de aplicación como HTTP y HTTPS.
 
 Antes de reenviar una petición, puede inspeccionar su contenido y decidir el destino según reglas configuradas.
@@ -457,6 +463,25 @@ Inconvenientes:
 - Consume más CPU.
 - Añade una pequeña latencia al tener que inspeccionar las peticiones.
 
+## Ayuda
+
+Hace falta un editor de texto, asi que podemos usar nano
+
+```bash
+which nano 
+cat /etc/os-release  # que sistema operativo estamos usando
+apt update && apt install nano
+```
+
+Vamos a renombrar el archivo default.conf, para poder recuperar la copia original.
+
+
+cd /etc/nginx/conf.d
+
+
+![Renombrar](images/nginx.rename.png)
+
+
 
 ## Logs
 
@@ -467,11 +492,17 @@ Inconvenientes:
 └── error.log
 ```
 
-Fijate que los logs estan gestionados por Docker. Asi que hay que usar: docker logs adoring_darwin
+Fijate que los logs estan gestionados por Docker. Asi que hay que usar desde el ORDENADOR local: 
 
-![Logs](images/nginx.logs1.png)
+```bash
+docker logs -f nginx-web
+docker logs -f  --tail 10 nginx-web
+```
+
 
 Modificamos el config para agregar access_log y error_log, para hacer cambios en este web server solo, no en todos.
+
+Creamos un archivo personalizado de server.conf:
 
 ```
 server {
@@ -493,7 +524,37 @@ Ahora, despues de test y reload, podemos ver los logs:
 
 ```
 tail -f /var/log/nginx/my-access.log
+tail /var/log/nginx/my-error.log
+
+
+cat my-error.log
 ```
+
+## Custom error pages
+
+Exploramos los diferentes tipos de HTTP Error codes:
+- https://http.cat/
+- https://httpstatuses.io/
+
+Como ejemplo, definimos una pagina 404.html para captar los errores de páginas (recursos) no encontrados en html. Ahora, modificamos el config
+
+
+
+server {
+    listen 80;
+    server_name localhost;
+
+    access_log /var/log/nginx/my-access.log;
+    error_log /var/log/nginx/my-error.log;
+    
+    error_page 404 /404.html;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+}
+
 
 
 
@@ -691,3 +752,41 @@ apache2-utils, wrk, apache2
 | Justifica las decisiones técnicas adoptadas y demuestra comprensión de los conceptos utilizados                                                                                                    | **2 puntos** |
 | Utiliza herramientas adicionales para verificar, contrastar o diagnosticar el comportamiento del sistema (curl, wget, ab, wrk, ss, netstat, top, htop, ps, docker stats, navegador, OpenSSL, etc.) | **2 puntos** |
 | Calidad de la documentación técnica, organización y claridad de las evidencias presentadas                                                                                                         | **1 punto**  |
+
+
+## AAA
+
+server {
+    listen 80;
+    server_name localhost;
+
+    root /usr/share/nginx/html;
+    index index.html;
+
+    access_log /var/log/nginx/my-access.log;
+    error_log /var/log/nginx/my-error.log;
+    
+    error_page 404 /404.html;
+    error_page 403 /403.html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    # Products homepage: /usr/share/nginx/html/products/index.html
+    location = /products {
+        return 301 /products/;
+    }
+
+    location /products/ {
+        index index.html;
+        try_files $uri $uri/ =404;
+    }
+
+
+    location = /forbidden {
+        allow 192.x.x.x;
+	deny all;
+        return 403;
+    }
+}
