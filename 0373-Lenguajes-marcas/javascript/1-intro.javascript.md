@@ -1,3 +1,19 @@
+# Netscape
+
+https://www.webdesignmuseum.org/software/netscape-navigator-1-0-in-1994
+
+Las primeras páginas web no eran completamente estáticas. Aunque todavía no existía JavaScript, ya había formas de interactuar con ellas. Por ejemplo:
+
+- Aunque el navegador no ejecutara JavaScript, el servidor podía procesar formularios, consultar bases de datos y generar páginas HTML diferentes según los datos recibidos
+
+JavaScript permitió ejecutar código directamente en el navegador
+
+Con JavaScript, una página podía **reaccionar a las acciones del usuario** y **modificar su contenido** sin tener que solicitar una página nueva al servidor cada vez.
+
+**CGI (Common Gateway Interface)** (Perl, por ejemplo) fue una de las tecnologías utilizadas en los primeros sitios web para procesar información en el servidor.
+
+La diferencia fundamental es que CGI permitía ejecutar lógica en el servidor, mientras que JavaScript permitió ejecutar lógica también en el navegador.
+
 # Javascript comandos útiles
 
 Usar dev tools
