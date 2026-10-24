@@ -28,7 +28,8 @@ console.log(document);
 ```javascript
 console.log(document.head); // Muestra la sección <head>
 console.log(document.body); // Muestra la sección <body>
-document.title = "Nuevo Título de Página"; // Cambia el título del documento
+document.title = "Nuevo Título de Página"; // Cambia el título del documento - atajo
+document.head.querySelector("title").textContent = "Nuevo Título de Página";
 ```
 
 3️⃣ Obtener un Elemento por su ID

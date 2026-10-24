@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="1.3-intro.common.commands.js" defer></script>
+    <!-- <script src="1.3-intro.common.commands.js" defer></script> -->
+
 </head>
 <body>
     <h1 title="Heading" data-test="this is a data attribute">My pagina de prueba de comandos Javascript con el DOM</h1>
@@ -16,5 +17,12 @@
     </div>
 
     <span class="hola">Hola SPAN</span>
+
+    <button onclick="handleClick();">Click Me</button>
+    <button onclick="handleClick(this);">Click Me with this</button>
+
+    <p id="clickParagraph">Pasar el raton por encima</p>
+
+    <script src="1.3-intro.common.commands.js" ></script>
 </body>
 </html>

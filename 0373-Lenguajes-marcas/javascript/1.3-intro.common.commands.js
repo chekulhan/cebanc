@@ -1,5 +1,31 @@
 
 
+// Paso 1 - tiipico
+/*
+function handleClick() {
+    console.log("Clicking");
+}
+ */
+
+// Paso 2 
+// Con 'this' keyword in   <button onclick="handleClick(this);">Click Me with this</button>
+/* function handleClick(element) {
+    console.log("Clicking");
+    console.log(element);
+    element.innerHTML = "Clicked"
+    element.style="background-color: red;"
+} */
+
+// Paso 3 - event listener 
+/*
+var btn = document.getElementById("clickParagraph");
+
+btn.addEventListener("mouseover", function() {
+    console.log("event fired");
+    btn.style.fontSize = "50px";
+});
+/* 
+
 
 const body = document.body;
 body.append("Hola a todos!");
