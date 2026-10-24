@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Historial de Viajes - Usuario</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    h1 {
+      color: #00539C;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    main {
+      display: flex;
+      flex: 1;
+      gap: 1rem;
+      overflow: hidden;
+    }
+    #tripHistoryContainer {
+      flex: 1 1 60%;
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      overflow-y: auto;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    #tripHistoryContainer h2 {
+      margin-top: 0;
+      color: #00539C;
+    }
+    #tripHistory {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #tripHistory li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #eef4fb;
+      margin-bottom: 0.75rem;
+      padding: 0.8rem;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    #tripHistory li div.details {
+      max-width: 75%;
+    }
+    #tripHistory li div.details strong {
+      color: #00539C;
+    }
+    #tripHistory li button {
+      margin-left: 0.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.9rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      transition: background-color 0.2s ease;
+    }
+    #tripHistory li button.edit {
+      color: #007bff;
+    }
+    #tripHistory li button.edit:hover {
+      background-color: #d0e6ff;
+    }
+    #tripHistory li button.delete {
+      color: #dc3545;
+    }
+    #tripHistory li button.delete:hover {
+      background-color: #f9d6d5;
+    }
+
+    #addTripContainer {
+      flex: 1 1 40%;
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    #addTripContainer h2 {
+      color: #00539C;
+      margin-top: 0;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    form label {
+      margin-top: 0.5rem;
+      font-weight: 600;
+    }
+    form input, form select {
+      padding: 0.5rem;
+      margin-top: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    /* Hide default form submit button because we'll use bottom fixed button */
+    form button {
+      display: none;
+    }
+
+    /* Fixed bottom button for mobile style */
+    #btnAddTripFixed {
+      position: fixed;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #00539C;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      padding: 1rem 3rem;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,83,156,0.3);
+      transition: background-color 0.3s ease;
+      z-index: 999;
+      user-select: none;
+    }
+    #btnAddTripFixed:hover {
+      background-color: #003f6b;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      main {
+        flex-direction: column;
+      }
+      #tripHistoryContainer, #addTripContainer {
+        flex: none;
+        width: 100%;
+        height: 40vh;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Bienvenido a SS Taxis, <span id="userName">Alice Smith</span></h1>
+  <main>
+    <section id="tripHistoryContainer">
+      <h2>Historial de viajes con SS Taxis</h2>
+      <ul id="tripHistory"></ul>
+    </section>
+
+    <section id="addTripContainer">
+      <h2>Pedir Taxi</h2>
+      <form id="tripForm" autocomplete="off">
+        <label for="lugar_recogida">Lugar de recogida:</label>
+        <input id="lugar_recogida" name="lugar_recogida" type="text" placeholder="Ej: Calle Principal" required />
+
+        <label for="lugar_destino">Lugar de destino:</label>
+        <input id="lugar_destino" name="lugar_destino" type="text" placeholder="Ej: Parque Central" required />
+
+        <label for="estado">Estado del viaje:</label>
+        <select id="estado" name="estado" required>
+          <option value="reservado">Reservado</option>
+          <option value="en curso">En curso</option>
+          <option value="completado">Completado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+
+        <label for="costo">Costo (€):</label>
+        <input id="costo" name="costo" type="number" placeholder="Ej: 15.50" min="0" step="0.01" required />
+      </form>
+    </section>
+  </main>
+
+  <button id="btnAddTripFixed" title="Agregar Viaje">Reservar taxi</button>
+
+  <script>
+    const userName = 'Alice Smith';
+    document.getElementById('userName').textContent = userName;
+
+    let trips = [
+      {
+        id: 1,
+        lugar_recogida: 'Calle Principal',
+        lugar_destino: 'Parque Central',
+        estado: 'completado',
+        costo: 15,
+        fecha_hora: '2025-05-20T14:00:00Z'
+      },
+      {
+        id: 2,
+        lugar_recogida: 'Biblioteca',
+        lugar_destino: 'Museo de Arte',
+        estado: 'en curso',
+        costo: 9,
+        fecha_hora: '2025-05-27T15:30:00Z'
+      }
+    ];
+
+    const historyList = document.getElementById('tripHistory');
+    const form = document.getElementById('tripForm');
+    const btnAddTripFixed = document.getElementById('btnAddTripFixed');
+
+    // Generate unique ID for new trips (simple increment)
+    function generateId() {
+      return trips.length ? Math.max(...trips.map(t => t.id)) + 1 : 1;
+    }
+
+    function renderTrips() {
+      historyList.innerHTML = '';
+      trips.forEach(trip => {
+        const li = document.createElement('li');
+        li.dataset.id = trip.id;
+        li.innerHTML = `
+          <div class="details">
+            <strong>${trip.lugar_recogida}</strong> → <strong>${trip.lugar_destino}</strong><br>
+            Estado: <em>${trip.estado}</em> | Costo: <strong>€${trip.costo.toFixed(2)}</strong><br>
+            Fecha: ${new Date(trip.fecha_hora).toLocaleString()}
+          </div>
+          <div class="actions">
+            <button class="edit" title="Editar">✏️</button>
+            <button class="delete" title="Eliminar">🗑️</button>
+          </div>
+        `;
+        historyList.appendChild(li);
+      });
+    }
+
+    function clearForm() {
+      form.reset();
+    }
+
+    // Add new trip
+    btnAddTripFixed.addEventListener('click', () => {
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      const newTrip = {
+        id: generateId(),
+        lugar_recogida: form.lugar_recogida.value.trim(),
+        lugar_destino: form.lugar_destino.value.trim(),
+        estado: form.estado.value,
+        costo: parseFloat(form.costo.value),
+        fecha_hora: new Date().toISOString()
+      };
+
+      trips.push(newTrip);
+      renderTrips();
+      clearForm();
+    });
+
+    // Delegate edit/delete buttons
+    historyList.addEventListener('click', (e) => {
+      const li = e.target.closest('li');
+      if (!li) return;
+      const id = parseInt(li.dataset.id);
+
+      if (e.target.classList.contains('delete')) {
+        if (confirm('¿Seguro que quieres eliminar este viaje?')) {
+          trips = trips.filter(t => t.id !== id);
+          renderTrips();
+        }
+      } else if (e.target.classList.contains('edit')) {
+        // Load trip into form for editing
+        const trip = trips.find(t => t.id === id);
+        if (!trip) return;
+
+        form.lugar_recogida.value = trip.lugar_recogida;
+        form.lugar_destino.value = trip.lugar_destino;
+        form.estado.value = trip.estado;
+        form.costo.value = trip.costo;
+
+        // Remove the trip, user must add it back (simplified edit)
+        trips = trips.filter(t => t.id !== id);
+        renderTrips();
+      }
+    });
+
+    // Initial render
+    renderTrips();
+  </script>
+</body>
+</html>
