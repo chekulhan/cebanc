@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voice Admin Assistant</title>
+</head>
+<body>
+    <h1>Voice Admin Assistant</h1>
+
+    <button id="listen">🎤 Speak a command</button>
+
+    <h3>You said:</h3>
+    <p id="heard">Waiting for voice input...</p>
+
+    <h3>Suggested Windows command:</h3>
+    <p id="command">None yet</p>
+
+    <h3>What to do:</h3>
+    <p id="instructions"></p>
+
+    <script>
+        const SpeechRecognition =
+            window.SpeechRecognition ||
+            window.webkitSpeechRecognition;
+
+        const heard = document.getElementById("heard");
+        const command = document.getElementById("command");
+        const instructions = document.getElementById("instructions");
+
+        if (!SpeechRecognition) {
+            heard.textContent =
+                "Speech recognition is not supported by this browser.";
+            document.getElementById("listen").disabled = true;
+        } else {
+            const recognition = new SpeechRecognition();
+            recognition.lang = "en-US";
+
+            document.getElementById("listen").onclick = () => {
+                recognition.start();
+                heard.textContent = "Listening...";
+            };
+
+            recognition.onresult = (event) => {
+                const phrase =
+                    event.results[0][0].transcript.toLowerCase();
+
+                heard.textContent = phrase;
+
+                if (phrase.includes("ip configuration")) {
+                    command.textContent = "ipconfig";
+                    instructions.textContent =
+                        "Open CMD or PowerShell, run ipconfig, " +
+                        "and identify your IPv4 address and default gateway.";
+                } else if (phrase.includes("computer name")) {
+                    command.textContent = "hostname";
+                    instructions.textContent =
+                        "Run the command and identify your computer's name.";
+                } else if (phrase.includes("dns")) {
+                    command.textContent = "nslookup example.com";
+                    instructions.textContent =
+                        "Run the command and identify the DNS server " +
+                        "and the IP address returned.";
+                } else if (phrase.includes("network connections")) {
+                    command.textContent = "netstat";
+                    instructions.textContent =
+                        "Run the command and examine the network connections.";
+                } else {
+                    command.textContent = "Command not recognised";
+                    instructions.textContent =
+                        "Try: Show IP configuration, Show computer name, " +
+                        "Check DNS, or Show network connections.";
+                }
+            };
+
+            recognition.onerror = (event) => {
+                heard.textContent = "Recognition error: " + event.error;
+            };
+        }
+    </script>
+</body>
+</html>
