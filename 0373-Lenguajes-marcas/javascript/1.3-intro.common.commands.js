@@ -16,7 +16,7 @@ function handleClick() {
     element.style="background-color: red;"
 } */
 
-// Paso 3 - event listener 
+// Paso 3 - event listener s
 /*
 var btn = document.getElementById("clickParagraph");
 
@@ -24,6 +24,13 @@ btn.addEventListener("mouseover", function() {
     console.log("event fired");
     btn.style.fontSize = "50px";
 });
+
+// Ejemplo 2 de event listener
+function sayHello() {
+    console.log("Hello!");
+}
+
+btn.addEventListener("click", sayHello);
 /* 
 
 
