@@ -1,6 +1,29 @@
+# CMS
 
+¿Qué es un CMS (Content Management System)?
+
+Un CMS o Sistema de Gestión de Contenidos es una aplicación que permite crear, organizar, publicar y mantener una página web sin tener que programar toda la web desde cero.
+
+Su objetivo principal es facilitar la gestión de una página web, separando la creación y administración de contenidos del desarrollo técnico de la aplicación.
+
+El **administrador (Administrator)** es el perfil con mayor nivel de permisos. Su responsabilidad es garantizar que la plataforma funcione correctamente, sea segura y esté disponible.
+
+Sus principales tareas son:
+- Gestión de usuarios: crear cuentas, asignar roles y controlar permisos.
+- Seguridad: gestionar contraseñas, actualizaciones y medidas de protección.
+- Mantenimiento: actualizar WordPress, temas y plugins.
+- Configuración: gestionar ajustes generales, apariencia y funcionalidades.
+- Copias de seguridad: garantizar que se puedan recuperar los datos.
+- Supervisión: comprobar que la web funciona correctamente.
+
+**Un CMS facilita la creación y gestión de páginas web, mientras que el administrador se encarga de controlar la plataforma, sus usuarios, su configuración y su seguridad.**
+
+
+![ CMS](images/cms.png)
 
 # Wordpress instalación
+
+![ Wordpress](images/docker.wordpress.png)
 
 ```bash
 docker compose up -d
