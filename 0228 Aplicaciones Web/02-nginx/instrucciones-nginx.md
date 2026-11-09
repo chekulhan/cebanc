@@ -617,6 +617,32 @@ Vamos a empezar con un nuevo contenedor, basado en la imagen original:
 docker run -d --name nginx-https -p 443:443 -v "$(pwd)/index.html:/usr/share/nginx/html/index.html" nginx
 
 
+![Certificados](images/tls.sinhttps.png)
+
+
+![OSI](images/osi.png)
+
+
+![Certificados](images/tls.certificado.png)
+
+### Certificate Authorities
+
+Una CA funciona como una entidad verificadora: certifica que la identidad del servidor corresponde al dominio indicado.
+
+
+![Auth cert](images/cert.auth.jpeg)
+
+
+- El certificado no cifra directamente toda la comunicación.
+
+- El certificado permite autenticar al servidor y participar en el establecimiento seguro de la conexión.
+
+- Durante el handshake TLS se negocian las claves de sesión.
+
+- Después, los datos HTTP (peticiones, páginas HTML, imágenes, etc.) viajan cifrados.
+
+![Auth cert proceso](images/tls.proceso.png)
+
 
 
 Creamos un nuevo directorio 'certs' y ejecutamos el comando 'openssl genra' para crear una clave privada.
