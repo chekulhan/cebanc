@@ -614,7 +614,7 @@ Verificar que:
 
 Vamos a empezar con un nuevo contenedor, basado en la imagen original:
 
-docker run -d --name nginx-https -p 443:443 -v "$(pwd)/index.html:/usr/share/nginx/html/index.html" nginx
+$ docker run -d --name nginx-https -p 443:443 nginx
 
 
 ![Certificados](images/tls.sinhttps.png)
