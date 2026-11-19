@@ -1,0 +1,11 @@
+event_id,timestamp,user_id,event_type,game_mode,level,score,duration_seconds,country
+6,2026-11-19 17:04:10,USR002,match_start,team_deathmatch,3,0,0,FR
+7,2026-11-19 17:05:30,USR003,match_start,battle_royale,2,0,0,DE
+8,2026-11-19 17:06:00,USR001,score,battle_royale,5,250,180,ES
+9,2026-11-19 17:07:45,USR002,score,team_deathmatch,3,100,210,FR
+10,2026-11-19 17:08:00,USR004,login,battle_royale,1,0,0,ES
+11,2026-11-19 17:09:10,USR001,match_end,battle_royale,5,450,300,ES
+12,2026-11-19 17:10:00,USR004,match_start,battle_royale,2,0,0,ES
+13,2026-11-19 17:11:30,USR003,score,battle_royale,2,200,150,DE
+14,2026-11-19 17:12:00,USR002,match_end,team_deathmatch,3,350,400,FR
+15,2026-11-19 17:13:00,USR004,score,battle_royale,2,300,180,ES

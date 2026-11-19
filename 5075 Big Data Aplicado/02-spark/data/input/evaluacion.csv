@@ -1,0 +1,101 @@
+flight_id,fecha,origen,destino,distancia_km,salida_prevista,salida_real,retraso_minutos,motivo_retraso
+IB1001,2026-11-01,MAD,BCN,505,07:30,08:15,45,Meteorología adversa
+IB1002,2026-11-01,BCN,BIO,467,08:15,08:03,-12,Salida anticipada por operación
+IB1003,2026-11-01,BIO,AGP,750,08:45,08:45,0,Sin retraso
+IB1004,2026-11-01,AGP,SVQ,150,09:15,10:20,65,Avería técnica
+IB1005,2026-11-01,SVQ,VLC,540,09:45,10:03,18,Operaciones de embarque lentas
+IB1006,2026-11-01,VLC,PMI,260,08:45,08:38,-7,Salida anticipada por operación
+IB1007,2026-11-01,PMI,LPA,2100,09:15,09:47,32,Congestión aeroportuaria
+IB1008,2026-11-01,LPA,SCQ,1800,09:45,09:45,0,Sin retraso
+IB1009,2026-11-01,SCQ,ALC,900,18:00,19:30,90,Huelga de control aéreo
+IB1010,2026-11-01,ALC,MAD,355,20:15,20:10,-5,Salida anticipada por operación
+IB1011,2026-11-02,MAD,AGP,415,07:30,08:15,45,Retraso en la llegada del avión anterior
+IB1012,2026-11-02,AGP,BCN,770,08:15,08:03,-12,Salida anticipada por operación
+IB1013,2026-11-02,BCN,SVQ,830,08:45,08:45,0,Sin retraso
+IB1014,2026-11-02,SVQ,BIO,700,09:15,10:20,65,Avería técnica
+IB1015,2026-11-02,BIO,PMI,560,09:45,10:03,18,Restricciones de tráfico aéreo
+IB1016,2026-11-02,PMI,MAD,550,08:45,08:38,-7,Salida anticipada por operación
+IB1017,2026-11-02,MAD,LPA,1750,09:15,09:47,32,Meteorología adversa
+IB1018,2026-11-02,LPA,ALC,1850,09:45,09:45,0,Sin retraso
+IB1019,2026-11-02,ALC,SCQ,800,18:00,19:30,90,Congestión aeroportuaria
+IB1020,2026-11-02,SCQ,VLC,750,20:15,20:10,-5,Salida anticipada por operación
+IB1021,2026-11-03,MAD,BCN,505,07:30,08:15,45,Meteorología adversa
+IB1022,2026-11-03,BCN,BIO,467,08:15,08:03,-12,Salida anticipada por operación
+IB1023,2026-11-03,BIO,AGP,750,08:45,08:45,0,Sin retraso
+IB1024,2026-11-03,AGP,SVQ,150,09:15,10:20,65,Avería técnica
+IB1025,2026-11-03,SVQ,VLC,540,09:45,10:03,18,Operaciones de embarque lentas
+IB1026,2026-11-03,VLC,PMI,260,08:45,08:38,-7,Salida anticipada por operación
+IB1027,2026-11-03,PMI,LPA,2100,09:15,09:47,32,Congestión aeroportuaria
+IB1028,2026-11-03,LPA,SCQ,1800,09:45,09:45,0,Sin retraso
+IB1029,2026-11-03,SCQ,ALC,900,18:00,19:30,90,Huelga de control aéreo
+IB1030,2026-11-03,ALC,MAD,355,20:15,20:10,-5,Salida anticipada por operación
+IB1031,2026-11-04,MAD,AGP,415,07:30,08:15,45,Retraso en la llegada del avión anterior
+IB1032,2026-11-04,AGP,BCN,770,08:15,08:03,-12,Salida anticipada por operación
+IB1033,2026-11-04,BCN,SVQ,830,08:45,08:45,0,Sin retraso
+IB1034,2026-11-04,SVQ,BIO,700,09:15,10:20,65,Avería técnica
+IB1035,2026-11-04,BIO,PMI,560,09:45,10:03,18,Restricciones de tráfico aéreo
+IB1036,2026-11-04,PMI,MAD,550,08:45,08:38,-7,Salida anticipada por operación
+IB1037,2026-11-04,MAD,LPA,1750,09:15,09:47,32,Meteorología adversa
+IB1038,2026-11-04,LPA,ALC,1850,09:45,09:45,0,Sin retraso
+IB1039,2026-11-04,ALC,SCQ,800,18:00,19:30,90,Congestión aeroportuaria
+IB1040,2026-11-04,SCQ,VLC,750,20:15,20:10,-5,Salida anticipada por operación
+IB1041,2026-11-05,MAD,BCN,505,07:30,08:15,45,Meteorología adversa
+IB1042,2026-11-05,BCN,BIO,467,08:15,08:03,-12,Salida anticipada por operación
+IB1043,2026-11-05,BIO,AGP,750,08:45,08:45,0,Sin retraso
+IB1044,2026-11-05,AGP,SVQ,150,09:15,10:20,65,Avería técnica
+IB1045,2026-11-05,SVQ,VLC,540,09:45,10:03,18,Operaciones de embarque lentas
+IB1046,2026-11-05,VLC,PMI,260,08:45,08:38,-7,Salida anticipada por operación
+IB1047,2026-11-05,PMI,LPA,2100,09:15,09:47,32,Congestión aeroportuaria
+IB1048,2026-11-05,LPA,SCQ,1800,09:45,09:45,0,Sin retraso
+IB1049,2026-11-05,SCQ,ALC,900,18:00,19:30,90,Huelga de control aéreo
+IB1050,2026-11-05,ALC,MAD,355,20:15,20:10,-5,Salida anticipada por operación
+IB1051,2026-11-06,MAD,AGP,415,07:30,08:15,45,Retraso en la llegada del avión anterior
+IB1052,2026-11-06,AGP,BCN,770,08:15,08:03,-12,Salida anticipada por operación
+IB1053,2026-11-06,BCN,SVQ,830,08:45,08:45,0,Sin retraso
+IB1054,2026-11-06,SVQ,BIO,700,09:15,10:20,65,Avería técnica
+IB1055,2026-11-06,BIO,PMI,560,09:45,10:03,18,Restricciones de tráfico aéreo
+IB1056,2026-11-06,PMI,MAD,550,08:45,08:38,-7,Salida anticipada por operación
+IB1057,2026-11-06,MAD,LPA,1750,09:15,09:47,32,Meteorología adversa
+IB1058,2026-11-06,LPA,ALC,1850,09:45,09:45,0,Sin retraso
+IB1059,2026-11-06,ALC,SCQ,800,18:00,19:30,90,Congestión aeroportuaria
+IB1060,2026-11-06,SCQ,VLC,750,20:15,20:10,-5,Salida anticipada por operación
+IB1061,2026-11-07,MAD,BCN,505,07:30,08:15,45,Meteorología adversa
+IB1062,2026-11-07,BCN,BIO,467,08:15,08:03,-12,Salida anticipada por operación
+IB1063,2026-11-07,BIO,AGP,750,08:45,08:45,0,Sin retraso
+IB1064,2026-11-07,AGP,SVQ,150,09:15,10:20,65,Avería técnica
+IB1065,2026-11-07,SVQ,VLC,540,09:45,10:03,18,Operaciones de embarque lentas
+IB1066,2026-11-07,VLC,PMI,260,08:45,08:38,-7,Salida anticipada por operación
+IB1067,2026-11-07,PMI,LPA,2100,09:15,09:47,32,Congestión aeroportuaria
+IB1068,2026-11-07,LPA,SCQ,1800,09:45,09:45,0,Sin retraso
+IB1069,2026-11-07,SCQ,ALC,900,18:00,19:30,90,Huelga de control aéreo
+IB1070,2026-11-07,ALC,MAD,355,20:15,20:10,-5,Salida anticipada por operación
+IB1071,2026-11-08,MAD,AGP,415,07:30,08:15,45,Retraso en la llegada del avión anterior
+IB1072,2026-11-08,AGP,BCN,770,08:15,08:03,-12,Salida anticipada por operación
+IB1073,2026-11-08,BCN,SVQ,830,08:45,08:45,0,Sin retraso
+IB1074,2026-11-08,SVQ,BIO,700,09:15,10:20,65,Avería técnica
+IB1075,2026-11-08,BIO,PMI,560,09:45,10:03,18,Restricciones de tráfico aéreo
+IB1076,2026-11-08,PMI,MAD,550,08:45,08:38,-7,Salida anticipada por operación
+IB1077,2026-11-08,MAD,LPA,1750,09:15,09:47,32,Meteorología adversa
+IB1078,2026-11-08,LPA,ALC,1850,09:45,09:45,0,Sin retraso
+IB1079,2026-11-08,ALC,SCQ,800,18:00,19:30,90,Congestión aeroportuaria
+IB1080,2026-11-08,SCQ,VLC,750,20:15,20:10,-5,Salida anticipada por operación
+IB1081,2026-11-09,MAD,BCN,505,07:30,08:15,45,Meteorología adversa
+IB1082,2026-11-09,BCN,BIO,467,08:15,08:03,-12,Salida anticipada por operación
+IB1083,2026-11-09,BIO,AGP,750,08:45,08:45,0,Sin retraso
+IB1084,2026-11-09,AGP,SVQ,150,09:15,10:20,65,Avería técnica
+IB1085,2026-11-09,SVQ,VLC,540,09:45,10:03,18,Operaciones de embarque lentas
+IB1086,2026-11-09,VLC,PMI,260,08:45,08:38,-7,Salida anticipada por operación
+IB1087,2026-11-09,PMI,LPA,2100,09:15,09:47,32,Congestión aeroportuaria
+IB1088,2026-11-09,LPA,SCQ,1800,09:45,09:45,0,Sin retraso
+IB1089,2026-11-09,SCQ,ALC,900,18:00,19:30,90,Huelga de control aéreo
+IB1090,2026-11-09,ALC,MAD,355,20:15,20:10,-5,Salida anticipada por operación
+IB1091,2026-11-10,MAD,AGP,415,07:30,08:15,45,Retraso en la llegada del avión anterior
+IB1092,2026-11-10,AGP,BCN,770,08:15,08:03,-12,Salida anticipada por operación
+IB1093,2026-11-10,BCN,SVQ,830,08:45,08:45,0,Sin retraso
+IB1094,2026-11-10,SVQ,BIO,700,09:15,10:20,65,Avería técnica
+IB1095,2026-11-10,BIO,PMI,560,09:45,10:03,18,Restricciones de tráfico aéreo
+IB1096,2026-11-10,PMI,MAD,550,08:45,08:38,-7,Salida anticipada por operación
+IB1097,2026-11-10,MAD,LPA,1750,09:15,09:47,32,Meteorología adversa
+IB1098,2026-11-10,LPA,ALC,1850,09:45,09:45,0,Sin retraso
+IB1099,2026-11-10,ALC,SCQ,800,18:00,19:30,90,Congestión aeroportuaria
+IB1100,2026-11-10,SCQ,VLC,750,20:15,20:10,-5,Salida anticipada por operación

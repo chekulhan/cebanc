@@ -1,0 +1,15 @@
+{"event_id":1,"user_id":"U001","session_id":"S1001","event_type":"page_view","page":"/","product_id":null,"device":"desktop","country":"Spain","timestamp":"2026-11-19T09:00:00"}
+{"event_id":2,"user_id":"U001","session_id":"S1001","event_type":"page_view","page":"/products","product_id":null,"device":"desktop","country":"Spain","timestamp":"2026-11-19T09:01:12"}
+{"event_id":3,"user_id":"U001","session_id":"S1001","event_type":"product_click","page":"/products/laptop-01","product_id":"P001","device":"desktop","country":"Spain","timestamp":"2026-11-19T09:02:30"}
+{"event_id":4,"user_id":"U001","session_id":"S1001","event_type":"add_to_cart","page":"/cart","product_id":"P001","device":"desktop","country":"Spain","timestamp":"2026-11-19T09:03:15"}
+{"event_id":5,"user_id":"U001","session_id":"S1001","event_type":"purchase","page":"/checkout/success","product_id":"P001","device":"desktop","country":"Spain","timestamp":"2026-11-19T09:05:42"}
+{"event_id":6,"user_id":"U002","session_id":"S1002","event_type":"page_view","page":"/","product_id":null,"device":"mobile","country":"France","timestamp":"2026-11-19T09:10:00"}
+{"event_id":7,"user_id":"U002","session_id":"S1002","event_type":"search","page":"/search?q=phone","product_id":null,"device":"mobile","country":"France","timestamp":"2026-11-19T09:10:45"}
+{"event_id":8,"user_id":"U002","session_id":"S1002","event_type":"product_click","page":"/products/phone-02","product_id":"P002","device":"mobile","country":"France","timestamp":"2026-11-19T09:11:20"}
+{"event_id":9,"user_id":"U003","session_id":"S1003","event_type":"page_view","page":"/","product_id":null,"device":"desktop","country":"Spain","timestamp":"2026-11-19T09:15:00"}
+{"event_id":10,"user_id":"U003","session_id":"S1003","event_type":"page_view","page":"/offers","product_id":null,"device":"desktop","country":"Spain","timestamp":"2026-11-19T09:16:10"}
+{"event_id":11,"user_id":"U003","session_id":"S1003","event_type":"add_to_cart","page":"/cart","product_id":"P003","device":"desktop","country":"Spain","timestamp":"2026-11-19T09:17:30"}
+{"event_id":12,"user_id":"U004","session_id":"S1004","event_type":"page_view","page":"/","product_id":null,"device":"mobile","country":"Germany","timestamp":"2026-11-19T09:20:00"}
+{"event_id":13,"user_id":"U004","session_id":"S1004","event_type":"search","page":"/search?q=headphones","product_id":null,"device":"mobile","country":"Germany","timestamp":"2026-11-19T09:21:05"}
+{"event_id":14,"user_id":"U004","session_id":"S1004","event_type":"purchase","page":"/checkout/success","product_id":"P004","device":"mobile","country":"Germany","timestamp":"2026-11-19T09:23:50"}
+{"event_id":15,"user_id":"U005","session_id":"S1005","event_type":"page_view","page":"/","product_id":null,"device":"tablet","country":"Spain","timestamp":"2026-11-19T09:30:00"}
